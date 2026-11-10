@@ -1,499 +1,770 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
+  <!-- CORE ENCODING & VIEWPORT FOR FOLD, FLIP, MOBILE & TABLETS -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- PRIMARY SEO META TAGS -->
   <title>PoshanKosh® — India's #1 All-India PM-POSHAN & School Reports Platform | राष्ट्रीय पोषण प्रबंधन</title>
-  <meta name="description" content="PoshanKosh is India's national offline-first Android app for government and aided schools. Standardized for PM-POSHAN with attendance, revised cooking rates (₹6.78 / ₹10.17), 12 statutory registers, 4 monthly vouchers, and 100% bank reconciliation.">
-  <meta name="keywords" content="PoshanKosh, All India PM POSHAN App, National MDM App, Mid Day Meal Register, School Cashbook, Dainik Vyay Panji, Ragi Panji, Anda Fal Panji, Iron Tablet, Chakhna Panji">
+  <meta name="title" content="PoshanKosh® — India's #1 All-India PM-POSHAN & School Reports Platform | राष्ट्रीय पोषण प्रबंधन">
+  <meta name="description" content="PoshanKosh® is India's national offline-first Android application for government and aided schools across all 28 States and 8 Union Territories. Standardized for PM-POSHAN with attendance, revised cooking rates (₹6.78 / ₹10.17), 12 statutory registers, 4 monthly vouchers, and 100% bank reconciliation.">
+  <meta name="keywords" content="PoshanKosh, All India PM POSHAN App, National MDM App, Mid Day Meal Register India, School Cashbook India, UDISE Plus Compatible, Ministry of Education PM POSHAN, Dainik Vyay Panji, Ragi Panji, Anda Fal Panji, Iron Tablet, Chakhna Panji">
+  <meta name="author" content="PoshanKosh Team">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <link rel="canonical" href="https://anantchandraushaamallick07-afk.github.io/poshankosh-web/">
+
+  <!-- 100% EMBEDDED HIGH-DEFINITION FAVICON (ZERO 404, INSTANT BROWSER TAB DISPLAY) -->
   <link rel="icon" type="image/png" href="data:image/png;base64,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">
   <link rel="shortcut icon" type="image/png" href="data:image/png;base64,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">
   <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAK70lEQVR4nI1Wa3AU15U+597bPd3z1AhphGRJCBA4SBBiIMniWmJv1qwtYdaLa2dSLJWUHVfK5SQ/nJRTFceORzjlSmpTfmy2dm1qKT+XWmdwANvEMgZ7iJcN60UCbD2RhJAsS0joNT3TM9M93X3P/gAUSMDm/Olb3eee853vnPpOIwBAKpXSly1bhhMTE6Cqqua6LimKohiGkUkkEqV0Oh0sFovO2NiYXLlyJU1PT1MkEtEMw3ASiUQJPseIiCGiTKVSPBqNBj3P49lsthgMBpXW1tYsAgDsP3Dg5XAkvDlfMM8Kzn4vJTQQUjsCBohYGSM6IZnUganzRcMYyVdWumWWtdhHlDdNcy6RSHjXSY7t7e3qWCwml2cy5bZtxyTnDBwHXMbkti1buhgAABcs6jhOhiG8RRzfkShfjYaiaZQ4xYjeR8TRoBY8VTSMvmAw6IwcPVra1tIy0traOg0AkEwm2bUAICK1tLQ4K3M5uuOOO6a2bNnStfWuuz4uFovdZNsTC44H2w9uf/Pgm/cdOnQolkql1Ett4dcKumvXLgUAgJJJRkR4ZbULZwC88s7lWESEl/2u9IcDBw7UHDlypOp6NF558XLyBfC7f/7I+688fu+1vn2B/QkAEfwlqissmU4LIsJkMsk63tpTAQDQ/vKTzd3pVPCt3/xw3we7f/zMO++kKt987tEqAIBDh14NfFH2dDotrkZx8UzXu0AA+PJLaV+5sb+7Jqw9NO7wTQGwmk3bHQsHArOFQn5rOBL7aS53oVkw9Z47H3p6c1syiTt37pSfB+RKuq6bHACgLZnE++//G2syL++eNjK/i4T8fQW1+uiiZeveVSu/1CG1RS9ZdnG1kN5TejD6bQSgti+i4c8YuK6lUnGeSOz19j3/s3uq/fLWjKN/qPp9gWD2k3+wMpN3Ms6lHq17fTawplPambkQcza6XHvx9h1PDCaTSfZ5LNzQwMTjKUlEmLOVU6Zl14UqFnOc+ugJkR3YTvnJcjc7XqHlen8Yzpza7Hq66ljFGI9UzBARtrXt/Fxm8WKFKX49MbmWtb/w/Z9UFrr+2TSytuGh6mMIqiy6ofKbFF/D3bd++d4fHb/RWAwAIJFIeH19fSEiYgAARMT/XAeSySRLJeNqOnmbIK/QJF3bc5H4v/bn8b1ZhprC0HUtWbRmVqaTSdHRcVEvbghA39m+74ICv2prawMiQkT0EomEd6XC7dy5U/bAXvco3C5dHuoK+P2884IFnxQUODotYc5hTKg6o1Dt6X9v7qUNGx50bpQFGBod6jxzbmDwcvX9I0N/+3HPx5suVw4A8Oz+lxronQEfAMB/pFLlh5/d1rf9viaK/f1aL7Z1jftvydvokxcfeBUusXjs2LFQ8qWkdkMMMM7zDPkxAID+4YFkrDJ6pCwaOXxm6Exrc3MzAgD0zow8949TL3Y8+bvn134vkZg7G9r07XOywmUoSfUJfsysOrzm/t0PAKL8/p5fPfhs/9u9GTVwCwBAPBW/pqwvAADEXCgSvrdnaOCPwaDv55pQvFhlpQ8Y/HLv3r0AAOBIOT/tmauPX+g9+sj+Z7+Cg6XBvAccEFAIBc4Z1jmVCee+3Y89022cfWGmlKldHKzQiUiJx+OQvLg7/gIIAwDwPI9cxw37dX1jNByVuhpimvDLgD+89NEnHttBRMwv/N3CIZguGmU9U8P7K1rXLicJOSJEYAiVeuD8I/ue+6fP0PjRfM5wg6iZf7dyYxARnTjE5datW7X2wXZxKe+C/rB0Oi0cx33XNMzvkZTguMAcz4OCY5Om6yFVURtmZ2eDiVW3vad5Yo488rLSajg0dfJhv+LrRoEIrpQNjcudjvGe38wb867P5xNrFzf2VflDmzu6uu7uHxho08LhhkZoDF/Ku6ANbHp6mrxCqf3mxsaXi3nzO5lMZmo2O0fZQo5PTp//6ORox9NPvfKKs7y6esXW5RvfDagaLxQKNDJ/vmXVqtUeEUFECYwUw+JrWVlYhAxFOQv3bG/aPGrY+e0+wZ9yPWetU7I22a69qaOjQxkYGPARkXIVFUTEEdEbGhl6vKoq9gun5OYCivaAqutvA0AIAFQoyIdeP3V4w64T+75p6a6ycdGqw/tfff3WdavXHTHrlK/OONmaDYubRnYlHt1czBa3WbL0uG1ZZ31c/K9LEh3X0V3X/b1pmnNNTU0fLAC4tIYRANiHJz56eHRm9KGBseHCyf6uYdPKBhkyjXM2EwmEp+76+jc5+vyDb48dv7M2Vu0snwlMeuWa/J/5/i0baledWB+oO3Xk5IfzTPAWVShfmpyZGlO4emFZXX3NTRU1Xm209oPq6CL0nLlfNzV9ffbiTkakeDzO3njjDffHTz85dfDEe0tzVg65UFYLzoEkgZQSXDkKf+g9AZwgVxYKD8Ru+WvzvgeTPbvfeq2s0Dcysuf9/179jDHb4g8FoGQ7YFs2qKpa43oOIAIQMLlhyVfgtcf/pXN8Jr8RAA5enkpoamqi38rf8p4Xhs8wxlDTdPm1VevynmubnicVjygnhGA505w08oY6l59fcfj4H7SH75k0j5/+v1tO9X9SuaL+5nxNbEmPQLDKouVLjKwxgIgi6A/ERic/rRyYGA5UlFcWBBNRAaACACwAaGtrIwCgbPV/fYYSC9l8zv/h6T+GinY+JMkDRKzgjIMqeI2m+mdqa+rmrUKpwnPdmObX1calKyfIK/lGpycbzKLJaYQ0AqpAQvLrfkmEABJhZd3SkpTuOsHFGADsWwBwuRWFAonnD/ynIU2pu57jCS4YESNERADAYslWCiWr+nzvJFTo5aamaVHLLkLnmc4lmuoDhgy44MAAgQEDAsB8ocgBEAQT7uolK8p8utbIcsK3wAARscHBQWXXrl1SF7C4LBAslC44yLkqLMcGRATXcUCSB4oQoAqFmKqBrmscEQrFkq34fXq5T/Wh45bQ9TyQjguSAAQXoAgVGEfwC61QV1nrB4aAgO5VLVixYoW3Z88eAAW6y/3R/qrQTUFGcvCmxeUhKTETCoQaXPAqR86P0FTmgpKzTTWo+AkBAYj0bCHPdNt1ykNRiAQjhVi4IqD7dGEWTcfIZezZfFbxcf/conCEIyJjyLQFAIgoAUACAOzYsSP60x0/6FWM3rfXfONbn2aK0GoXcn/lloqSyPXMoknnzn9WTJ88Jj7u73Y86c1HfCER33gP3b3xDvfmuuXh8kgZE4wBMg4ecUCueuenRibMnKEih3rHdYEhXq3Jl/4DqLu7u5y4eGSu/bHtVVG1QVZ+2eY16xhGGhioQQRgoAoBmqJSLp8vOK7rMUSrLBAsI4ZayXVBIoD0XCBrjjA7jtZnJ0py5gyLfPUBYYWWumUBjRsZ4/kVjY0/WGgBIlIymWTNzdPZvqH6iVjLLz4y+t8fx8mudXD2mPAH/VwrbwDXXwNWIOZYWpQHy6pCAa4CZwilzDjIkgnSNsDLjQNlzoNtTKLnWSAi9aq2ahs4/mpg5ApV18AzDOWqGbikhnS6v7/Wx9w67tPqouvjNmPfGvfy0643O6RnJ/uK9qddFpYyIebZ3OTMh0RARMAAgRhHUEPA/JWSR+qLSvPtPjW6lHF/FIE88OwCkue5JbskSNLcVS24bN3d3Wo2nOXVZ20qVvkD7uy0rF+zBSgCVHZxi5XGAOB05wTqw68pw8OdEIUoRJeth+j6OKxfFl2IlQHAOQCCziMXX0SXXXxEo2CaZqm+vr74/z0kjams4g3fAAAAAElFTkSuQmCC">
+  <link rel="icon" type="image/png" sizes="256x256" href="logo-256x256.png">
+
+  <!-- OPEN GRAPH / FACEBOOK / WHATSAPP PREVIEW -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://anantchandraushaamallick07-afk.github.io/poshankosh-web/">
+  <meta property="og:title" content="PoshanKosh® — विद्यालय का पोषण, उज्ज्वल कल | All-India PM-POSHAN Platform">
+  <meta property="og:description" content="Complete digital register for school headmasters: Daily Attendance, 4 Monthly Vouchers, 100% Bank Passbook Reconciliation & Cashbook. 100% Offline-First.">
+  <meta property="og:site_name" content="PoshanKosh">
+  <meta property="og:locale" content="en_IN">
+  <meta property="og:locale:alternate" content="hi_IN">
+
+  <!-- TWITTER CARDS -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://anantchandraushaamallick07-afk.github.io/poshankosh-web/">
+  <meta name="twitter:title" content="PoshanKosh® — All-India PM-POSHAN Platform">
+  <meta name="twitter:description" content="Manage daily attendance, cooking allowances, rice stocks, monthly vouchers, and bank passbooks with 0% errors.">
+
+  <!-- MOBILE THEME COLORS -->
+  <meta name="theme-color" content="#1b8045">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="PoshanKosh">
+
+  <!-- TAILWIND CSS & GOOGLE FONTS -->
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', '"Noto Sans Devanagari"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              green: '#1b8045',
+              'green-dark': '#135c31',
+              'green-light': '#e8f5ed',
+              orange: '#f28b20',
+              'orange-dark': '#d7720d',
+              'orange-light': '#fef3e6',
+              dark: '#0f172a',
+            }
+          },
+          screens: {
+            'xs': '360px',
+            'sm': '640px',
+            'md': '768px',
+            'lg': '1024px',
+            'xl': '1280px',
+            '2xl': '1536px',
+            'fold': {'raw': '(max-width: 320px)'},
+          }
+        }
+      }
+    }
+  </script>
+
   <style>
-    body { font-family: 'Plus Jakarta Sans', 'Noto Sans Devanagari', sans-serif; overflow-x: hidden; }
-    .card-hover:hover { transform: translateY(-3px); transition: all 0.25s ease; }
+    body {
+      font-family: 'Plus Jakarta Sans', 'Noto Sans Devanagari', sans-serif;
+      overflow-x: hidden;
+      padding-top: env(safe-area-inset-top);
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+    .card-hover:hover {
+      transform: translateY(-3px);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .chat-bubble-user { border-radius: 18px 18px 4px 18px; }
+    .chat-bubble-ai { border-radius: 18px 18px 18px 4px; }
+    @media (max-width: 340px) {
+      .hero-title { font-size: 1.65rem !important; line-height: 1.2 !important; }
+      .compact-btn { padding-left: 0.75rem !important; padding-right: 0.75rem !important; font-size: 0.75rem !important; }
+    }
   </style>
 </head>
-<body id="top" class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col selection:bg-emerald-700 selection:text-white">
+<body id="top" class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col selection:bg-brand-green selection:text-white">
 
-  <!-- TOP BANNER -->
-  <aside class="bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-900 text-white text-[11px] sm:text-xs py-2 px-3 text-center font-medium shadow-xs flex items-center justify-center gap-2 flex-wrap">
-    <span class="bg-amber-500 text-white text-[10px] font-black px-2 py-0.5 rounded-full uppercase">NEW RELEASE</span>
-    <span>PoshanKosh v0.16.4+20 is Live: Revised Rates (₹6.78 / ₹10.17), 12 Registers & AI Sahayak!</span>
-    <a href="#download" class="underline font-bold hover:text-amber-300">Download APK &rarr;</a>
+  <!-- TOP BILINGUAL ANNOUNCEMENT STRIP -->
+  <aside class="bg-gradient-to-r from-emerald-900 via-brand-green to-emerald-900 text-white text-[11px] sm:text-xs py-2 px-3 text-center font-medium shadow-xs flex items-center justify-center gap-1.5 sm:gap-2 flex-wrap">
+    <span class="bg-brand-orange text-white text-[10px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider">NEW RELEASE</span>
+    <span>PoshanKosh v0.16.4+20: Revised Rates (₹6.78 / ₹10.17), 12 Registers, AI Sahayak & Nov Carry-Forward!</span>
+    <a href="#download" class="underline font-bold hover:text-brand-orange transition-colors">Download APK &rarr;</a>
   </aside>
 
   <!-- NAVBAR -->
-  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 sm:h-20 flex items-center justify-between">
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-2xs">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-18 sm:h-20 flex items-center justify-between">
+      
+      <!-- LOGO -->
       <a href="#top" class="flex items-center gap-2 sm:gap-3 group shrink-0">
         <img src="logo-256x256.png" alt="PoshanKosh Logo" class="h-10 sm:h-12 w-auto object-contain">
         <div class="flex flex-col">
-          <div class="flex items-center gap-1">
-            <span class="text-xl sm:text-2xl font-black tracking-tight text-slate-900">Poshan<span class="text-amber-600">kosh</span></span>
-            <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-1 rounded">v0.16</span>
+          <div class="flex items-center gap-1 sm:gap-1.5">
+            <span class="text-xl sm:text-2xl font-black tracking-tight text-slate-900">Poshan<span class="text-brand-orange">kosh</span></span>
+            <span class="text-[10px] sm:text-xs font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-1.5 py-0.2 rounded">v0.16</span>
           </div>
-          <span class="text-[10px] font-semibold text-slate-500">विद्यालय का पोषण, उज्ज्वल कल</span>
+          <span class="text-[10px] sm:text-[11px] font-semibold text-slate-500 leading-tight">विद्यालय का पोषण, उज्ज्वल कल</span>
         </div>
       </a>
-      <nav class="hidden lg:flex items-center gap-6 text-sm font-semibold text-slate-600">
-        <a href="#features" class="hover:text-emerald-700">Features</a>
-        <a href="#registers" class="hover:text-emerald-700 text-emerald-800 font-bold">12 Registers (पंजी)</a>
-        <a href="#how-to-use" class="hover:text-emerald-700">How to Use</a>
-        <a href="#ai-assistant" class="hover:text-emerald-700 flex items-center gap-1">
+
+      <!-- DESKTOP NAV -->
+      <nav class="hidden lg:flex items-center gap-5 text-sm font-semibold text-slate-600">
+        <a href="#features" class="hover:text-brand-green transition-colors">Features</a>
+        <a href="#registers" class="hover:text-brand-green transition-colors font-bold text-emerald-800">12 Registers (पंजी)</a>
+        <a href="#how-to-use" class="hover:text-brand-green transition-colors">How to Use</a>
+        <a href="#ai-assistant" class="hover:text-brand-green transition-colors flex items-center gap-1">
           <span>AI Assistant</span>
-          <span class="text-[9px] bg-indigo-100 text-indigo-700 font-bold px-1.5 py-0.5 rounded-full">AI 2.0</span>
+          <span class="text-[9px] bg-indigo-100 text-indigo-700 font-extrabold px-1.5 py-0.5 rounded-full">AI 2.0</span>
         </a>
-        <a href="#calculator" class="hover:text-emerald-700">Calculator</a>
-        <a href="#vouchers" class="hover:text-emerald-700">Vouchers</a>
-        <a href="#faqs" class="hover:text-emerald-700">FAQs</a>
-        <a href="#about" class="hover:text-emerald-700">About Us</a>
+        <a href="#calculator" class="hover:text-brand-green transition-colors">Calculator</a>
+        <a href="#vouchers" class="hover:text-brand-green transition-colors">Monthly Vouchers</a>
+        <a href="#faqs" class="hover:text-brand-green transition-colors">FAQs</a>
+        <a href="#about" class="hover:text-brand-green transition-colors">About Us</a>
       </nav>
+
+      <!-- RIGHT ACTIONS -->
       <div class="flex items-center gap-2">
-        <button id="lang-toggle-btn" type="button" class="px-2.5 py-1.5 rounded-xl border border-slate-300 hover:bg-slate-100 text-xs font-bold text-slate-700 flex items-center gap-1">
+        <button id="lang-toggle-btn" type="button" class="px-2.5 sm:px-3 py-1.5 rounded-xl border border-slate-300 hover:bg-slate-100 text-[11px] sm:text-xs font-bold text-slate-700 transition-colors flex items-center gap-1">
+          <svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/></svg>
           <span id="lang-btn-text">हिंदी</span>
         </button>
-        <a href="#download" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-xs sm:text-sm font-bold shadow-xs">
+        <a href="#download" class="compact-btn inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl bg-brand-green hover:bg-brand-green-dark text-white text-xs sm:text-sm font-bold shadow-xs transition-all hover:shadow-md">
+          <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a1 1 0 0 1 1 1v11.586l3.293-3.293a1 1 0 1 1 1.414 1.414l-5 5a1 1 0 0 1-1.414 0l-5-5a1 1 0 1 1 1.414-1.414L11 14.586V3a1 1 0 0 1 1-1zM4 18a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1z"/></svg>
           <span>APK Download</span>
         </a>
+        <button id="mobile-menu-btn" type="button" aria-label="Toggle mobile menu" class="lg:hidden p-2 rounded-xl text-slate-600 hover:bg-slate-100">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
       </div>
+
+    </div>
+
+    <!-- MOBILE EXPANDABLE MENU -->
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 bg-white px-4 py-4 space-y-2.5 text-sm font-semibold text-slate-700 shadow-lg">
+      <a href="#features" class="block py-1.5 hover:text-brand-green">Features (मुख्य सुविधाएँ)</a>
+      <a href="#registers" class="block py-1.5 hover:text-brand-green text-emerald-800 font-bold">12 Registers (सभी विहित पंजी)</a>
+      <a href="#how-to-use" class="block py-1.5 hover:text-brand-green">How to Use (उपयोग विधि)</a>
+      <a href="#ai-assistant" class="block py-1.5 hover:text-brand-green">AI Assistant (एआई सहायक)</a>
+      <a href="#calculator" class="block py-1.5 hover:text-brand-green">Daily MDM Calculator (कैलकुलेटर)</a>
+      <a href="#vouchers" class="block py-1.5 hover:text-brand-green">Monthly Vouchers (मासिक वाउचर्स)</a>
+      <a href="#faqs" class="block py-1.5 hover:text-brand-green">FAQs (प्रश्नोत्तरी)</a>
+      <a href="#about" class="block py-1.5 hover:text-brand-green">About Us (हमारे बारे में)</a>
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="bg-gradient-to-b from-emerald-50/70 via-white to-slate-50 py-12 sm:py-16 border-b border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center lg:text-left grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-      <div class="lg:col-span-7 space-y-4">
-        <div class="inline-flex items-center gap-2 bg-emerald-100 text-emerald-900 border border-emerald-300 px-3 py-1 rounded-full text-xs font-bold">
-          <span>🇮🇳 All-India PM-POSHAN National Platform • 28 States & 8 UTs</span>
-        </div>
-        <h1 class="text-2xl sm:text-5xl font-black text-slate-900 leading-tight">
-          Nourishing Education, <span class="text-emerald-700">Brightening Tomorrow</span>
-        </h1>
-        <p class="text-xs sm:text-sm font-bold text-emerald-700">विद्यालय का पोषण, उज्ज्वल कल — School Reports & MDM Management</p>
-        <p class="text-sm sm:text-base text-slate-600 leading-relaxed lang-text"
-           data-en="Complete digital register for school headmasters: Revised cooking rates (Primary ₹6.78, Upper Primary ₹10.17), all 12 statutory registers (Dainik Vyay, Ragi, Egg/Fruit, IFA Iron, Chakhna, and Periodic Registers), 4 monthly vouchers, and 100% bank passbook reconciliation."
-           data-hi="प्रधानाध्यापकों हेतु संपूर्ण डिजिटल रजिस्टर: संशोधित दरें (प्राथमिक ₹6.78, उच्च प्राथमिक ₹10.17), 12 विहित पंजियाँ (दैनिक व्यय, व्यय पंजी, रागी, अंडा/फल, आयरन स्टॉक, चखना पंजी एवं छात्र आवधिक पंजियाँ), 4 मासिक वाउचर्स व 100% बैंक पासबुक मिलान।">
-          Complete digital register for school headmasters: Revised cooking rates (Primary ₹6.78, Upper Primary ₹10.17), all 12 statutory registers (Dainik Vyay, Ragi, Egg/Fruit, IFA Iron, Chakhna, and Periodic Registers), 4 monthly vouchers, and 100% bank passbook reconciliation.
-        </p>
-        <div class="flex flex-wrap justify-center lg:justify-start gap-2 pt-2">
-          <span class="px-2.5 py-1 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-700">✓ 100% Offline-First</span>
-          <span class="px-2.5 py-1 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-700">✓ Rates: ₹6.78 / ₹10.17</span>
-          <span class="px-2.5 py-1 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-700">✓ All 12 Registers</span>
-          <span class="px-2.5 py-1 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-700">✓ 4 Auto-Vouchers</span>
-        </div>
-        <div class="flex flex-col sm:flex-row gap-3 pt-3 justify-center lg:justify-start">
-          <a href="#download" class="px-6 py-3 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-sm shadow-md text-center">
-            Download PoshanKosh APK &rarr;
-          </a>
-          <a href="#ai-assistant" class="px-5 py-3 rounded-xl bg-white hover:bg-slate-100 text-slate-800 font-bold text-sm border border-slate-300 text-center">
-            Ask AI Assistant 🤖
-          </a>
-        </div>
-      </div>
-      <div class="lg:col-span-5 flex justify-center">
-        <div class="w-full max-w-sm bg-white rounded-3xl p-5 shadow-xl border border-slate-200 text-left">
-          <div class="flex items-center justify-between pb-3 border-b border-slate-100">
-            <span class="text-xs font-bold text-slate-800 flex items-center gap-1.5">
-              <img src="logo-256x256.png" alt="Emblem" class="h-5 w-auto"> PoshanKosh Live Replica
-            </span>
-            <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">100% Matched</span>
+  <main id="main-content" class="flex-1">
+
+    <!-- HERO SECTION -->
+    <section class="relative overflow-hidden bg-gradient-to-b from-emerald-50/70 via-white to-slate-50 py-12 sm:py-20 border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          
+          <div class="lg:col-span-7 text-center lg:text-left space-y-5 sm:space-y-6">
+            <div class="inline-flex items-center gap-2 bg-emerald-100/90 text-emerald-900 border border-emerald-300 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full text-xs font-bold">
+              <span class="inline-block w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+              <span class="lang-text" data-en="🇮🇳 All-India PM-POSHAN National Platform • 28 States &amp; 8 UTs" data-hi="🇮🇳 अखिल भारतीय राष्ट्रीय पीएम-पोषण प्रबंधन प्रणाली • सभी 28 राज्य व 8 केंद्र शासित प्रदेश">🇮🇳 All-India PM-POSHAN National Platform • 28 States &amp; 8 UTs</span>
+            </div>
+
+            <h1 class="hero-title text-2xl xs:text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
+              Nourishing Education, <span class="text-brand-green">Brightening Tomorrow</span>
+            </h1>
+            <p class="text-xs sm:text-sm font-bold text-brand-green -mt-2">विद्यालय का पोषण, उज्ज्वल कल — School Reports &amp; MDM Management</p>
+
+            <p class="text-sm sm:text-lg text-slate-600 max-w-2xl leading-relaxed lang-text"
+               data-en="Complete digital register for school headmasters: Revised cooking rates (Primary ₹6.78, Upper Primary ₹10.17), all 12 statutory registers (Dainik Vyay, Ragi, Egg/Fruit, IFA Iron, Chakhna, and Periodic Registers), 4 monthly vouchers, and 100% bank passbook reconciliation."
+               data-hi="प्रधानाध्यापकों हेतु संपूर्ण डिजिटल रजिस्टर: संशोधित दरें (प्राथमिक ₹6.78, उच्च प्राथमिक ₹10.17), 12 विहित पंजियाँ (दैनिक व्यय, व्यय पंजी, रागी, अंडा/फल, आयरन स्टॉक, चखना पंजी एवं छात्र आवधिक पंजियाँ), 4 मासिक वाउचर्स व 100% बैंक पासबुक मिलान।">
+              Complete digital register for school headmasters: Revised cooking rates (Primary ₹6.78, Upper Primary ₹10.17), all 12 statutory registers (Dainik Vyay, Ragi, Egg/Fruit, IFA Iron, Chakhna, and Periodic Registers), 4 monthly vouchers, and 100% bank passbook reconciliation.
+            </p>
+
+            <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2 pt-1">
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-white border border-slate-200 rounded-lg text-[11px] sm:text-xs font-semibold text-slate-700 shadow-2xs">✓ 100% Offline-First</span>
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-white border border-slate-200 rounded-lg text-[11px] sm:text-xs font-semibold text-slate-700 shadow-2xs">✓ Rates: ₹6.78 / ₹10.17</span>
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-white border border-slate-200 rounded-lg text-[11px] sm:text-xs font-semibold text-slate-700 shadow-2xs">✓ All 12 Registers</span>
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-white border border-slate-200 rounded-lg text-[11px] sm:text-xs font-semibold text-slate-700 shadow-2xs">✓ 4 Auto-Vouchers</span>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-3">
+              <a href="#download" class="w-full sm:w-auto px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl bg-brand-green hover:bg-brand-green-dark text-white font-bold text-sm sm:text-base shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a1 1 0 0 1 1 1v11.586l3.293-3.293a1 1 0 1 1 1.414 1.414l-5 5a1 1 0 0 1-1.414 0l-5-5a1 1 0 1 1 1.414-1.414L11 14.586V3a1 1 0 0 1 1-1zM4 18a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1z"/></svg>
+                <span>Download PoshanKosh APK</span>
+              </a>
+              <a href="#ai-assistant" class="w-full sm:w-auto px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-white hover:bg-slate-100 text-slate-800 font-bold text-sm sm:text-base border border-slate-300 shadow-xs transition-all flex items-center justify-center gap-2">
+                <svg class="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>
+                <span>Ask AI Assistant</span>
+              </a>
+            </div>
+            
+            <p class="text-[11px] sm:text-xs text-slate-500 font-medium">
+              Android 7.0+ to 14+ | Permanent Cloud Security via Neon PostgreSQL &amp; Google Drive Backup
+            </p>
           </div>
-          <div class="mt-3 p-3.5 rounded-2xl bg-gradient-to-br from-emerald-700 to-emerald-900 text-white">
-            <div class="text-[11px] text-emerald-100">Opening Balance (Bank & Cash B/F)</div>
-            <div class="text-2xl font-black mt-0.5">₹20,000.00</div>
-            <div class="text-[10px] text-emerald-200 mt-2 flex justify-between border-t border-emerald-600/50 pt-2">
-              <span>November 2026 Opening (B/F)</span>
-              <span class="font-bold text-white">Verified ✓</span>
+
+          <!-- RIGHT PREVIEW CARD -->
+          <div class="lg:col-span-5 flex justify-center">
+            <div class="w-full max-w-sm sm:max-w-md bg-white rounded-3xl p-5 sm:p-6 shadow-2xl border border-slate-200">
+              <div class="flex items-center justify-between pb-3 sm:pb-4 border-b border-slate-100">
+                <div class="flex items-center gap-2">
+                  <img src="logo-256x256.png" alt="PoshanKosh Icon" class="h-6 w-auto object-contain">
+                  <span class="text-xs font-bold text-slate-800">PoshanKosh Live Replica</span>
+                </div>
+                <span class="text-[10px] sm:text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200">100% Reconciled</span>
+              </div>
+
+              <div class="mt-4 p-4 rounded-2xl bg-gradient-to-br from-emerald-600 to-emerald-800 text-white shadow-md">
+                <div class="text-[11px] sm:text-xs font-medium text-emerald-100">Opening Balance (Bank &amp; Cash B/F)</div>
+                <div class="text-xl sm:text-2xl font-black mt-1">₹20,000.00</div>
+                <div class="flex justify-between items-center text-[10px] sm:text-xs mt-3 pt-3 border-t border-emerald-500/50 text-emerald-100">
+                  <span>November 2026 Opening (B/F)</span>
+                  <span class="font-bold text-white">Verified ✓</span>
+                </div>
+              </div>
+
+              <div class="mt-3.5 space-y-1.5 sm:space-y-2">
+                <div class="text-[11px] font-bold text-slate-500 uppercase tracking-wider">4 Monthly Auto-Vouchers</div>
+                <div class="flex items-center justify-between p-2 rounded-xl bg-slate-50 border border-slate-100 text-xs">
+                  <div class="flex items-center gap-2"><span class="w-5 h-5 rounded-md bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-[10px]">1</span><span class="font-medium text-slate-800 truncate">Ration &amp; Groceries (किराना)</span></div>
+                  <span class="font-bold text-slate-900 shrink-0">Vr no - 1/2026</span>
+                </div>
+                <div class="flex items-center justify-between p-2 rounded-xl bg-slate-50 border border-slate-100 text-xs">
+                  <div class="flex items-center gap-2"><span class="w-5 h-5 rounded-md bg-amber-100 text-amber-800 flex items-center justify-center font-bold text-[10px]">2</span><span class="font-medium text-slate-800 truncate">Egg &amp; Fruit (अंडा/फल)</span></div>
+                  <span class="font-bold text-slate-900 shrink-0">Vr no - 2/2026</span>
+                </div>
+                <div class="flex items-center justify-between p-2 rounded-xl bg-slate-50 border border-slate-100 text-xs">
+                  <div class="flex items-center gap-2"><span class="w-5 h-5 rounded-md bg-green-100 text-green-800 flex items-center justify-center font-bold text-[10px]">3</span><span class="font-medium text-slate-800 truncate">Green Vegetables (सब्जी)</span></div>
+                  <span class="font-bold text-slate-900 shrink-0">Vr no - 3/2026</span>
+                </div>
+                <div class="flex items-center justify-between p-2 rounded-xl bg-slate-50 border border-slate-100 text-xs">
+                  <div class="flex items-center gap-2"><span class="w-5 h-5 rounded-md bg-orange-100 text-orange-800 flex items-center justify-center font-bold text-[10px]">4</span><span class="font-medium text-slate-800 truncate">Cooking Fuel &amp; LPG (ईंधन)</span></div>
+                  <span class="font-bold text-slate-900 shrink-0">Vr no - 4/2026</span>
+                </div>
+              </div>
+
+              <div class="mt-3.5 pt-2.5 border-t border-slate-100 text-center text-[11px] font-semibold text-emerald-700">
+                ✓ All 4 Vouchers Auto-Booked to Cashbook Payment
+              </div>
             </div>
           </div>
-          <div class="mt-3 space-y-1.5 text-xs">
-            <div class="flex justify-between p-2 rounded-xl bg-slate-50 border border-slate-100">
-              <span class="font-medium">1. Ration & Groceries</span>
-              <span class="font-bold">Vr no - 1/2026</span>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 1: 6 ORIGINAL CORE FEATURES & MODULES (RESTORED IN FULL GLORY) -->
+    <section id="features" class="py-16 sm:py-20 bg-white border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+          <span class="text-xs font-bold text-brand-green uppercase tracking-wider">All-in-One School Ecosystem</span>
+          <h2 class="text-2xl sm:text-4xl font-black text-slate-900 mt-1">Core Modules Built for Educators</h2>
+          <p class="text-slate-600 mt-2 text-xs sm:text-base">Designed to satisfy PM-POSHAN state guidelines, statutory audits, and daily school convenience:</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          
+          <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 card-hover">
+            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-brand-green flex items-center justify-center font-bold text-xl mb-4">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
             </div>
-            <div class="flex justify-between p-2 rounded-xl bg-slate-50 border border-slate-100">
-              <span class="font-medium">2. Egg & Fruit</span>
-              <span class="font-bold">Vr no - 2/2026</span>
+            <h3 class="text-base sm:text-lg font-bold text-slate-900">दैनिक छात्र उपस्थिति व जाति/लिंग</h3>
+            <p class="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
+              बालक/बालिका एवं जातिवार (SC, ST, OBC, GEN) उपस्थिति कुछ ही सेकंडों में दर्ज करें। पिछले दिन की उपस्थिति से 1-टैप स्वतः प्री-फ़िल की सुविधा।
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 card-hover">
+            <div class="w-12 h-12 rounded-xl bg-orange-100 text-brand-orange flex items-center justify-center font-bold text-xl mb-4">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
             </div>
-            <div class="flex justify-between p-2 rounded-xl bg-slate-50 border border-slate-100">
-              <span class="font-medium">3. Vegetables</span>
-              <span class="font-bold">Vr no - 3/2026</span>
+            <h3 class="text-base sm:text-lg font-bold text-slate-900">4 मासिक वाउचर्स का स्वतः निर्माण</h3>
+            <p class="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
+              माह के अंत में 1. राशन व किराना, 2. अंडा, 3. सब्जी और 4. ईंधन का वाउचर स्वतः तैयार होता है और कैशबुक के भुगतान कॉलम में क्रमानुसार दर्ज होता है।
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 card-hover">
+            <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-xl mb-4">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
             </div>
-            <div class="flex justify-between p-2 rounded-xl bg-slate-50 border border-slate-100">
-              <span class="font-medium">4. Cooking Fuel & LPG</span>
-              <span class="font-bold">Vr no - 4/2026</span>
+            <h3 class="text-base sm:text-lg font-bold text-slate-900">रोकड़ बही व 100% बैंक पासबुक मिलान</h3>
+            <p class="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
+              स्कूल बैंक खाता एवं नकद (Cash-in-hand) दोनों का अलग-अलग पारदर्शी हिसाब। बैंक पासबुक से हर लेनदेन का 100% स्वतः मिलान।
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 card-hover">
+            <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-xl mb-4">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+            </div>
+            <h3 class="text-base sm:text-lg font-bold text-slate-900">चावल व खाद्यान्न स्टॉक ट्रैकिंग</h3>
+            <p class="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
+              प्राथमिक (100 ग्राम) व उच्च प्राथमिक (150 ग्राम) प्रति छात्र अनुसार दैनिक चावल खपत, आवक और अंतिम शेष का पूर्ण वास्तविक हिसाब।
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 card-hover">
+            <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center font-bold text-xl mb-4">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+            </div>
+            <h3 class="text-base sm:text-lg font-bold text-slate-900">1-क्लिक शुद्ध हिंदी PDF व Excel रिपोर्ट</h3>
+            <p class="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
+              मासिक प्रगति प्रतिवेदन (MPR), दैनिक उपस्थिति व व्यय विवरणी, और बैंक रोकड़ बही को सरकारी मानकों के अनुरूप तुरंत प्रिंट करें।
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 card-hover">
+            <div class="w-12 h-12 rounded-xl bg-teal-100 text-teal-800 flex items-center justify-center font-bold text-xl mb-4">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+            </div>
+            <h3 class="text-base sm:text-lg font-bold text-slate-900">100% डेटा गोपनीयता एवं सुरक्षा</h3>
+            <p class="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
+              डेटा आपके फ़ोन के इनक्रिप्टेड SQLite में सुरक्षित रहता है। इंटरनेट न होने पर भी सभी फ़ीचर्स बिना रुकावट काम करते हैं।
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 2: ALL 12 STATUTORY REGISTERS SECTION -->
+    <section id="registers" class="py-16 sm:py-20 bg-slate-50 border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+          <span class="text-xs font-bold text-brand-green uppercase tracking-wider">Statutory Compliance</span>
+          <h2 class="text-2xl sm:text-4xl font-black text-slate-900 mt-1">All 12 Official School Registers &amp; Periodic Records</h2>
+          <p class="text-slate-600 mt-2 text-xs sm:text-base">Fully standardized registers covering daily nutrition, stock, health, quality testing, and student periodic tracking:</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          
+          <!-- GROUP 1: 6 NUTRITION & STOCK REGISTERS -->
+          <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+            <div class="flex items-center gap-3 pb-4 border-b border-slate-200 mb-6">
+              <span class="w-10 h-10 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-lg">🍲</span>
+              <div>
+                <h3 class="text-lg font-black text-slate-900">विहित पोषण, भंडार एवं व्यय पंजियाँ</h3>
+                <span class="text-xs text-slate-500 font-semibold">Statutory Nutrition, Stock &amp; Accounting Registers</span>
+              </div>
+            </div>
+
+            <div class="space-y-3.5">
+              <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 card-hover">
+                <div class="flex items-center justify-between"><span class="text-xs font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">पंजी 1</span><span class="text-[11px] font-semibold text-slate-400">दैनिक गणना</span></div>
+                <h4 class="font-bold text-slate-900 text-sm mt-1">दैनिक व्यय पंजी (Daily Expense Register)</h4>
+                <p class="text-xs text-slate-600 mt-1">प्रतिदिन उपस्थित छात्र संख्या अनुसार खाद्य सामग्री, तेल, मसाले, सब्जी एवं ईंधन का दिन-वार स्वीकृत दरों (₹6.78 / ₹10.17) पर प्रमाणित लेखा-जोखा।</p>
+              </div>
+
+              <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 card-hover">
+                <div class="flex items-center justify-between"><span class="text-xs font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">पंजी 2</span><span class="text-[11px] font-semibold text-slate-400">द्वि-प्रविष्टि बही</span></div>
+                <h4 class="font-bold text-slate-900 text-sm mt-1">व्यय पंजी / रोकड़ बही (General Expense &amp; Cashbook)</h4>
+                <p class="text-xs text-slate-600 mt-1">स्कूल बैंक खाता एवं नकद खर्च (Cash-in-hand) की विस्तृत द्वि-प्रविष्टि रोकड़ बही। 100% बैंक पासबुक ऑटो-मिलान युक्त।</p>
+              </div>
+
+              <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 card-hover">
+                <div class="flex items-center justify-between"><span class="text-xs font-bold text-amber-800 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">पंजी 3</span><span class="text-[11px] font-semibold text-slate-400">श्री अन्न / मिलेट्स</span></div>
+                <h4 class="font-bold text-slate-900 text-sm mt-1">रागी पंजी (Ragi / Millet Stock &amp; Distribution)</h4>
+                <p class="text-xs text-slate-600 mt-1">श्री अन्न (रागी/मड़ुआ) योजना अंतर्गत पोषक लड्डुओं व व्यंजनों के वितरण, दैनिक ग्राम खपत, प्राप्त आवक एवं क्लोजिंग बैलेंस का अलग लेखा।</p>
+              </div>
+
+              <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 card-hover">
+                <div class="flex items-center justify-between"><span class="text-xs font-bold text-amber-800 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">पंजी 4</span><span class="text-[11px] font-semibold text-slate-400">साप्ताहिक वितरण</span></div>
+                <h4 class="font-bold text-slate-900 text-sm mt-1">अंडा / फल वितरण पंजी (Egg &amp; Seasonal Fruit Register)</h4>
+                <p class="text-xs text-slate-600 mt-1">सप्ताह में निर्धारित दिवसों पर उपस्थित प्रत्येक लाभार्थी छात्र को वितरित किए गए उबले अंडे अथवा मौसमी फल की प्रमाणित पंजी।</p>
+              </div>
+
+              <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 card-hover">
+                <div class="flex items-center justify-between"><span class="text-xs font-bold text-blue-800 bg-blue-50 px-2 py-0.5 rounded border border-blue-200">पंजी 5</span><span class="text-[11px] font-semibold text-slate-400">WIFS स्वास्थ्य</span></div>
+                <h4 class="font-bold text-slate-900 text-sm mt-1">आयरन व फोलिक एसिड स्टॉक पंजी (IFA Tablet Register)</h4>
+                <p class="text-xs text-slate-600 mt-1">WIFS योजना अंतर्गत प्राथमिक (गुलाबी गोली) व उच्च प्राथमिक (नीली गोली) का मासिक आवक, साप्ताहिक वितरण एवं सुरक्षित बैच-स्टॉक पंजी।</p>
+              </div>
+
+              <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 card-hover">
+                <div class="flex items-center justify-between"><span class="text-xs font-bold text-teal-800 bg-teal-50 px-2 py-0.5 rounded border border-teal-200">पंजी 6</span><span class="text-[11px] font-semibold text-slate-400">गुणवत्ता प्रमाणन</span></div>
+                <h4 class="font-bold text-slate-900 text-sm mt-1">चखना पंजी (Food Tasting / Chakhna Quality Register)</h4>
+                <p class="text-xs text-slate-600 mt-1">छात्रों को भोजन परोसने से पूर्व शिक्षक, SMC सदस्य अथवा रसोइया द्वारा भोजन चखकर गुणवत्ता एवं स्वाद का अनिवार्य दैनिक प्रमाणन।</p>
+              </div>
             </div>
           </div>
+
+          <!-- GROUP 2: 6 STUDENT PERIODIC REGISTERS -->
+          <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+            <div class="flex items-center gap-3 pb-4 border-b border-slate-200 mb-6">
+              <span class="w-10 h-10 rounded-2xl bg-indigo-100 text-indigo-800 flex items-center justify-center font-bold text-lg">📊</span>
+              <div>
+                <h3 class="text-lg font-black text-slate-900">छात्र उपस्थिति एवं आवधिक प्रतिवेदन पंजियाँ</h3>
+                <span class="text-xs text-slate-500 font-semibold">Student Attendance &amp; Periodic Reporting Registers</span>
+              </div>
+            </div>
+
+            <div class="space-y-3.5">
+              <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 card-hover">
+                <div class="flex items-center justify-between"><span class="text-xs font-bold text-indigo-800 bg-indigo-50 px-2 py-0.5 rounded border border-indigo-200">पंजी 7</span><span class="text-[11px] font-semibold text-slate-400">प्रतिदिन</span></div>
+                <h4 class="font-bold text-slate-900 text-sm mt-1">दैनिक छात्र उपस्थिति पंजी (Daily Attendance Register)</h4>
+                <p class="text-xs text-slate-600 mt-1">कक्षावार बालक, बालिका एवं जातिवार (SC, ST, OBC, General) दैनिक उपस्थिति। 1-क्लिक प्री-फ़िल व तत्काल खाद्यान्न गणना के साथ।</p>
+              </div>
+
+              <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 card-hover">
+                <div class="flex items-center justify-between"><span class="text-xs font-bold text-indigo-800 bg-indigo-50 px-2 py-0.5 rounded border border-indigo-200">पंजी 8</span><span class="text-[11px] font-semibold text-slate-400">साप्ताहिक औसत</span></div>
+                <h4 class="font-bold text-slate-900 text-sm mt-1">साप्ताहिक पंजी (Weekly Consolidated Register)</h4>
+                <p class="text-xs text-slate-600 mt-1">प्रत्येक 6 कार्यदिवसों का समेकित साप्ताहिक औसत, कुल वितरित भोजन दिवस और अंडा/फल वितरण दिवसों का स्वचालित साप्ताहिक मिलान।</p>
+              </div>
+
+              <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 card-hover">
+                <div class="flex items-center justify-between"><span class="text-xs font-bold text-purple-800 bg-purple-50 px-2 py-0.5 rounded border border-purple-200">पंजी 9</span><span class="text-[11px] font-semibold text-slate-400">मासिक विहित प्रपत्र-II</span></div>
+                <h4 class="font-bold text-slate-900 text-sm mt-1">मासिक प्रगति पंजी (Monthly Progress Register - MPR)</h4>
+                <p class="text-xs text-slate-600 mt-1">माह के अंत में सरकारी विहित प्रपत्र-II प्रारूप पर कुल कार्यदिवस, औसत उपस्थिति, कुल चावल उपभोग व कुल व्यय राशि का 1-क्लिक शुद्ध हिंदी PDF।</p>
+              </div>
+
+              <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 card-hover">
+                <div class="flex items-center justify-between"><span class="text-xs font-bold text-purple-800 bg-purple-50 px-2 py-0.5 rounded border border-purple-200">पंजी 10</span><span class="text-[11px] font-semibold text-slate-400">तिमाही समेकन व UC</span></div>
+                <h4 class="font-bold text-slate-900 text-sm mt-1">त्रैमासिक पंजी (Quarterly Progress &amp; UC Register)</h4>
+                <p class="text-xs text-slate-600 mt-1">3 माह का समेकित प्रतिवेदन (Q1, Q2, Q3, Q4), तिमाही आवंटन के विरुद्ध वास्तविक व्यय और उपयोगिता प्रमाण पत्र (UC) तैयार करने हेतु।</p>
+              </div>
+
+              <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 card-hover">
+                <div class="flex items-center justify-between"><span class="text-xs font-bold text-slate-800 bg-slate-100 px-2 py-0.5 rounded border border-slate-300">पंजी 11</span><span class="text-[11px] font-semibold text-slate-400">6 माह समीक्षा</span></div>
+                <h4 class="font-bold text-slate-900 text-sm mt-1">अर्द्धवार्षिक पंजी (Half-Yearly Review &amp; Physical Verification)</h4>
+                <p class="text-xs text-slate-600 mt-1">प्रथम 6 माह का अर्द्धवार्षिक ऑडिट, खाद्यान्न भंडार का भौतिक सत्यापन (Physical Verification) एवं वित्तीय शेष का सरकारी पुनरीक्षण।</p>
+              </div>
+
+              <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 card-hover">
+                <div class="flex items-center justify-between"><span class="text-xs font-bold text-slate-800 bg-slate-100 px-2 py-0.5 rounded border border-slate-300">पंजी 12</span><span class="text-[11px] font-semibold text-slate-400">वार्षिक अंतिम ऑडिट</span></div>
+                <h4 class="font-bold text-slate-900 text-sm mt-1">वार्षिक पंजी (Annual Comprehensive Audit Ledger)</h4>
+                <p class="text-xs text-slate-600 mt-1">पूरे शैक्षणिक सत्र (31 मार्च) का वार्षिक ऑडिट विवरण, कुल खाद्यान्न आवक-खपत, बैंक क्लोजिंग बैलेंस एवं नए सत्र के लिए प्रारंभिक शेष प्रमाणन।</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 3: HOW TO USE -->
+    <section id="how-to-use" class="py-16 sm:py-20 bg-white border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-14">
+          <span class="text-xs font-bold text-brand-green uppercase tracking-wider">Quick Start Guide</span>
+          <h2 class="text-2xl sm:text-4xl font-black text-slate-900 mt-1">How to Use PoshanKosh (उपयोग विधि)</h2>
+          <p class="text-slate-600 mt-2 text-xs sm:text-base">Follow these 5 simple steps to operate your school midday meal register:</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5">
+          <div class="p-5 rounded-2xl bg-emerald-50/60 border border-emerald-200 flex flex-col justify-between card-hover">
+            <div>
+              <div class="w-9 h-9 rounded-xl bg-emerald-600 text-white font-black flex items-center justify-center text-sm mb-3">1</div>
+              <h3 class="font-bold text-slate-900 text-sm">School Setup &amp; Opening</h3>
+              <p class="text-xs text-slate-600 mt-2 leading-relaxed">Enter your UDISE code, bank account details, and initial cash/rice opening balances once.</p>
+            </div>
+            <span class="text-[11px] font-bold text-emerald-800 mt-4 block">One-time Setup ✓</span>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-white border border-slate-200 flex flex-col justify-between card-hover">
+            <div>
+              <div class="w-9 h-9 rounded-xl bg-brand-green text-white font-black flex items-center justify-center text-sm mb-3">2</div>
+              <h3 class="font-bold text-slate-900 text-sm">Daily Attendance &amp; Castes</h3>
+              <p class="text-xs text-slate-600 mt-2 leading-relaxed">Record present boys/girls and SC/ST/OBC/GEN categories daily. Rice and funds auto-compute.</p>
+            </div>
+            <span class="text-[11px] font-bold text-slate-700 mt-4 block">1 Min Daily ✓</span>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-white border border-slate-200 flex flex-col justify-between card-hover">
+            <div>
+              <div class="w-9 h-9 rounded-xl bg-brand-orange text-white font-black flex items-center justify-center text-sm mb-3">3</div>
+              <h3 class="font-bold text-slate-900 text-sm">4 Monthly Vouchers</h3>
+              <p class="text-xs text-slate-600 mt-2 leading-relaxed">Finalize Ration, Egg, Veg &amp; Fuel vouchers at month end. Auto-posts straight to Cashbook expenses.</p>
+            </div>
+            <span class="text-[11px] font-bold text-orange-800 mt-4 block">Auto Voucher Sequence ✓</span>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-white border border-slate-200 flex flex-col justify-between card-hover">
+            <div>
+              <div class="w-9 h-9 rounded-xl bg-blue-600 text-white font-black flex items-center justify-center text-sm mb-3">4</div>
+              <h3 class="font-bold text-slate-900 text-sm">100% Passbook Match</h3>
+              <p class="text-xs text-slate-600 mt-2 leading-relaxed">Upload bank passbook statement. Verify every transaction to lock the cashbook audit.</p>
+            </div>
+            <span class="text-[11px] font-bold text-blue-800 mt-4 block">Zero Discrepancy ✓</span>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-white border border-slate-200 flex flex-col justify-between card-hover">
+            <div>
+              <div class="w-9 h-9 rounded-xl bg-purple-600 text-white font-black flex items-center justify-center text-sm mb-3">5</div>
+              <h3 class="font-bold text-slate-900 text-sm">Download MPR &amp; Reports</h3>
+              <p class="text-xs text-slate-600 mt-2 leading-relaxed">Download official Monthly Progress Reports (MPR) and Form-II in pure Hindi PDF and Excel in 1 click.</p>
+            </div>
+            <span class="text-[11px] font-bold text-purple-800 mt-4 block">Instant Printout ✓</span>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- 12 STATUTORY REGISTERS SECTION -->
-  <section id="registers" class="py-16 bg-white border-b border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-12">
-        <span class="text-xs font-bold text-emerald-700 uppercase tracking-wider">Statutory Compliance</span>
-        <h2 class="text-2xl sm:text-4xl font-black text-slate-900 mt-1">All 12 Official School Registers & Periodic Records</h2>
-        <p class="text-slate-600 mt-2 text-xs sm:text-sm">Standardized digital registers compliant with national PM-POSHAN guidelines:</p>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <!-- 6 NUTRITION & STOCK REGISTERS -->
-        <div class="bg-slate-50 rounded-3xl p-6 border border-slate-200 space-y-3">
-          <div class="flex items-center gap-2 pb-3 border-b border-slate-200">
-            <span class="text-xl">🍲</span>
-            <h3 class="font-black text-slate-900 text-base">विहित पोषण, भंडार एवं व्यय पंजियाँ</h3>
+    <!-- SECTION 4: AI ASSISTANT -->
+    <section id="ai-assistant" class="py-16 sm:py-20 bg-gradient-to-b from-slate-100 via-indigo-50/40 to-slate-100 border-b border-slate-200">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-8">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-xs font-bold mb-2">
+            <span>🤖 PoshanKosh AI Assistant (पोषणकोष एआई सहायक)</span>
           </div>
-          <div class="p-3.5 bg-white rounded-xl border border-slate-200 card-hover">
-            <div class="flex justify-between text-xs font-bold"><span class="text-emerald-700">पंजी 1</span><span>दैनिक व्यय</span></div>
-            <h4 class="font-bold text-slate-900 text-sm mt-1">दैनिक व्यय पंजी (Daily Expense Register)</h4>
-            <p class="text-xs text-slate-600 mt-1">दैनिक छात्र संख्या पर स्वीकृत दरों (₹6.78 / ₹10.17) पर तेल, मसाले, सब्जी, ईंधन का प्रतिदिन प्रमाणित हिसाब।</p>
-          </div>
-          <div class="p-3.5 bg-white rounded-xl border border-slate-200 card-hover">
-            <div class="flex justify-between text-xs font-bold"><span class="text-emerald-700">पंजी 2</span><span>रोकड़ बही</span></div>
-            <h4 class="font-bold text-slate-900 text-sm mt-1">व्यय पंजी / रोकड़ बही (General Expense & Cashbook)</h4>
-            <p class="text-xs text-slate-600 mt-1">स्कूल बैंक व नकद खाता की विस्तृत डबल-एंट्री रोकड़ बही। 100% बैंक पासबुक ऑटो-मिलान युक्त।</p>
-          </div>
-          <div class="p-3.5 bg-white rounded-xl border border-slate-200 card-hover">
-            <div class="flex justify-between text-xs font-bold"><span class="text-amber-700">पंजी 3</span><span>श्री अन्न</span></div>
-            <h4 class="font-bold text-slate-900 text-sm mt-1">रागी पंजी (Ragi / Millet Stock & Distribution)</h4>
-            <p class="text-xs text-slate-600 mt-1">श्री अन्न (रागी/मड़ुआ) योजना अंतर्गत लड्डू/व्यंजनों के वितरण, आवक व क्लोजिंग बैलेंस की पंजी।</p>
-          </div>
-          <div class="p-3.5 bg-white rounded-xl border border-slate-200 card-hover">
-            <div class="flex justify-between text-xs font-bold"><span class="text-amber-700">पंजी 4</span><span>साप्ताहिक वितरण</span></div>
-            <h4 class="font-bold text-slate-900 text-sm mt-1">अंडा / फल वितरण पंजी (Egg & Fruit Register)</h4>
-            <p class="text-xs text-slate-600 mt-1">साप्ताहिक दिवसों पर उपस्थित प्रत्येक लाभार्थी छात्र को वितरित अंडे अथवा मौसमी फल की प्रमाणित पंजी।</p>
-          </div>
-          <div class="p-3.5 bg-white rounded-xl border border-slate-200 card-hover">
-            <div class="flex justify-between text-xs font-bold"><span class="text-blue-700">पंजी 5</span><span>WIFS स्वास्थ्य</span></div>
-            <h4 class="font-bold text-slate-900 text-sm mt-1">आयरन व फोलिक एसिड स्टॉक पंजी (IFA Tablet Register)</h4>
-            <p class="text-xs text-slate-600 mt-1">WIFS योजना अंतर्गत प्राथमिक (गुलाबी) व उच्च प्राथमिक (नीली) गोलियों का साप्ताहिक वितरण व स्टॉक बही।</p>
-          </div>
-          <div class="p-3.5 bg-white rounded-xl border border-slate-200 card-hover">
-            <div class="flex justify-between text-xs font-bold"><span class="text-teal-700">पंजी 6</span><span>सुरक्षा प्रमाणन</span></div>
-            <h4 class="font-bold text-slate-900 text-sm mt-1">चखना पंजी (Food Tasting / Chakhna Quality Register)</h4>
-            <p class="text-xs text-slate-600 mt-1">भोजन परोसने से पूर्व शिक्षक/SMC सदस्य द्वारा भोजन चखकर स्वाद एवं गुणवत्ता का अनिवार्य दैनिक प्रमाणन।</p>
-          </div>
+          <h2 class="text-2xl sm:text-3xl font-black text-slate-900">Ask Any Question on MDM Norms, Rates or App Usage</h2>
+          <p class="text-xs sm:text-sm text-slate-600 mt-1">Instant answers on revised cooking cost rates (₹6.78 / ₹10.17), 12 registers, and vouchers:</p>
         </div>
 
-        <!-- 6 STUDENT PERIODIC REGISTERS -->
-        <div class="bg-slate-50 rounded-3xl p-6 border border-slate-200 space-y-3">
-          <div class="flex items-center gap-2 pb-3 border-b border-slate-200">
-            <span class="text-xl">📊</span>
-            <h3 class="font-black text-slate-900 text-base">छात्र उपस्थिति एवं आवधिक प्रतिवेदन पंजियाँ</h3>
+        <div class="bg-white rounded-3xl shadow-xl border border-indigo-100 overflow-hidden flex flex-col h-[500px]">
+          <div class="bg-indigo-950 text-white p-3.5 px-5 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-full bg-white flex items-center justify-center p-1 shadow-xs shrink-0">
+                <img src="logo-256x256.png" alt="AI Icon" class="w-full h-full object-contain">
+              </div>
+              <div>
+                <div class="text-xs sm:text-sm font-bold flex items-center gap-1.5">
+                  <span>PoshanKosh AI Sahayak</span>
+                  <span class="w-2 h-2 rounded-full bg-emerald-400 inline-block animate-pulse"></span>
+                </div>
+                <div class="text-[10px] sm:text-[11px] text-indigo-200">24x7 School Nutrition &amp; Accounting Expert</div>
+              </div>
+            </div>
+            <button id="clear-chat-btn" type="button" class="text-xs bg-indigo-900 text-indigo-200 px-2.5 py-1 rounded-lg border border-indigo-800">Clear</button>
           </div>
-          <div class="p-3.5 bg-white rounded-xl border border-slate-200 card-hover">
-            <div class="flex justify-between text-xs font-bold"><span class="text-indigo-700">पंजी 7</span><span>प्रतिदिन</span></div>
-            <h4 class="font-bold text-slate-900 text-sm mt-1">दैनिक छात्र उपस्थिति पंजी (Daily Attendance)</h4>
-            <p class="text-xs text-slate-600 mt-1">बालक/बालिका एवं जातिवार (SC, ST, OBC, GEN) दैनिक उपस्थिति और चावल कटौती रजिस्टर।</p>
+
+          <div class="bg-indigo-50/70 p-2.5 px-4 border-b border-indigo-100 flex items-center gap-2 overflow-x-auto text-xs whitespace-nowrap">
+            <span class="font-bold text-slate-500 text-[10px]">Quick Prompts:</span>
+            <button type="button" class="quick-chip bg-white border border-indigo-200 text-indigo-900 px-2.5 py-1 rounded-full font-medium" data-q="What are the revised cooking cost rates?">💰 Revised Rates (₹6.78 / ₹10.17)</button>
+            <button type="button" class="quick-chip bg-white border border-indigo-200 text-indigo-900 px-2.5 py-1 rounded-full font-medium" data-q="What is the daily rice norm per student?">🍚 Daily Rice Norm</button>
+            <button type="button" class="quick-chip bg-white border border-indigo-200 text-indigo-900 px-2.5 py-1 rounded-full font-medium" data-q="What is Chakhna Panji?">🥣 चखना पंजी क्या है?</button>
+            <button type="button" class="quick-chip bg-white border border-indigo-200 text-indigo-900 px-2.5 py-1 rounded-full font-medium" data-q="How do the 4 monthly vouchers work?">📑 4 Monthly Vouchers</button>
           </div>
-          <div class="p-3.5 bg-white rounded-xl border border-slate-200 card-hover">
-            <div class="flex justify-between text-xs font-bold"><span class="text-indigo-700">पंजी 8</span><span>साप्ताहिक औसत</span></div>
-            <h4 class="font-bold text-slate-900 text-sm mt-1">साप्ताहिक पंजी (Weekly Consolidated Register)</h4>
-            <p class="text-xs text-slate-600 mt-1">प्रत्येक 6 कार्यदिवसों का समेकित साप्ताहिक औसत व अंडा/फल वितरण दिवसों का मिलान।</p>
+
+          <div id="chat-messages" class="flex-1 p-4 overflow-y-auto space-y-4 text-xs sm:text-sm bg-slate-50/50">
+            <div class="flex items-start gap-2.5">
+              <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center p-1 border border-slate-200 shrink-0 mt-1">
+                <img src="logo-256x256.png" alt="AI Avatar" class="w-full h-full object-contain">
+              </div>
+              <div class="bg-white p-3.5 rounded-2xl text-slate-800 border border-slate-200 shadow-2xs max-w-[85%] leading-relaxed">
+                <p>Hello! I am your <b>PoshanKosh AI Assistant</b>. 🙏</p>
+                <p class="mt-1 text-slate-600">Ask me anything about revised rates (Primary ₹6.78, Upper Primary ₹10.17), rice norms, 12 registers, or vouchers!</p>
+              </div>
+            </div>
           </div>
-          <div class="p-3.5 bg-white rounded-xl border border-slate-200 card-hover">
-            <div class="flex justify-between text-xs font-bold"><span class="text-purple-700">पंजी 9</span><span>मासिक MPR</span></div>
-            <h4 class="font-bold text-slate-900 text-sm mt-1">मासिक प्रगति पंजी (Monthly Progress Register - MPR)</h4>
-            <p class="text-xs text-slate-600 mt-1">माह के अंत में विहित प्रपत्र-II प्रारूप पर कुल कार्यदिवस, औसत उपस्थिति व कुल व्यय का शुद्ध हिंदी PDF।</p>
-          </div>
-          <div class="p-3.5 bg-white rounded-xl border border-slate-200 card-hover">
-            <div class="flex justify-between text-xs font-bold"><span class="text-purple-700">पंजी 10</span><span>तिमाही UC</span></div>
-            <h4 class="font-bold text-slate-900 text-sm mt-1">त्रैमासिक पंजी (Quarterly Progress & UC Register)</h4>
-            <p class="text-xs text-slate-600 mt-1">3 माह का समेकित प्रतिवेदन, तिमाही आवंटन के विरुद्ध वास्तविक व्यय और उपयोगिता प्रमाण पत्र (UC)।</p>
-          </div>
-          <div class="p-3.5 bg-white rounded-xl border border-slate-200 card-hover">
-            <div class="flex justify-between text-xs font-bold"><span class="text-slate-700">पंजी 11</span><span>6 माह समीक्षा</span></div>
-            <h4 class="font-bold text-slate-900 text-sm mt-1">अर्द्धवार्षिक पंजी (Half-Yearly Review Register)</h4>
-            <p class="text-xs text-slate-600 mt-1">प्रथम 6 माह का अर्द्धवार्षिक ऑडिट, खाद्यान्न भंडार का भौतिक सत्यापन व शेष का मिलान।</p>
-          </div>
-          <div class="p-3.5 bg-white rounded-xl border border-slate-200 card-hover">
-            <div class="flex justify-between text-xs font-bold"><span class="text-slate-700">पंजी 12</span><span>वार्षिक क्लोजिंग</span></div>
-            <h4 class="font-bold text-slate-900 text-sm mt-1">वार्षिक पंजी (Annual Comprehensive Audit Ledger)</h4>
-            <p class="text-xs text-slate-600 mt-1">31 मार्च का वार्षिक ऑडिट विवरण, कुल खाद्यान्न आवक-खपत व नए सत्र के लिए प्रारंभिक शेष।</p>
+
+          <div class="p-3 bg-white border-t border-slate-200">
+            <form id="ai-chat-form" class="flex gap-2">
+              <input type="text" id="ai-input" placeholder="Type your query (e.g. Revised cooking rates?)..." class="flex-1 px-3 py-2 rounded-xl border border-slate-300 text-xs sm:text-sm">
+              <button type="submit" class="px-4 py-2 rounded-xl bg-indigo-600 text-white font-bold text-xs sm:text-sm shadow-xs">Send</button>
+            </form>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- HOW TO USE -->
-  <section id="how-to-use" class="py-16 bg-slate-50 border-b border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-12">
-        <span class="text-xs font-bold text-emerald-700 uppercase tracking-wider">Quick Start Guide</span>
-        <h2 class="text-2xl sm:text-4xl font-black text-slate-900 mt-1">How to Use PoshanKosh (उपयोग विधि)</h2>
-        <p class="text-slate-600 mt-2 text-xs sm:text-base">Operate your school register in 5 simple steps:</p>
-      </div>
-      <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-        <div class="p-4 bg-white rounded-2xl border border-slate-200 card-hover">
-          <div class="w-8 h-8 rounded-lg bg-emerald-600 text-white font-bold flex items-center justify-center text-xs mb-2">1</div>
-          <h3 class="font-bold text-slate-900 text-sm">School Setup</h3>
-          <p class="text-xs text-slate-600 mt-1">Enter UDISE code, bank details, and opening rice/cash balances.</p>
+    <!-- SECTION 5: CALCULATOR -->
+    <section id="calculator" class="py-16 sm:py-20 bg-white border-b border-slate-200">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-8">
+          <span class="text-xs font-bold text-brand-orange uppercase tracking-wider">Revised PM-POSHAN Norms</span>
+          <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-1">Daily MDM Allowance &amp; Rice Calculator</h2>
+          <p class="text-xs sm:text-sm text-slate-600 mt-1">Enter student counts to calculate daily cooking cost at revised rates:</p>
         </div>
-        <div class="p-4 bg-white rounded-2xl border border-slate-200 card-hover">
-          <div class="w-8 h-8 rounded-lg bg-emerald-700 text-white font-bold flex items-center justify-center text-xs mb-2">2</div>
-          <h3 class="font-bold text-slate-900 text-sm">Daily Attendance</h3>
-          <p class="text-xs text-slate-600 mt-1">Log present students with caste breakdown daily. Rice auto-computes.</p>
-        </div>
-        <div class="p-4 bg-white rounded-2xl border border-slate-200 card-hover">
-          <div class="w-8 h-8 rounded-lg bg-amber-600 text-white font-bold flex items-center justify-center text-xs mb-2">3</div>
-          <h3 class="font-bold text-slate-900 text-sm">4 Auto-Vouchers</h3>
-          <p class="text-xs text-slate-600 mt-1">Finalize Ration, Egg, Veg & Fuel vouchers at month end.</p>
-        </div>
-        <div class="p-4 bg-white rounded-2xl border border-slate-200 card-hover">
-          <div class="w-8 h-8 rounded-lg bg-blue-600 text-white font-bold flex items-center justify-center text-xs mb-2">4</div>
-          <h3 class="font-bold text-slate-900 text-sm">Passbook Match</h3>
-          <p class="text-xs text-slate-600 mt-1">Reconcile bank statement line-by-line with 100% precision.</p>
-        </div>
-        <div class="p-4 bg-white rounded-2xl border border-slate-200 card-hover">
-          <div class="w-8 h-8 rounded-lg bg-purple-600 text-white font-bold flex items-center justify-center text-xs mb-2">5</div>
-          <h3 class="font-bold text-slate-900 text-sm">Download MPR</h3>
-          <p class="text-xs text-slate-600 mt-1">Export official MPR and Form-II in Hindi PDF and Excel in 1 click.</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- AI ASSISTANT CHATBOT (WITH EMBEDDED LOGO AVATAR) -->
-  <section id="ai-assistant" class="py-16 bg-white border-b border-slate-200">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6">
-      <div class="text-center mb-8">
-        <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-xs font-bold mb-2">
-          <span>🤖 PoshanKosh AI Assistant (पोषणकोष एआई सहायक)</span>
-        </div>
-        <h2 class="text-2xl sm:text-3xl font-black text-slate-900">Ask Any Question on MDM Norms, Rates or Registers</h2>
-        <p class="text-xs sm:text-sm text-slate-600 mt-1">Instant answers on revised cooking cost rates (₹6.78 / ₹10.17), 12 registers, and vouchers:</p>
-      </div>
-
-      <div class="bg-white rounded-3xl shadow-xl border border-indigo-100 overflow-hidden flex flex-col h-[500px]">
-        <div class="bg-indigo-950 text-white p-3.5 px-5 flex items-center justify-between">
-          <div class="flex items-center gap-3">
-            <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center p-1 shadow-xs">
-              <img src="data:image/png;base64,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" alt="AI" class="w-full h-full object-contain">
+        <div class="bg-slate-50 rounded-3xl p-5 sm:p-8 shadow-sm border border-slate-200">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div>
+              <label for="primary-count" class="block text-xs font-bold text-slate-700 uppercase mb-2">Primary Students (Class 1 to 5 / प्राथमिक)</label>
+              <div class="relative">
+                <input type="number" id="primary-count" min="0" value="85" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 font-bold text-slate-800 bg-white">
+                <span class="absolute right-3.5 top-2.5 text-xs text-slate-400 font-semibold">Students</span>
+              </div>
+              <p class="text-[11px] text-emerald-800 font-bold mt-1.5">Revised Rate: ₹6.78 / student | Rice: 100g</p>
             </div>
             <div>
-              <div class="text-xs sm:text-sm font-bold flex items-center gap-1.5">
-                <span>PoshanKosh AI Sahayak</span>
-                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <label for="upper-count" class="block text-xs font-bold text-slate-700 uppercase mb-2">Upper Primary (Class 6 to 8 / उच्च प्राथमिक)</label>
+              <div class="relative">
+                <input type="number" id="upper-count" min="0" value="62" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 font-bold text-slate-800 bg-white">
+                <span class="absolute right-3.5 top-2.5 text-xs text-slate-400 font-semibold">Students</span>
               </div>
-              <div class="text-[10px] text-indigo-200">24x7 School Nutrition & Accounting Expert</div>
+              <p class="text-[11px] text-emerald-800 font-bold mt-1.5">Revised Rate: ₹10.17 / student | Rice: 150g</p>
             </div>
           </div>
-          <button id="clear-chat-btn" type="button" class="text-xs bg-indigo-900 text-indigo-200 px-2.5 py-1 rounded-lg border border-indigo-800">Clear</button>
+
+          <div class="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3 p-4 rounded-2xl bg-white border border-emerald-200 shadow-xs">
+            <div><div class="text-[11px] font-semibold text-emerald-800">Total Students</div><div id="calc-students" class="text-xl font-black mt-1">147</div></div>
+            <div><div class="text-[11px] font-semibold text-emerald-800">Daily Cooking Cost</div><div id="calc-cost" class="text-xl font-black text-brand-green mt-1">₹1,206.84</div></div>
+            <div><div class="text-[11px] font-semibold text-emerald-800">Daily Rice Needed</div><div id="calc-rice" class="text-xl font-black mt-1">17.80 kg</div></div>
+            <div><div class="text-[11px] font-semibold text-emerald-800">Egg / Fruit Budget</div><div id="calc-egg" class="text-xl font-black text-brand-orange mt-1">₹735.00</div></div>
+          </div>
         </div>
-        <div class="bg-indigo-50/70 p-2.5 px-4 border-b border-indigo-100 flex items-center gap-2 overflow-x-auto text-xs whitespace-nowrap">
-          <span class="font-bold text-slate-500 text-[10px]">Quick Prompts:</span>
-          <button type="button" class="quick-chip bg-white border border-indigo-200 text-indigo-900 px-2.5 py-1 rounded-full font-medium" data-q="What are the revised cooking cost rates?">💰 Revised Rates (₹6.78 / ₹10.17)</button>
-          <button type="button" class="quick-chip bg-white border border-indigo-200 text-indigo-900 px-2.5 py-1 rounded-full font-medium" data-q="What is the daily rice norm per student?">🍚 Daily Rice Norm</button>
-          <button type="button" class="quick-chip bg-white border border-indigo-200 text-indigo-900 px-2.5 py-1 rounded-full font-medium" data-q="What is Chakhna Panji?">🥣 चखना पंजी क्या है?</button>
-          <button type="button" class="quick-chip bg-white border border-indigo-200 text-indigo-900 px-2.5 py-1 rounded-full font-medium" data-q="How do the 4 monthly vouchers work?">📑 4 Monthly Vouchers</button>
+      </div>
+    </section>
+
+    <!-- SECTION 6: 4 VOUCHERS -->
+    <section id="vouchers" class="py-16 sm:py-20 bg-slate-50 border-b border-slate-200">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-8">
+          <span class="text-xs font-bold text-brand-green uppercase tracking-wider">Automated Month-End Accounting</span>
+          <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-1">4 Automated Monthly Vouchers in Cashbook</h2>
+          <p class="text-xs sm:text-sm text-slate-600 mt-1">All 4 vouchers prepared sequentially with annual sequence numbers:</p>
         </div>
-        <div id="chat-messages" class="flex-1 p-4 overflow-y-auto space-y-4 text-xs sm:text-sm bg-slate-50/50">
-          <div class="flex items-start gap-2.5">
-            <div class="w-7 h-7 rounded-full bg-white flex items-center justify-center p-0.5 border border-slate-200 shrink-0 mt-1">
-              <img src="data:image/png;base64,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" alt="PK" class="w-full h-full object-contain">
+
+        <div class="flex flex-wrap justify-center gap-2 mb-6">
+          <button type="button" class="voucher-tab-btn px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-brand-green text-white shadow-xs" data-v="ration">1. Ration &amp; Groceries</button>
+          <button type="button" class="voucher-tab-btn px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white text-slate-700 border border-slate-200" data-v="egg">2. Egg &amp; Fruit</button>
+          <button type="button" class="voucher-tab-btn px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white text-slate-700 border border-slate-200" data-v="veg">3. Vegetables</button>
+          <button type="button" class="voucher-tab-btn px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white text-slate-700 border border-slate-200" data-v="fuel">4. Fuel &amp; LPG</button>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-3xl p-5 sm:p-8 shadow-sm">
+          <div class="flex justify-between pb-3 border-b border-slate-200">
+            <div>
+              <div class="text-xs font-semibold text-emerald-700" id="v-seq">Voucher Sequence: Vr no - 1/2026</div>
+              <h3 class="text-base sm:text-lg font-black text-slate-900" id="v-title">Ration &amp; Dry Groceries Consumption Voucher (किराना सामग्री)</h3>
             </div>
-            <div class="bg-white p-3.5 rounded-2xl text-slate-800 border border-slate-200 shadow-2xs max-w-[85%] leading-relaxed">
-              <p>Hello! I am your <b>PoshanKosh AI Assistant</b>. 🙏</p>
-              <p class="mt-1 text-slate-600">Ask me anything about revised rates (Primary ₹6.78, Upper Primary ₹10.17), rice norms, 12 registers, or vouchers!</p>
+            <span class="text-xs bg-emerald-100 text-emerald-800 font-bold px-3 py-1 rounded-full border border-emerald-300">Posted in Cashbook ✓</span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 my-4">
+            <div class="bg-slate-50 p-3 rounded-xl border border-slate-200"><div class="text-xs text-slate-500">Account Type</div><div class="font-bold text-sm">Cash Expense (नकद खर्च)</div></div>
+            <div class="bg-slate-50 p-3 rounded-xl border border-slate-200"><div class="text-xs text-slate-500">Reference</div><div class="font-bold text-sm" id="v-ref">October 2026 / 1/2026</div></div>
+            <div class="bg-slate-50 p-3 rounded-xl border border-slate-200"><div class="text-xs text-slate-500">Allocation Category</div><div class="font-bold text-sm" id="v-alloc">Materials • KG-5 &amp; 6-8</div></div>
+          </div>
+          <p class="text-xs text-slate-600" id="v-desc">Auto-generated from daily student attendance, approved ingredient norms, and physical rice consumption.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: FAQS -->
+    <section id="faqs" class="py-16 sm:py-20 bg-white border-b border-slate-200">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-10">
+          <span class="text-xs font-bold text-indigo-700 uppercase tracking-wider">Frequently Asked Questions</span>
+          <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-1">Questions &amp; Answers (FAQs)</h2>
+        </div>
+        <div class="space-y-3" id="faq-accordion">
+          <div class="border border-slate-200 rounded-2xl overflow-hidden bg-slate-50/50">
+            <button type="button" class="faq-btn w-full p-4 text-left font-bold text-xs sm:text-sm text-slate-900 flex justify-between items-center hover:bg-slate-100">
+              <span>1. What are the latest cooking cost rates in PoshanKosh?</span>
+              <span class="text-emerald-700 text-base font-black faq-icon">+</span>
+            </button>
+            <div class="faq-content p-4 pt-0 text-xs sm:text-sm text-slate-600 leading-relaxed hidden border-t border-slate-200/50 bg-white">
+              The revised PM-POSHAN cooking cost rates in PoshanKosh are <b>₹6.78 per student</b> for Primary (Classes 1–5) and <b>₹10.17 per student</b> for Upper Primary (Classes 6–8).
+            </div>
+          </div>
+          <div class="border border-slate-200 rounded-2xl overflow-hidden bg-slate-50/50">
+            <button type="button" class="faq-btn w-full p-4 text-left font-bold text-xs sm:text-sm text-slate-900 flex justify-between items-center hover:bg-slate-100">
+              <span>2. Does the PoshanKosh mobile app work without internet?</span>
+              <span class="text-emerald-700 text-base font-black faq-icon">+</span>
+            </button>
+            <div class="faq-content p-4 pt-0 text-xs sm:text-sm text-slate-600 leading-relaxed hidden border-t border-slate-200/50 bg-white">
+              <b>Yes, 100%!</b> PoshanKosh operates completely offline on SQLite. Internet is only needed if syncing cloud backups to Google Drive.
+            </div>
+          </div>
+          <div class="border border-slate-200 rounded-2xl overflow-hidden bg-slate-50/50">
+            <button type="button" class="faq-btn w-full p-4 text-left font-bold text-xs sm:text-sm text-slate-900 flex justify-between items-center hover:bg-slate-100">
+              <span>3. Does October's closing balance carry forward to November?</span>
+              <span class="text-emerald-700 text-base font-black faq-icon">+</span>
+            </button>
+            <div class="faq-content p-4 pt-0 text-xs sm:text-sm text-slate-600 leading-relaxed hidden border-t border-slate-200/50 bg-white">
+              <b>Yes!</b> October's closing balance (e.g. ₹20,000) automatically carries forward into November's Opening Balance B/F in the Cashbook.
+            </div>
+          </div>
+          <div class="border border-slate-200 rounded-2xl overflow-hidden bg-slate-50/50">
+            <button type="button" class="faq-btn w-full p-4 text-left font-bold text-xs sm:text-sm text-slate-900 flex justify-between items-center hover:bg-slate-100">
+              <span>4. What is Chakhna Panji (चखना पंजी)?</span>
+              <span class="text-emerald-700 text-base font-black faq-icon">+</span>
+            </button>
+            <div class="faq-content p-4 pt-0 text-xs sm:text-sm text-slate-600 leading-relaxed hidden border-t border-slate-200/50 bg-white">
+              <b>चखना पंजी (Food Tasting Register)</b> records mandatory pre-meal tasting by a teacher, cook, or SMC member for food safety and quality certification.
             </div>
           </div>
         </div>
-        <div class="p-3 bg-white border-t border-slate-200">
-          <form id="ai-chat-form" class="flex gap-2">
-            <input type="text" id="ai-input" placeholder="Type your query (e.g. Revised cooking rates?)..." class="flex-1 px-3 py-2 rounded-xl border border-slate-300 text-xs sm:text-sm">
-            <button type="submit" class="px-4 py-2 rounded-xl bg-indigo-600 text-white font-bold text-xs sm:text-sm shadow-xs">Send</button>
-          </form>
-        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CALCULATOR (PRIMARY ₹6.78, UPPER PRIMARY ₹10.17) -->
-  <section id="calculator" class="py-16 bg-slate-50 border-b border-slate-200">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6">
-      <div class="text-center mb-8">
-        <span class="text-xs font-bold text-amber-600 uppercase tracking-wider">Revised PM-POSHAN Norms</span>
-        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-1">Daily MDM Allowance & Rice Calculator</h2>
-        <p class="text-xs sm:text-sm text-slate-600 mt-1">Enter student counts to calculate daily cooking cost at revised rates:</p>
-      </div>
-      <div class="bg-white rounded-3xl p-5 sm:p-8 shadow-sm border border-slate-200">
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-          <div>
-            <label for="primary-count" class="block text-xs font-bold text-slate-700 uppercase mb-2">Primary Students (Class 1 to 5 / प्राथमिक)</label>
-            <div class="relative">
-              <input type="number" id="primary-count" min="0" value="85" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 font-bold text-slate-800">
-              <span class="absolute right-3.5 top-2.5 text-xs text-slate-400 font-semibold">Students</span>
+    <!-- SECTION 8: ABOUT US (WITH PROMINENT LARGE LOGO, NO ADMIN CONSOLE BOX) -->
+    <section id="about" class="py-16 sm:py-20 bg-slate-50 border-b border-slate-200">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          <div class="md:col-span-5 text-center md:text-left flex flex-col items-center md:items-start">
+            <div class="p-4 bg-white rounded-3xl border border-slate-200 shadow-sm mb-3 inline-block">
+              <img src="logo-256x256.png" alt="PoshanKosh Grand Emblem" class="w-56 sm:w-80 md:w-96 h-auto object-contain">
             </div>
-            <p class="text-[11px] text-emerald-800 font-bold mt-1.5">Revised Rate: ₹6.78 / student | Rice: 100g</p>
+            <div class="text-2xl font-black text-slate-900">Poshan<span class="text-brand-orange">kosh</span>®</div>
+            <div class="text-xs font-bold text-brand-green mt-1">विद्यालय का पोषण, उज्ज्वल कल</div>
           </div>
-          <div>
-            <label for="upper-count" class="block text-xs font-bold text-slate-700 uppercase mb-2">Upper Primary (Class 6 to 8 / उच्च प्राथमिक)</label>
-            <div class="relative">
-              <input type="number" id="upper-count" min="0" value="62" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 font-bold text-slate-800">
-              <span class="absolute right-3.5 top-2.5 text-xs text-slate-400 font-semibold">Students</span>
+          <div class="md:col-span-7 space-y-3.5 text-xs sm:text-sm text-slate-600 leading-relaxed">
+            <h2 class="text-2xl sm:text-3xl font-black text-slate-900">About PoshanKosh (हमारे बारे में)</h2>
+            <p><b>PoshanKosh® (पोषणकोष)</b> is India's national digital PM-POSHAN accounting and attendance platform created to relieve teachers of administrative burdens and eliminate accounting errors.</p>
+            <div class="p-4 rounded-2xl bg-white border border-slate-200 space-y-2 mt-3">
+              <div class="font-bold text-slate-800 text-xs uppercase tracking-wide">Our Core Principles:</div>
+              <div class="flex items-center gap-2 text-xs text-slate-700">✓ <b>Teacher-First Simplicity:</b> Complex registers converted into single-tap actions.</div>
+              <div class="flex items-center gap-2 text-xs text-slate-700">✓ <b>Zero Financial Errors:</b> 100% matched bank statement and cashbook equations.</div>
+              <div class="flex items-center gap-2 text-xs text-slate-700">✓ <b>Local Sovereignty:</b> Data stays on school devices and private school Google Drive.</div>
             </div>
-            <p class="text-[11px] text-emerald-800 font-bold mt-1.5">Revised Rate: ₹10.17 / student | Rice: 150g</p>
           </div>
         </div>
-        <div class="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3 p-4 rounded-2xl bg-emerald-50 border border-emerald-200">
-          <div><div class="text-[11px] font-semibold text-emerald-800">Total Students</div><div id="calc-students" class="text-xl font-black mt-1">147</div></div>
-          <div><div class="text-[11px] font-semibold text-emerald-800">Daily Cooking Cost</div><div id="calc-cost" class="text-xl font-black text-emerald-700 mt-1">₹1,206.84</div></div>
-          <div><div class="text-[11px] font-semibold text-emerald-800">Daily Rice Needed</div><div id="calc-rice" class="text-xl font-black mt-1">17.80 kg</div></div>
-          <div><div class="text-[11px] font-semibold text-emerald-800">Egg / Fruit Budget</div><div id="calc-egg" class="text-xl font-black text-amber-600 mt-1">₹735.00</div></div>
-        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- 4 VOUCHERS -->
-  <section id="vouchers" class="py-16 bg-white border-b border-slate-200">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6">
-      <div class="text-center mb-8">
-        <span class="text-xs font-bold text-emerald-700 uppercase tracking-wider">Automated Month-End Accounting</span>
-        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-1">4 Automated Monthly Vouchers in Cashbook</h2>
-        <p class="text-xs sm:text-sm text-slate-600 mt-1">All 4 vouchers prepared sequentially with annual sequence numbers:</p>
-      </div>
-      <div class="flex flex-wrap justify-center gap-2 mb-6">
-        <button type="button" class="voucher-tab-btn px-3 py-2 rounded-xl text-xs sm:text-sm font-bold bg-emerald-700 text-white" data-v="ration">1. Ration & Groceries</button>
-        <button type="button" class="voucher-tab-btn px-3 py-2 rounded-xl text-xs sm:text-sm font-bold bg-slate-100 text-slate-700" data-v="egg">2. Egg & Fruit</button>
-        <button type="button" class="voucher-tab-btn px-3 py-2 rounded-xl text-xs sm:text-sm font-bold bg-slate-100 text-slate-700" data-v="veg">3. Vegetables</button>
-        <button type="button" class="voucher-tab-btn px-3 py-2 rounded-xl text-xs sm:text-sm font-bold bg-slate-100 text-slate-700" data-v="fuel">4. Fuel & LPG</button>
-      </div>
-      <div class="bg-slate-50 border border-slate-200 rounded-3xl p-5 sm:p-8">
-        <div class="flex justify-between pb-3 border-b border-slate-200">
-          <div>
-            <div class="text-xs font-semibold text-emerald-700" id="v-seq">Voucher Sequence: Vr no - 1/2026</div>
-            <h3 class="text-base sm:text-lg font-black text-slate-900" id="v-title">Ration & Dry Groceries Consumption Voucher (किराना सामग्री)</h3>
+    <!-- SECTION 9: DOWNLOAD (WITHOUT ADMIN CONSOLE SECTION BELOW) -->
+    <section id="download" class="py-16 sm:py-20 bg-slate-950 text-white">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center">
+        <h2 class="text-2xl sm:text-4xl font-black">Download PoshanKosh for Android</h2>
+        <p class="text-slate-400 text-xs sm:text-sm max-w-xl mx-auto mt-2">Manage student attendance, 12 registers, MDM vouchers, and bank reconciliation:</p>
+        <div class="mt-8 bg-slate-900 border border-slate-800 rounded-3xl p-6 max-w-lg mx-auto shadow-2xl text-left">
+          <div class="flex justify-between items-center pb-4 border-b border-slate-800">
+            <div><div class="font-bold text-sm">PoshanKosh Android App</div><div class="text-xs text-slate-400">v0.16.4+20 Universal APK</div></div>
+            <span class="text-xs text-emerald-400 font-semibold">Signed ✓</span>
           </div>
-          <span class="text-xs bg-emerald-100 text-emerald-800 font-bold px-3 py-1 rounded-full">Posted in Cashbook ✓</span>
+          <div class="py-4 space-y-2 text-xs text-slate-300">
+            <div>✓ All 12 Statutory Registers (Dainik Vyay, Ragi, Egg/Fruit, IFA Iron, Chakhna &amp; Student Periodic Registers).</div>
+            <div>✓ Revised Cooking Cost Norms: Primary ₹6.78, Upper Primary ₹10.17 per student.</div>
+            <div>✓ All 4 Monthly Vouchers (Ration, Egg, Vegetable, Fuel) auto-post into Cashbook expenses (Vr 1/2026 to 4/2026).</div>
+            <div>✓ Smooth November Cashbook Opening Balance carry-forward (₹20,000 B/F).</div>
+          </div>
+          <div class="pt-2 flex flex-col sm:flex-row gap-2.5">
+            <a href="https://github.com/anantchandraushaamallick07-afk/Poshankosh-/releases/latest" target="_blank" rel="noopener noreferrer" class="flex-1 py-3 px-4 rounded-xl bg-brand-green hover:bg-brand-green-dark text-white font-bold text-center text-xs shadow-md">
+              Download APK Direct (v0.16.4)
+            </a>
+            <button id="copy-link-btn" type="button" class="py-3 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-xs font-semibold">
+              <span id="copy-text">Copy Link</span>
+            </button>
+          </div>
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 my-4">
-          <div class="bg-white p-3 rounded-xl border border-slate-200"><div class="text-xs text-slate-500">Account Type</div><div class="font-bold text-sm">Cash Expense (नकद खर्च)</div></div>
-          <div class="bg-white p-3 rounded-xl border border-slate-200"><div class="text-xs text-slate-500">Reference</div><div class="font-bold text-sm" id="v-ref">October 2026 / 1/2026</div></div>
-          <div class="bg-white p-3 rounded-xl border border-slate-200"><div class="text-xs text-slate-500">Allocation Category</div><div class="font-bold text-sm" id="v-alloc">Materials • KG-5 & 6-8</div></div>
-        </div>
-        <p class="text-xs text-slate-600" id="v-desc">Auto-generated from daily student attendance, approved ingredient norms, and physical rice consumption.</p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FAQS -->
-  <section id="faqs" class="py-16 bg-slate-50 border-b border-slate-200">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6">
-      <div class="text-center mb-10">
-        <span class="text-xs font-bold text-indigo-700 uppercase tracking-wider">Frequently Asked Questions</span>
-        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-1">Questions & Answers (FAQs)</h2>
-      </div>
-      <div class="space-y-3" id="faq-accordion">
-        <div class="border border-slate-200 rounded-2xl overflow-hidden bg-white">
-          <button type="button" class="faq-btn w-full p-4 text-left font-bold text-xs sm:text-sm text-slate-900 flex justify-between items-center hover:bg-slate-50">
-            <span>1. What are the latest cooking cost rates in PoshanKosh?</span>
-            <span class="text-emerald-700 text-base font-black faq-icon">+</span>
-          </button>
-          <div class="faq-content p-4 pt-0 text-xs sm:text-sm text-slate-600 leading-relaxed hidden border-t border-slate-100">
-            The revised PM-POSHAN cooking cost rates in PoshanKosh are <b>₹6.78 per student</b> for Primary (Classes 1–5) and <b>₹10.17 per student</b> for Upper Primary (Classes 6–8).
-          </div>
-        </div>
-        <div class="border border-slate-200 rounded-2xl overflow-hidden bg-white">
-          <button type="button" class="faq-btn w-full p-4 text-left font-bold text-xs sm:text-sm text-slate-900 flex justify-between items-center hover:bg-slate-50">
-            <span>2. Does the PoshanKosh mobile app work without internet?</span>
-            <span class="text-emerald-700 text-base font-black faq-icon">+</span>
-          </button>
-          <div class="faq-content p-4 pt-0 text-xs sm:text-sm text-slate-600 leading-relaxed hidden border-t border-slate-100">
-            <b>Yes, 100%!</b> PoshanKosh operates completely offline on SQLite. Internet is only needed if syncing cloud backups to Google Drive.
-          </div>
-        </div>
-        <div class="border border-slate-200 rounded-2xl overflow-hidden bg-white">
-          <button type="button" class="faq-btn w-full p-4 text-left font-bold text-xs sm:text-sm text-slate-900 flex justify-between items-center hover:bg-slate-50">
-            <span>3. Does October's closing balance carry forward to November?</span>
-            <span class="text-emerald-700 text-base font-black faq-icon">+</span>
-          </button>
-          <div class="faq-content p-4 pt-0 text-xs sm:text-sm text-slate-600 leading-relaxed hidden border-t border-slate-100">
-            <b>Yes!</b> October's closing balance (e.g. ₹20,000) automatically carries forward into November's Opening Balance B/F in the Cashbook.
-          </div>
-        </div>
-        <div class="border border-slate-200 rounded-2xl overflow-hidden bg-white">
-          <button type="button" class="faq-btn w-full p-4 text-left font-bold text-xs sm:text-sm text-slate-900 flex justify-between items-center hover:bg-slate-50">
-            <span>4. What is Chakhna Panji (चखना पंजी)?</span>
-            <span class="text-emerald-700 text-base font-black faq-icon">+</span>
-          </button>
-          <div class="faq-content p-4 pt-0 text-xs sm:text-sm text-slate-600 leading-relaxed hidden border-t border-slate-100">
-            <b>चखना पंजी (Food Tasting Register)</b> records mandatory pre-meal tasting by a teacher, cook, or SMC member for food safety and quality certification.
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT US (WITH PROMINENT LARGE LOGO, NO ADMIN CONSOLE BOX) -->
-  <section id="about" class="py-16 bg-white border-b border-slate-200">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6">
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-        <div class="md:col-span-5 text-center md:text-left flex flex-col items-center md:items-start">
-          <div class="p-3 bg-white rounded-3xl border border-slate-200 shadow-sm mb-3 inline-block">
-            <img src="logo-256x256.png" alt="PoshanKosh Logo" class="w-56 sm:w-80 md:w-96 h-auto object-contain">
-          </div>
-          <div class="text-2xl font-black text-slate-900">Poshan<span class="text-amber-600">kosh</span>®</div>
-          <div class="text-xs font-bold text-emerald-700">विद्यालय का पोषण, उज्ज्वल कल</div>
-        </div>
-        <div class="md:col-span-7 space-y-3 text-xs sm:text-sm text-slate-600 leading-relaxed">
-          <h2 class="text-2xl sm:text-3xl font-black text-slate-900">About PoshanKosh (हमारे बारे में)</h2>
-          <p><b>PoshanKosh® (पोषणकोष)</b> is India's national digital PM-POSHAN accounting and attendance platform created to relieve teachers of administrative burdens and eliminate accounting errors.</p>
-          <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-1.5 mt-3">
-            <div class="font-bold text-slate-800 text-xs">Our Core Commitments:</div>
-            <div>✓ <b>Teacher-First Simplicity:</b> Complex registers converted into single-tap actions.</div>
-            <div>✓ <b>Zero Financial Errors:</b> 100% matched bank statement and cashbook equations.</div>
-            <div>✓ <b>Local Sovereignty:</b> Data stays on school devices and private school Google Drive.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- DOWNLOAD -->
-  <section id="download" class="py-16 bg-slate-950 text-white">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center">
-      <h2 class="text-2xl sm:text-4xl font-black">Download PoshanKosh for Android</h2>
-      <p class="text-slate-400 text-xs sm:text-sm max-w-xl mx-auto mt-2">Manage student attendance, 12 registers, MDM vouchers, and bank reconciliation:</p>
-      <div class="mt-8 bg-slate-900 border border-slate-800 rounded-3xl p-6 max-w-lg mx-auto shadow-2xl text-left">
-        <div class="flex justify-between items-center pb-4 border-b border-slate-800">
-          <div><div class="font-bold text-sm">PoshanKosh Android App</div><div class="text-xs text-slate-400">v0.16.4+20 Universal APK</div></div>
-          <span class="text-xs text-emerald-400 font-semibold">Signed ✓</span>
-        </div>
-        <div class="pt-4 flex flex-col sm:flex-row gap-2.5">
-          <a href="https://github.com/anantchandraushaamallick07-afk/Poshankosh-/releases/latest" target="_blank" rel="noopener noreferrer" class="flex-1 py-3 px-4 rounded-xl bg-emerald-700 hover:bg-emerald-600 text-white font-bold text-center text-xs shadow-md">
-            Download APK Direct (v0.16.4)
-          </a>
-          <button id="copy-link-btn" type="button" class="py-3 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-xs font-semibold">
-            <span id="copy-text">Copy Link</span>
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
+  </main>
 
   <!-- FOOTER -->
-  <footer class="bg-white border-t border-slate-200 mt-auto py-6">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
+  <footer class="bg-white border-t border-slate-200 mt-auto py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
       <div class="flex items-center gap-2">
         <img src="logo-256x256.png" alt="Logo" class="h-5 w-auto">
-        <span class="font-bold text-slate-800">Poshan<span class="text-amber-600">kosh</span>®</span>
+        <span class="font-bold text-slate-800 text-sm">Poshan<span class="text-brand-orange">kosh</span>®</span>
         <span>• विद्यालय का पोषण, उज्ज्वल कल</span>
       </div>
       <div class="flex flex-wrap gap-4 font-medium text-[11px]">
+        <a href="#features" class="hover:text-slate-900">Features</a>
         <a href="#registers" class="hover:text-slate-900">12 Registers</a>
         <a href="#how-to-use" class="hover:text-slate-900">How to Use</a>
         <a href="#ai-assistant" class="hover:text-slate-900">AI Assistant</a>
         <a href="#calculator" class="hover:text-slate-900">Calculator</a>
+        <a href="#vouchers" class="hover:text-slate-900">Vouchers</a>
         <a href="#faqs" class="hover:text-slate-900">FAQs</a>
         <a href="#about" class="hover:text-slate-900">About Us</a>
         <a href="#download" class="hover:text-slate-900">Download</a>
@@ -502,7 +773,7 @@
   </footer>
 
   <script>
-    // MOBILE TOGGLE
+    // MOBILE MENU
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     mobileMenuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
@@ -531,8 +802,8 @@
     };
     document.querySelectorAll('.voucher-tab-btn').forEach(b => {
       b.addEventListener('click', () => {
-        document.querySelectorAll('.voucher-tab-btn').forEach(btn => { btn.classList.remove('bg-emerald-700', 'text-white'); btn.classList.add('bg-slate-100', 'text-slate-700'); });
-        b.classList.add('bg-emerald-700', 'text-white'); b.classList.remove('bg-slate-100', 'text-slate-700');
+        document.querySelectorAll('.voucher-tab-btn').forEach(btn => { btn.classList.remove('bg-brand-green', 'text-white'); btn.classList.add('bg-white', 'text-slate-700'); });
+        b.classList.add('bg-brand-green', 'text-white'); b.classList.remove('bg-white', 'text-slate-700');
         const d = vData[b.dataset.v];
         if (d) { document.getElementById('v-seq').textContent = d.seq; document.getElementById('v-title').textContent = d.title; document.getElementById('v-ref').textContent = d.ref; document.getElementById('v-alloc').textContent = d.alloc; document.getElementById('v-desc').textContent = d.desc; }
       });
@@ -582,11 +853,11 @@
       const val = inp.value.trim().toLowerCase();
       if (!val) return;
       const box = document.getElementById('chat-messages');
-      box.innerHTML += `<div class="flex justify-end"><div class="bg-emerald-700 text-white p-3 rounded-2xl text-xs sm:text-sm max-w-[85%]">${inp.value}</div></div>`;
+      box.innerHTML += `<div class="flex justify-end"><div class="bg-brand-green text-white p-3 rounded-2xl text-xs sm:text-sm max-w-[85%]">${inp.value}</div></div>`;
       const match = chatKnowledge.find(item => item.k.some(key => val.includes(key)));
       setTimeout(() => {
         const resp = match ? match.a : `PoshanKosh संशोधित दरों (₹6.78 / ₹10.17), 12 पंजियों और 4 मासिक वाउचर्स का स्वतः हिसाब रखता है। अधिक जानकारी के लिए '12 Registers' या 'FAQs' देखें।`;
-        box.innerHTML += `<div class="flex items-start gap-2.5"><div class="w-7 h-7 rounded-full bg-white flex items-center justify-center p-0.5 border border-slate-200 shrink-0 mt-1"><img src="data:image/png;base64,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" class="w-full h-full object-contain"></div><div class="bg-white p-3.5 rounded-2xl text-slate-800 border border-slate-200 shadow-2xs max-w-[85%] text-xs sm:text-sm leading-relaxed">${resp}</div></div>`;
+        box.innerHTML += `<div class="flex items-start gap-2.5"><div class="w-7 h-7 rounded-full bg-white flex items-center justify-center p-0.5 border border-slate-200 shrink-0 mt-1"><img src="logo-256x256.png" class="w-full h-full object-contain"></div><div class="bg-white p-3.5 rounded-2xl text-slate-800 border border-slate-200 shadow-2xs max-w-[85%] text-xs sm:text-sm leading-relaxed">${resp}</div></div>`;
         box.scrollTop = box.scrollHeight;
       }, 300);
       inp.value = '';
@@ -596,7 +867,7 @@
       document.getElementById('ai-chat-form').dispatchEvent(new Event('submit'));
     }));
     document.getElementById('clear-chat-btn')?.addEventListener('click', () => {
-      document.getElementById('chat-messages').innerHTML = `<div class="flex items-start gap-2.5"><div class="w-7 h-7 rounded-full bg-white flex items-center justify-center p-0.5 border border-slate-200 shrink-0 mt-1"><img src="data:image/png;base64,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" class="w-full h-full object-contain"></div><div class="bg-white p-3.5 rounded-2xl text-slate-800 border border-slate-200 shadow-2xs max-w-[85%] leading-relaxed"><p>Chat cleared. Ask any question regarding revised rates, 12 registers, or PM-POSHAN! 🙏</p></div></div>`;
+      document.getElementById('chat-messages').innerHTML = `<div class="flex items-start gap-2.5"><div class="w-7 h-7 rounded-full bg-white flex items-center justify-center p-0.5 border border-slate-200 shrink-0 mt-1"><img src="logo-256x256.png" class="w-full h-full object-contain"></div><div class="bg-white p-3.5 rounded-2xl text-slate-800 border border-slate-200 shadow-2xs max-w-[85%] leading-relaxed"><p>Chat cleared. Ask any question regarding revised rates, 12 registers, or PM-POSHAN! 🙏</p></div></div>`;
     });
   </script>
 </body>
