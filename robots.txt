@@ -1,0 +1,4 @@
+# PoshanKosh Official robots.txt
+User-agent: *
+Allow: /
+Sitemap: https://anantchandraushaamallick07-afk.github.io/poshankosh-web/sitemap.xml
