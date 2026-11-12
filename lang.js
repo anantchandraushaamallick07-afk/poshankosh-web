@@ -145,3 +145,9 @@
     initPoshanKosh();
   }
 })();
+//REMOVE BANNER 
+document.querySelectorAll('aside').forEach(function (el) {
+  if (el.textContent.indexOf('NEW RELEASE') !== -1) {
+    el.remove();
+  }
+});
