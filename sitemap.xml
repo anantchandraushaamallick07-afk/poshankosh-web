@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url>
-    <loc>https://poshankosh.com</loc>
-    <lastmod>2026-11-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://anantchandraushaamallick07-afk.github.io/poshankosh-web/" />
-    <xhtml:link rel="alternate" hreflang="hi" href="https://anantchandraushaamallick07-afk.github.io/poshankosh-web/" />
-  </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://poshankosh.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://poshankosh.com/faqs.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://poshankosh.com/how-to-use.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://poshankosh.com/how-beneficial.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://poshankosh.com/journey.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://poshankosh.com/about.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://poshankosh.com/contact.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://poshankosh.com/privacy.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://poshankosh.com/terms.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
 </urlset>
