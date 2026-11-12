@@ -1,22 +1,26 @@
-// PoshanKosh® Universal Language Switcher + Centered Footer Shortcut for All 9 Pages
+// Short, Clean & Centered Footer Across All Pages
 (function () {
-  // 1. Center-align the entire Footer across all pages & devices
-  const style = document.createElement('style');
-  style.textContent = `
-    .goog-te-banner-frame.skiptranslate, .goog-te-gadget-simple, #google_translate_element, body > .skiptranslate { display: none !important; }
-    body { top: 0px !important; }
-    footer > div > div {
-      flex-direction: column !important;
+  const footer = document.querySelector('footer');
+  if (!footer) return;
+
+  const bottomBar = footer.querySelector('div > div:last-child');
+  if (bottomBar && bottomBar.querySelectorAll('p').length > 0) {
+    bottomBar.className = 'mt-5 pt-4 border-t border-slate-100 text-center text-[11px] text-slate-500';
+    bottomBar.innerHTML = '<p class="w-full text-center">© 2026 PoshanKosh®. Independent Teacher Utility</p>';
+  }
+
+  const st = document.createElement('style');
+  st.textContent = `
+    footer, footer > div, footer > div > div, footer nav, footer p {
+      text-align: center !important;
+      justify-content: center !important;
       align-items: center !important;
-      justify-content: center !important;
-      text-align: center !important;
     }
-    footer nav {
-      justify-content: center !important;
-      text-align: center !important;
-    }
+    footer > div > div { flex-direction: column !important; width: 100% !important; }
   `;
-  document.head.appendChild(style);
+  document.head.appendChild(st);
+})();
+
 
 // PoshanKosh® Universal Language Switcher (English <-> हिंदी) for All 9 Pages
 (function () {
