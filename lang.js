@@ -1,4 +1,4 @@
-```javascript
+
 // PoshanKosh® Final All-in-One Shortcut (lang.js)
 // 1. Hides top green NEW RELEASE bar across all pages
 // 2. Protects Poshankosh® brand & tagline from translation distortion
