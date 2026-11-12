@@ -1,3 +1,23 @@
+// PoshanKosh® Universal Language Switcher + Centered Footer Shortcut for All 9 Pages
+(function () {
+  // 1. Center-align the entire Footer across all pages & devices
+  const style = document.createElement('style');
+  style.textContent = `
+    .goog-te-banner-frame.skiptranslate, .goog-te-gadget-simple, #google_translate_element, body > .skiptranslate { display: none !important; }
+    body { top: 0px !important; }
+    footer > div > div {
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      text-align: center !important;
+    }
+    footer nav {
+      justify-content: center !important;
+      text-align: center !important;
+    }
+  `;
+  document.head.appendChild(style);
+
 // PoshanKosh® Universal Language Switcher (English <-> हिंदी) for All 9 Pages
 (function () {
   const btn = document.getElementById('lang-toggle-btn');
