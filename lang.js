@@ -111,3 +111,30 @@
     });
   }
 })();
+// Keep Brand Logo & Tagline Untranslated + Cleanly Aligned Beside Logo
+(function () {
+  document.querySelectorAll('header a:first-child, footer a:first-child').forEach(el => {
+    el.classList.add('notranslate');
+    el.setAttribute('translate', 'no');
+  });
+
+  const st = document.createElement('style');
+  st.textContent = `
+    footer a:first-child {
+      display: inline-flex !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      justify-content: center !important;
+      width: auto !important;
+      gap: 0.75rem !important;
+      margin: 0 auto !important;
+    }
+    footer a:first-child > div {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      text-align: left !important;
+    }
+  `;
+  document.head.appendChild(st);
+})();
