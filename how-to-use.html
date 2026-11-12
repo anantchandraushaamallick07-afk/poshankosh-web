@@ -168,20 +168,337 @@
 
 <main class="flex-1">
 
-  <section class="max-w-5xl mx-auto px-4 sm:px-6 py-12">
-    <div class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-10 shadow-sm space-y-6">
-      <div>
-        <span class="text-xs font-bold text-brand-green uppercase tracking-wider">Step-by-Step Guide • उपयोग विधि</span>
-        <h1 class="text-2xl sm:text-3xl font-black text-slate-900 mt-1">How to Use PoshanKosh® in 6 Simple Steps</h1>
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 py-12 space-y-8">
+    <div class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-10 shadow-sm space-y-4">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-green-light border border-emerald-200 text-brand-green text-xs font-extrabold uppercase tracking-wider">
+        Complete A-to-Z Visual Guide • पूरी उपयोग विधि (English &amp; हिंदी)
       </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 text-sm">
-        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200"><div class="font-black text-brand-green mb-1">1. School Setup</div><p class="text-slate-600">Sign in with your school Google account (tick Drive permission), select your State/UDISE, and enter verified Opening Balances.</p></div>
-        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200"><div class="font-black text-brand-green mb-1">2. Daily Attendance</div><p class="text-slate-600">Mark daily class-wise attendance &amp; SC/ST/OBC/Gen counts. Rice (100g/150g) &amp; cooking costs auto-calculate.</p></div>
-        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200"><div class="font-black text-brand-green mb-1">3. 3-Dot Quick Restock</div><p class="text-slate-600">Inside any register (Rice, Egg, Ragi, Daily Expenditure), tap 3-dot → enter KG–5 &amp; 6–8 shares; Total calculates automatically.</p></div>
-        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200"><div class="font-black text-brand-green mb-1">4. Withdrawal &amp; Schemes</div><p class="text-slate-600">Use Withdrawal Register (with Cheque No.) for Bank → Cash contra entries, and Scheme Register for split expenses &amp; Settled status.</p></div>
-        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200"><div class="font-black text-brand-green mb-1">5. Cashbook &amp; Bank Match</div><p class="text-slate-600">Upload PDF/CSV/Photo statement, auto-fill missed entries 1-to-1, add Bank Interest, and get the CA Royal Blue Verified Seal.</p></div>
-        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200"><div class="font-black text-brand-green mb-1">6. Vouchers &amp; MPR PDF</div><p class="text-slate-600">Generate 4 Monthly Vouchers and 2-page Hindi/English MPR PDFs in 1 click.</p></div>
+      <h1 class="text-2xl sm:text-4xl font-black text-slate-900 leading-tight">
+        How to Use <span class="text-brand-green">PoshanKosh®</span> — Account Creation to Monthly PDF
+      </h1>
+      <p class="text-sm sm:text-base text-slate-600 leading-relaxed text-justify">
+        Everything explained crystal clear, step by step: how to create your account, where and how to add stock, how to make daily entries, how to update or edit any past record, and how to export your monthly vouchers and MPR PDF—in both <b>English</b> and <b>हिंदी</b>.
+      </p>
+    </div>
+
+    <!-- APP NAVIGATION MAP: WHERE IS EVERY OPTION? -->
+    <div class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+      <div class="space-y-2">
+        <span class="text-xs font-extrabold text-brand-orange-dark uppercase tracking-wider">App Map • कौन सा ऑप्शन कहाँ है (और कहाँ नहीं है)</span>
+        <h2 class="text-xl sm:text-2xl font-black text-slate-900">Complete PoshanKosh® Navigation Map (हर बटन और मेनू की सही जगह)</h2>
+        <p class="text-sm text-slate-600 text-justify">
+          At the bottom of the app, you will see <b>5 main tabs</b> (<b>Home, Attendance, MDM, Registers, Reports</b>) and at the top-right of Home is <b>Settings / Profile</b>. Use this table so you never waste time searching in the wrong screen:
+        </p>
       </div>
+
+      <!-- 5 BOTTOM TABS -->
+      <div class="grid grid-cols-2 sm:grid-cols-5 gap-2.5 text-center text-xs">
+        <div class="p-3 rounded-2xl bg-emerald-50 border border-emerald-200"><div class="font-black text-brand-green">1. Home</div><div class="text-[11px] text-slate-600 mt-0.5">Quick Actions, 7-Day Cash Alert, Summary</div></div>
+        <div class="p-3 rounded-2xl bg-slate-50 border border-slate-200"><div class="font-black text-slate-900">2. Attendance</div><div class="text-[11px] text-slate-600 mt-0.5">Daily KG–5 &amp; 6–8 Present Counts</div></div>
+        <div class="p-3 rounded-2xl bg-slate-50 border border-slate-200"><div class="font-black text-slate-900">3. MDM</div><div class="text-[11px] text-slate-600 mt-0.5">Daily Meal, Menu &amp; Tasting Flow</div></div>
+        <div class="p-3 rounded-2xl bg-slate-50 border border-slate-200"><div class="font-black text-slate-900">4. Registers</div><div class="text-[11px] text-slate-600 mt-0.5">All 12+ Registers, 3-Dot Stock, Schemes</div></div>
+        <div class="p-3 rounded-2xl bg-orange-50 border border-orange-200 col-span-2 sm:col-span-1"><div class="font-black text-brand-orange-dark">5. Reports</div><div class="text-[11px] text-slate-600 mt-0.5">4 Vouchers (Vr 1–4) &amp; MPR PDF</div></div>
+      </div>
+
+      <!-- WHERE TO GO VS WHERE NOT TO LOOK -->
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="bg-slate-100 text-slate-900">
+              <th class="p-3 rounded-tl-xl font-extrabold">What You Want to Do (आप क्या करना चाहते हैं)</th>
+              <th class="p-3 font-extrabold text-brand-green">Exact Location in App (यहाँ मिलेगा ✓)</th>
+              <th class="p-3 rounded-tr-xl font-extrabold text-red-700">Where It Is NOT (यहाँ न ढूँढें ✕)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200 text-slate-700">
+            <tr>
+              <td class="p-3 font-bold">Add Rice Stock (चावल स्टॉक जोड़ना)</td>
+              <td class="p-3 font-semibold text-brand-green">Registers → Rice Register → Top-Right 3-Dot (⋮) → Quick Restock</td>
+              <td class="p-3 text-slate-500">Not in Cashbook (Rice quantity never alters bank cash)</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold">Add Cooking / Egg / Ragi Funds (राशि जोड़ना)</td>
+              <td class="p-3 font-semibold text-brand-green">Registers → Daily Exp. / Egg / Ragi → 3-Dot (⋮) → Quick Restock (KG–5 + 6–8 auto-total)</td>
+              <td class="p-3 text-slate-500">No need to type twice in Cashbook (auto-posts to Bank Receipt!)</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold">Record Bank Cheque Withdrawal (बैंक निकासी)</td>
+              <td class="p-3 font-semibold text-brand-green">Home → Withdrawal (or Registers → Withdrawal Register) with Cheque No.</td>
+              <td class="p-3 text-slate-500">Not inside Daily Expenditure</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold">Bank Statement Match &amp; Interest (बैंक मिलान)</td>
+              <td class="p-3 font-semibold text-brand-green">Home → Cashbook (Upload PDF/CSV/Photo, 1-to-1 Auto-Fill, Verified Seal)</td>
+              <td class="p-3 text-slate-500">Not inside Reports tab</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold">Special Scheme Grants (बर्तन/गैस आदि योजना)</td>
+              <td class="p-3 font-semibold text-brand-green">Registers → Scheme Register (3-field form + split expenses + Settled)</td>
+              <td class="p-3 text-slate-500">Not inside Monthly Vouchers</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold">4 Monthly Vouchers &amp; MPR PDF (रिपोर्ट व वाउचर)</td>
+              <td class="p-3 font-semibold text-brand-green">Reports Tab → Monthly Vouchers (Vr 1–4) &amp; 2-Page MPR PDF (Draft Mode available!)</td>
+              <td class="p-3 text-slate-500">Not inside Attendance tab</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold">Edit / Update Any Past Entry (सुधार करना)</td>
+              <td class="p-3 font-semibold text-brand-green">Open that exact Date/Row in Attendance, Register, or Cashbook → Tap Edit (✏️)</td>
+              <td class="p-3 text-slate-500">No separate “Edit” tab needed</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold">Google Drive Backup, Language &amp; ₹119 Status</td>
+              <td class="p-3 font-semibold text-brand-green">Home → Top-Right Settings / Profile Icon</td>
+              <td class="p-3 text-slate-500">Not inside Registers</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- STEP 1: ACCOUNT CREATION -->
+    <div class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm grid md:grid-cols-12 gap-6 items-center">
+      <div class="md:col-span-5 bg-slate-900 rounded-2xl p-4 text-white shadow-inner border border-slate-800">
+        <div class="flex items-center justify-between text-[10px] text-slate-400 mb-3">
+          <span>STEP 1 • ACCOUNT &amp; SETUP</span>
+          <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold">2 Mins Only</span>
+        </div>
+        <div class="bg-white text-slate-800 rounded-xl p-3.5 space-y-2 text-xs">
+          <div class="font-black text-brand-green text-sm">Create School Account</div>
+          <div class="p-2 rounded bg-blue-50 border border-blue-200 text-blue-900 font-bold">1. Tap “Sign in with Google”</div>
+          <div class="p-2 rounded bg-emerald-50 border border-emerald-200 text-emerald-800 font-semibold">2. ☑ Tick Google Drive Backup Box</div>
+          <div class="p-2 rounded bg-slate-50 border border-slate-200">3. Select State (28 States / 8 UTs) + UDISE</div>
+          <div class="p-2 rounded bg-orange-50 border border-orange-200 text-orange-800 font-semibold">4. Enter Opening Cash, Bank &amp; Rice</div>
+        </div>
+      </div>
+      <div class="md:col-span-7 space-y-3 text-justify">
+        <div class="flex items-center gap-2.5 text-left">
+          <span class="w-8 h-8 rounded-full bg-brand-green text-white font-black text-sm flex items-center justify-center shrink-0">1</span>
+          <h2 class="text-lg sm:text-xl font-black text-slate-900">Account Creation &amp; School Setup (खाता कैसे बनाएँ)</h2>
+        </div>
+        <p class="text-sm text-slate-700 leading-relaxed">
+          <b>English:</b> Open PoshanKosh® and tap <b>Sign in with Google</b> using your school or personal Gmail. On the permission screen, make sure to <b>tick the Google Drive box</b> so your encrypted backup stays safe. Next, choose your State/UT, type your School Name, UDISE Code, and enter your verified Opening Balances (Opening Cash, Bank Balance, and Opening Rice Stock for KG–5 &amp; 6–8).
+        </p>
+        <p class="text-sm text-slate-600 leading-relaxed bg-slate-50 p-3.5 rounded-xl border border-slate-200">
+          <b>हिंदी:</b> ऐप खोलकर अपने स्कूल या निजी Gmail से <b>Sign in with Google</b> करें। अनुमति स्क्रीन पर <b>Google Drive वाले बॉक्स पर टिक ज़रूर करें</b> ताकि आपका डेटा सुरक्षित रहे। इसके बाद अपना राज्य/केंद्र शासित प्रदेश, स्कूल का नाम, UDISE कोड और महीने की शुरुआत का Opening Balance (नकद, बैंक बैलेंस और KG–5 व 6–8 का चावल स्टॉक) भरकर सेव करें।
+        </p>
+      </div>
+    </div>
+
+    <!-- STEP 2: HOW TO DO DAILY ENTRY -->
+    <div class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm grid md:grid-cols-12 gap-6 items-center">
+      <div class="md:col-span-5 bg-slate-900 rounded-2xl p-4 text-white shadow-inner border border-slate-800">
+        <div class="flex items-center justify-between text-[10px] text-slate-400 mb-3">
+          <span>STEP 2 • DAILY ENTRY</span>
+          <span class="px-2 py-0.5 rounded bg-orange-500/20 text-orange-300 font-bold">Auto Math</span>
+        </div>
+        <div class="bg-white text-slate-800 rounded-xl p-3.5 space-y-2 text-xs">
+          <div class="font-black text-slate-900 text-sm">Home → Daily Attendance</div>
+          <div class="p-2 rounded bg-slate-50 border border-slate-200">Select Date → Enter KG–5 &amp; 6–8 Present</div>
+          <div class="grid grid-cols-2 gap-2">
+            <div class="p-2 rounded bg-emerald-50 border border-emerald-200"><div class="text-[10px] text-slate-500">Primary (KG–5)</div><div class="font-black text-brand-green">100g • ₹6.78</div></div>
+            <div class="p-2 rounded bg-orange-50 border border-orange-200"><div class="text-[10px] text-slate-500">Upper Pri. (6–8)</div><div class="font-black text-brand-orange-dark">150g • ₹10.17</div></div>
+          </div>
+          <div class="p-2 rounded bg-emerald-600 text-white font-bold text-center">Save Entry ✓ (Auto-Updates All Registers)</div>
+        </div>
+      </div>
+      <div class="md:col-span-7 space-y-3 text-justify">
+        <div class="flex items-center gap-2.5 text-left">
+          <span class="w-8 h-8 rounded-full bg-brand-green text-white font-black text-sm flex items-center justify-center shrink-0">2</span>
+          <h2 class="text-lg sm:text-xl font-black text-slate-900">How to Make Daily Entry (दैनिक एंट्री कैसे करें)</h2>
+        </div>
+        <p class="text-sm text-slate-700 leading-relaxed">
+          <b>English:</b> On the Home screen, tap <b>Daily Attendance</b>. Pick the date, enter present student counts (KG–5 and 6–8, plus SC/ST/OBC/Gen &amp; Boys/Girls), choose items served (Egg, Fruit, or Ragi), and tap <b>Save</b>. PoshanKosh® automatically deducts rice (100g/150g) and posts cooking cost (₹6.78/₹10.17) into your Daily Expenditure, Egg/Fruit, Ragi, and Chakhna registers.
+        </p>
+        <p class="text-sm text-slate-600 leading-relaxed bg-slate-50 p-3.5 rounded-xl border border-slate-200">
+          <b>हिंदी:</b> होम स्क्रीन पर <b>Daily Attendance</b> दबाएँ, तारीख चुनें और उपस्थित छात्रों की संख्या (KG–5 व 6–8, जाति व लिंग अनुसार) भरें। उस दिन अंडा, फल या रागी दिया गया हो तो चुनें और <b>Save</b> करें। सेव करते ही चावल खर्च, कुकिंग कॉस्ट, दैनिक व्यय और चखना पंजी में एंट्री अपने आप हो जाएगी।
+        </p>
+      </div>
+    </div>
+
+    <!-- STEP 3: WHERE & HOW TO ADD STOCK -->
+    <div class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm grid md:grid-cols-12 gap-6 items-center">
+      <div class="md:col-span-5 bg-slate-900 rounded-2xl p-4 text-white shadow-inner border border-slate-800">
+        <div class="flex items-center justify-between text-[10px] text-slate-400 mb-3">
+          <span>STEP 3 • ADD STOCK</span>
+          <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold">3-Dot (⋮) Menu</span>
+        </div>
+        <div class="bg-white text-slate-800 rounded-xl p-3.5 space-y-2 text-xs">
+          <div class="flex items-center justify-between font-black text-slate-900">
+            <span>Open Register → Tap ⋮</span>
+            <span class="px-2 py-0.5 rounded bg-emerald-100 text-brand-green font-bold">Quick Restock</span>
+          </div>
+          <div class="p-2 rounded bg-slate-50 border border-slate-200 flex justify-between"><span>KG–5 Stock Added:</span><b>150 kg</b></div>
+          <div class="p-2 rounded bg-slate-50 border border-slate-200 flex justify-between"><span>6–8 Stock Added:</span><b>100 kg</b></div>
+          <div class="p-2 rounded bg-emerald-50 border border-emerald-200 flex justify-between text-brand-green font-black"><span>Auto Total at Bottom:</span><span>250 kg ✓</span></div>
+        </div>
+      </div>
+      <div class="md:col-span-7 space-y-3 text-justify">
+        <div class="flex items-center gap-2.5 text-left">
+          <span class="w-8 h-8 rounded-full bg-brand-green text-white font-black text-sm flex items-center justify-center shrink-0">3</span>
+          <h2 class="text-lg sm:text-xl font-black text-slate-900">Where &amp; How to Add Stock (स्टॉक कहाँ और कैसे जोड़ें)</h2>
+        </div>
+        <p class="text-sm text-slate-700 leading-relaxed">
+          <b>English:</b> Whenever you receive new Rice, Eggs, Ragi, or Cooking funds, go to <b>Registers</b> and open that exact register (e.g., <i>Rice Register</i>, <i>Egg/Fruit Register</i>, <i>Ragi Register</i>, or <i>Daily Expenditure</i>). Tap the <b>3-dot (⋮) menu</b> at the top-right corner and select <b>Quick Restock / Add Stock</b>. Enter the <b>KG–5</b> and <b>6–8</b> amounts separately—the combined Total calculates automatically at the bottom—then tap Save.
+        </p>
+        <p class="text-sm text-slate-600 leading-relaxed bg-slate-50 p-3.5 rounded-xl border border-slate-200">
+          <b>हिंदी:</b> जब भी नया चावल, अंडा, रागी या कुकिंग राशि आए, <b>Registers</b> में जाकर संबंधित रजिस्टर (जैसे Rice, Egg/Fruit, Ragi या Daily Expenditure) खोलें। ऊपर दाईं ओर <b>3-डॉट (⋮)</b> दबाकर <b>Quick Restock / Add Stock</b> चुनें। अब <b>KG–5</b> और <b>6–8</b> की मात्रा अलग-अलग भरें — नीचे कुल (Total) अपने आप जुड़ जाएगा — और सेव कर दें।
+        </p>
+      </div>
+    </div>
+
+    <!-- STEP 4: HOW TO UPDATE / EDIT ANY ENTRY -->
+    <div class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm grid md:grid-cols-12 gap-6 items-center">
+      <div class="md:col-span-5 bg-slate-900 rounded-2xl p-4 text-white shadow-inner border border-slate-800">
+        <div class="flex items-center justify-between text-[10px] text-slate-400 mb-3">
+          <span>STEP 4 • EDIT &amp; UPDATE</span>
+          <span class="px-2 py-0.5 rounded bg-orange-500/20 text-orange-300 font-bold">Auto Recalculate</span>
+        </div>
+        <div class="bg-white text-slate-800 rounded-xl p-3.5 space-y-2 text-xs">
+          <div class="font-black text-slate-900 text-sm">Modify Any Past Entry</div>
+          <div class="p-2 rounded bg-slate-50 border border-slate-200 flex justify-between items-center">
+            <span>12-11-2026 • Attendance / Stock</span>
+            <span class="px-2 py-0.5 rounded bg-orange-100 text-brand-orange-dark font-bold">✏️ Edit</span>
+          </div>
+          <div class="p-2 rounded bg-slate-50 border border-slate-200">Change Count / Stock / Amount → Tap Update</div>
+          <div class="p-2 rounded bg-emerald-50 border border-emerald-200 text-emerald-800 font-bold">✓ Closing Balances Auto-Adjusted</div>
+        </div>
+      </div>
+      <div class="md:col-span-7 space-y-3 text-justify">
+        <div class="flex items-center gap-2.5 text-left">
+          <span class="w-8 h-8 rounded-full bg-brand-green text-white font-black text-sm flex items-center justify-center shrink-0">4</span>
+          <h2 class="text-lg sm:text-xl font-black text-slate-900">How to Update or Edit Any Entry (सुधार/अपडेट कैसे करें)</h2>
+        </div>
+        <p class="text-sm text-slate-700 leading-relaxed">
+          <b>English:</b> Made a typing mistake on an earlier date? Simply open <b>Daily Attendance</b> (for student counts) or open the specific <b>Register / Cashbook</b> row you want to fix. Tap the <b>Edit (✏️) icon</b> or tap that date row, correct the figure, and tap <b>Update / Save</b>. PoshanKosh® immediately recalculates all subsequent daily totals and closing balances automatically.
+        </p>
+        <p class="text-sm text-slate-600 leading-relaxed bg-slate-50 p-3.5 rounded-xl border border-slate-200">
+          <b>हिंदी:</b> अगर किसी पुरानी तारीख की एंट्री में गलती हो गई हो, तो <b>Daily Attendance</b> या संबंधित <b>Register / Cashbook</b> खोलकर उस तारीख वाली लाइन या <b>Edit (✏️)</b> आइकन पर टैप करें। सही संख्या या राशि भरकर <b>Update / Save</b> दबाएँ — आगे के सभी दिनों का टोटल और क्लोज़िंग बैलेंस अपने आप ठीक हो जाएगा।
+        </p>
+      </div>
+    </div>
+
+    <!-- STEP 5: BANK WITHDRAWALS & SCHEMES -->
+    <div class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm grid md:grid-cols-12 gap-6 items-center">
+      <div class="md:col-span-5 bg-slate-900 rounded-2xl p-4 text-white shadow-inner border border-slate-800">
+        <div class="flex items-center justify-between text-[10px] text-slate-400 mb-3">
+          <span>STEP 5 • BANK &amp; SCHEMES</span>
+          <span class="px-2 py-0.5 rounded bg-orange-500/20 text-orange-300 font-bold">Contra Sync</span>
+        </div>
+        <div class="bg-white text-slate-800 rounded-xl p-3.5 space-y-2 text-xs">
+          <div class="font-black text-slate-900 text-sm">Withdrawal &amp; Scheme Register</div>
+          <div class="p-2 rounded bg-slate-50 border border-slate-200"><b>Cheque No.:</b> 482910 → Bank to Cash</div>
+          <div class="p-2 rounded bg-slate-50 border border-slate-200"><b>Scheme Grant:</b> Utensil / Kitchen / Gas</div>
+          <div class="p-2 rounded bg-emerald-50 border border-emerald-200 text-emerald-800 font-bold">Split Expense + Settled Status ✓</div>
+        </div>
+      </div>
+      <div class="md:col-span-7 space-y-3 text-justify">
+        <div class="flex items-center gap-2.5 text-left">
+          <span class="w-8 h-8 rounded-full bg-brand-green text-white font-black text-sm flex items-center justify-center shrink-0">5</span>
+          <h2 class="text-lg sm:text-xl font-black text-slate-900">Cheque Withdrawals &amp; Scheme Entries (बैंक निकासी व योजना)</h2>
+        </div>
+        <p class="text-sm text-slate-700 leading-relaxed">
+          <b>English:</b> Whenever you withdraw cash from the bank, open <b>Withdrawal Register</b> and enter the Date, Amount, and <b>Cheque No.</b>—PoshanKosh® automatically posts the Bank-to-Cash contra entry in your Cashbook. For special grants (Utensils, Gas, etc.), open <b>Scheme Register</b> to add receipts, record split expenses, and track <b>Settled</b> status.
+        </p>
+        <p class="text-sm text-slate-600 leading-relaxed bg-slate-50 p-3.5 rounded-xl border border-slate-200">
+          <b>हिंदी:</b> बैंक से नकद निकालने पर <b>Withdrawal Register</b> में तारीख, राशि और <b>Cheque No.</b> डालें — कैशबुक में Bank से Cash की कॉन्ट्रा एंट्री अपने आप जुड़ जाएगी। रसोई बर्तन, गैस या अन्य विशेष अनुदान के लिए <b>Scheme Register</b> में प्राप्ति व विभाजित खर्च दर्ज करें।
+        </p>
+      </div>
+    </div>
+
+    <!-- STEP 6: CASHBOOK & BANK MATCH -->
+    <div class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm grid md:grid-cols-12 gap-6 items-center">
+      <div class="md:col-span-5 bg-slate-900 rounded-2xl p-4 text-white shadow-inner border border-slate-800">
+        <div class="flex items-center justify-between text-[10px] text-slate-400 mb-3">
+          <span>STEP 6 • CASHBOOK &amp; BANK MATCH</span>
+          <span class="px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 font-bold">CA Verified</span>
+        </div>
+        <div class="bg-white text-slate-800 rounded-xl p-3.5 space-y-2 text-xs">
+          <div class="flex items-center justify-between">
+            <span class="font-black text-slate-900">Cashbook (DD-MM-YYYY)</span>
+            <span class="px-2 py-0.5 rounded border border-blue-700 text-blue-800 font-extrabold text-[10px]">POSHANKOSH VERIFIED</span>
+          </div>
+          <div class="p-2 rounded bg-slate-50 border border-slate-200">Upload PDF / CSV / Photo Bank Statement</div>
+          <div class="p-2 rounded bg-blue-50 border border-blue-200 text-blue-900 font-semibold">1-to-1 Auto-Fill + Bank Interest Entry</div>
+        </div>
+      </div>
+      <div class="md:col-span-7 space-y-3 text-justify">
+        <div class="flex items-center gap-2.5 text-left">
+          <span class="w-8 h-8 rounded-full bg-brand-green text-white font-black text-sm flex items-center justify-center shrink-0">6</span>
+          <h2 class="text-lg sm:text-xl font-black text-slate-900">Bank Statement Match &amp; Verified Seal (बैंक मिलान)</h2>
+        </div>
+        <p class="text-sm text-slate-700 leading-relaxed">
+          <b>English:</b> Open <b>Cashbook</b> and upload your monthly Bank Statement (PDF, CSV, or Photo). PoshanKosh® matches entries one-to-one, lets you auto-fill any missed bank interest or bank charges in one tap, sorts entries chronologically (<code>DD-MM-YYYY</code>), and stamps your ledger with the Royal Blue <b>POSHANKOSH VERIFIED</b> seal.
+        </p>
+        <p class="text-sm text-slate-600 leading-relaxed bg-slate-50 p-3.5 rounded-xl border border-slate-200">
+          <b>हिंदी:</b> <b>Cashbook</b> में अपने बैंक स्टेटमेंट की PDF, CSV या फोटो अपलोड करें। ऐप एक-एक एंट्री का मिलान करेगा, छूटे हुए बैंक ब्याज या शुल्क को 1-क्लिक में भरेगा और मिलान पूरा होते ही Royal Blue <b>POSHANKOSH VERIFIED</b> मुहर लगा देगा।
+        </p>
+      </div>
+    </div>
+
+    <!-- STEP 7: VOUCHERS & MPR PDF -->
+    <div class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm grid md:grid-cols-12 gap-6 items-center">
+      <div class="md:col-span-5 bg-slate-900 rounded-2xl p-4 text-white shadow-inner border border-slate-800">
+        <div class="flex items-center justify-between text-[10px] text-slate-400 mb-3">
+          <span>STEP 7 • VOUCHERS &amp; MPR PDF</span>
+          <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold">1-Click Export</span>
+        </div>
+        <div class="bg-white text-slate-800 rounded-xl p-3.5 space-y-2 text-xs">
+          <div class="font-black text-slate-900 text-sm">Month-End Reports Ready</div>
+          <div class="grid grid-cols-2 gap-1.5 text-[11px]">
+            <div class="p-1.5 rounded bg-slate-50 border border-slate-200 font-semibold">Vr 1: Ration</div>
+            <div class="p-1.5 rounded bg-slate-50 border border-slate-200 font-semibold">Vr 2: Egg / Fruit</div>
+            <div class="p-1.5 rounded bg-slate-50 border border-slate-200 font-semibold">Vr 3: Vegetables</div>
+            <div class="p-1.5 rounded bg-slate-50 border border-slate-200 font-semibold">Vr 4: Fuel / LPG</div>
+          </div>
+          <div class="p-2 rounded bg-emerald-50 border border-emerald-200 text-brand-green font-black text-center">Download 2-Page MPR PDF (Hindi / Eng)</div>
+        </div>
+      </div>
+      <div class="md:col-span-7 space-y-3 text-justify">
+        <div class="flex items-center gap-2.5 text-left">
+          <span class="w-8 h-8 rounded-full bg-brand-green text-white font-black text-sm flex items-center justify-center shrink-0">7</span>
+          <h2 class="text-lg sm:text-xl font-black text-slate-900">Export 4 Monthly Vouchers &amp; MPR PDF (रिपोर्ट निकालें)</h2>
+        </div>
+        <p class="text-sm text-slate-700 leading-relaxed">
+          <b>English:</b> At month-end, open <b>Monthly Vouchers &amp; MPR</b>. All 4 vouchers (<code>Vr 1</code> Ration, <code>Vr 2</code> Egg/Fruit, <code>Vr 3</code> Vegetables, and <code>Vr 4</code> Fuel/LPG) are already calculated and posted to your Cashbook. Tap <b>Export PDF</b> to download or print your 2-page bilingual MPR and vouchers in seconds.
+        </p>
+        <p class="text-sm text-slate-600 leading-relaxed bg-slate-50 p-3.5 rounded-xl border border-slate-200">
+          <b>हिंदी:</b> महीने के अंत में <b>Monthly Vouchers &amp; MPR</b> खोलें — चारों वाउचर (राशन, अंडा/फल, सब्ज़ी और ईंधन) पहले से तैयार मिलेंगे। बस <b>Export PDF</b> दबाकर हिंदी या अंग्रेज़ी में 2-पेज का MPR और वाउचर प्रिंट या शेयर करें।
+        </p>
+      </div>
+    </div>
+
+    <!-- STEP 8: BACKUP & RESTORE -->
+    <div class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm grid md:grid-cols-12 gap-6 items-center">
+      <div class="md:col-span-5 bg-slate-900 rounded-2xl p-4 text-white shadow-inner border border-slate-800">
+        <div class="flex items-center justify-between text-[10px] text-slate-400 mb-3">
+          <span>STEP 8 • BACKUP &amp; RESTORE</span>
+          <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold">Encrypted</span>
+        </div>
+        <div class="bg-white text-slate-800 rounded-xl p-3.5 space-y-2 text-xs">
+          <div class="font-black text-slate-900 text-sm">Settings → Google Drive Sync</div>
+          <div class="p-2 rounded bg-emerald-50 border border-emerald-200 text-emerald-800 font-semibold">☁️ Backup Now (Encrypted ZIP)</div>
+          <div class="p-2 rounded bg-slate-50 border border-slate-200">New Phone? Sign in with same Gmail → Instant Restore ✓</div>
+        </div>
+      </div>
+      <div class="md:col-span-7 space-y-3 text-justify">
+        <div class="flex items-center gap-2.5 text-left">
+          <span class="w-8 h-8 rounded-full bg-brand-green text-white font-black text-sm flex items-center justify-center shrink-0">8</span>
+          <h2 class="text-lg sm:text-xl font-black text-slate-900">Backup &amp; Restore on Any Phone (बैकअप व रीस्टोर)</h2>
+        </div>
+        <p class="text-sm text-slate-700 leading-relaxed">
+          <b>English:</b> PoshanKosh® works 100% offline during school hours. Whenever you get mobile signal, go to <b>Settings → Google Drive Backup</b> and tap <b>Backup Now</b>. If you ever change or reset your phone, simply sign in with the same Google account and your entire school history restores safely.
+        </p>
+        <p class="text-sm text-slate-600 leading-relaxed bg-slate-50 p-3.5 rounded-xl border border-slate-200">
+          <b>हिंदी:</b> स्कूल में ऐप पूरी तरह ऑफलाइन चलता है। जब भी इंटरनेट मिले, <b>Settings → Google Drive Backup</b> में जाकर <b>Backup Now</b> दबा दें। नया फोन लेने पर उसी Gmail से लॉगिन करते ही आपका पूरा डेटा सुरक्षित वापस आ जाएगा।
+        </p>
+      </div>
+    </div>
+
+    <div class="text-center pt-2">
+      <a href="index.html#download" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-brand-green hover:bg-brand-green-dark text-white text-sm font-bold shadow-sm transition-colors">
+        Download PoshanKosh APK Now →
+      </a>
     </div>
   </section>
 
