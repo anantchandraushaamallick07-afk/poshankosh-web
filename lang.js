@@ -1,42 +1,70 @@
-// Short, Clean & Centered Footer Across All Pages
+```javascript
+// PoshanKosh® Final All-in-One Shortcut (lang.js)
+// 1. Hides top green NEW RELEASE bar across all pages
+// 2. Protects Poshankosh® brand & tagline from translation distortion
+// 3. Enables English <-> हिंदी switcher across all 9 pages
+// 4. Keeps Footer short, clean & centered with proper logo+text alignment
+
 (function () {
-  const footer = document.querySelector('footer');
-  if (!footer) return;
+  // Protect Header & Footer brand lockup from translation mangling
+  document.querySelectorAll('header a:first-child, footer a:first-child').forEach(el => {
+    el.classList.add('notranslate');
+    el.setAttribute('translate', 'no');
+  });
 
-  const bottomBar = footer.querySelector('div > div:last-child');
-  if (bottomBar && bottomBar.querySelectorAll('p').length > 0) {
-    bottomBar.className = 'mt-5 pt-4 border-t border-slate-100 text-center text-[11px] text-slate-500';
-    bottomBar.innerHTML = '<p class="w-full text-center">© 2026 PoshanKosh®. Independent Teacher Utility</p>';
-  }
-
-  const st = document.createElement('style');
-  st.textContent = `
+  // Global CSS rules for all pages & devices
+  const style = document.createElement('style');
+  style.textContent = `
+    body > aside:first-of-type { display: none !important; }
+    .goog-te-banner-frame.skiptranslate, .goog-te-gadget-simple, #google_translate_element, body > .skiptranslate { display: none !important; }
+    body { top: 0px !important; }
     footer, footer > div, footer > div > div, footer nav, footer p {
       text-align: center !important;
       justify-content: center !important;
       align-items: center !important;
     }
-    footer > div > div { flex-direction: column !important; width: 100% !important; }
+    footer > div > div {
+      flex-direction: column !important;
+      width: 100% !important;
+    }
+    footer p {
+      width: 100% !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+    footer a:first-child {
+      display: inline-flex !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      justify-content: center !important;
+      width: auto !important;
+      gap: 0.75rem !important;
+      margin: 0 auto !important;
+    }
+    footer a:first-child > div {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      text-align: left !important;
+    }
   `;
-  document.head.appendChild(st);
-})();
+  document.head.appendChild(style);
 
+  // Short & clean Footer bottom bar across all pages
+  const footer = document.querySelector('footer');
+  if (footer) {
+    const bottomBar = footer.querySelector('div > div:last-child');
+    if (bottomBar && bottomBar.querySelectorAll('p').length > 0) {
+      bottomBar.className = 'mt-5 pt-4 border-t border-slate-100 text-center text-[11px] text-slate-500';
+      bottomBar.innerHTML = '<p class="w-full text-center notranslate" translate="no">© 2026 PoshanKosh®. Independent Teacher Utility</p>';
+    }
+  }
 
-// PoshanKosh® Universal Language Switcher (English <-> हिंदी) for All 9 Pages
-(function () {
+  // Language Switcher (English <-> हिंदी)
   const btn = document.getElementById('lang-toggle-btn');
   const btnText = document.getElementById('lang-btn-text');
   if (!btn || !btnText) return;
 
-  // Hide Google Translate top banner cleanly
-  const style = document.createElement('style');
-  style.textContent = `
-    .goog-te-banner-frame.skiptranslate, .goog-te-gadget-simple, #google_translate_element, body > .skiptranslate { display: none !important; }
-    body { top: 0px !important; }
-  `;
-  document.head.appendChild(style);
-
-  // Hidden container for Google Translate
   const gtDiv = document.createElement('div');
   gtDiv.id = 'google_translate_element';
   gtDiv.style.display = 'none';
@@ -55,11 +83,7 @@
   }
 
   function triggerGoogleTranslate(lang) {
-    if (lang === 'hi') {
-      setCookie('googtrans', '/en/hi');
-    } else {
-      setCookie('googtrans', '/en/en');
-    }
+    setCookie('googtrans', lang === 'hi' ? '/en/hi' : '/en/en');
     const select = document.querySelector('.goog-te-combo');
     if (select) {
       select.value = lang === 'hi' ? 'hi' : 'en';
@@ -91,7 +115,6 @@
     triggerGoogleTranslate('hi');
   }
 
-  // Clone button on sub-pages to ensure clean single click handler
   if (!isHomeWithInline) {
     btn.addEventListener('click', function () {
       currentLang = (localStorage.getItem('pk_lang') || 'en') === 'hi' ? 'en' : 'hi';
@@ -111,30 +134,4 @@
     });
   }
 })();
-// Keep Brand Logo & Tagline Untranslated + Cleanly Aligned Beside Logo
-(function () {
-  document.querySelectorAll('header a:first-child, footer a:first-child').forEach(el => {
-    el.classList.add('notranslate');
-    el.setAttribute('translate', 'no');
-  });
-
-  const st = document.createElement('style');
-  st.textContent = `
-    footer a:first-child {
-      display: inline-flex !important;
-      flex-direction: row !important;
-      align-items: center !important;
-      justify-content: center !important;
-      width: auto !important;
-      gap: 0.75rem !important;
-      margin: 0 auto !important;
-    }
-    footer a:first-child > div {
-      display: flex !important;
-      flex-direction: column !important;
-      align-items: flex-start !important;
-      text-align: left !important;
-    }
-  `;
-  document.head.appendChild(st);
-})();
+```
