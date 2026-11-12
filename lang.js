@@ -1,3 +1,26 @@
+// Short, Clean & Centered Footer Across All Pages
+(function () {
+  const footer = document.querySelector('footer');
+  if (!footer) return;
+
+  const bottomBar = footer.querySelector('div > div:last-child');
+  if (bottomBar && bottomBar.querySelectorAll('p').length > 0) {
+    bottomBar.className = 'mt-5 pt-4 border-t border-slate-100 text-center text-[11px] text-slate-500';
+    bottomBar.innerHTML = '<p class="w-full text-center">© 2026 PoshanKosh®. Independent Teacher Utility</p>';
+  }
+
+  const st = document.createElement('style');
+  st.textContent = `
+    footer, footer > div, footer > div > div, footer nav, footer p {
+      text-align: center !important;
+      justify-content: center !important;
+      align-items: center !important;
+    }
+    footer > div > div { flex-direction: column !important; width: 100% !important; }
+  `;
+  document.head.appendChild(st);
+})();
+
 // PoshanKosh® Clean & Tested All-in-One Script (lang.js)
 (function () {
   function initPoshanKosh() {
