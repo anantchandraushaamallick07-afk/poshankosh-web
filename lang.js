@@ -186,14 +186,18 @@ document.querySelectorAll('aside').forEach(function (el) {
       return localStorage.getItem('pk_lang') === 'hi';
     }
 
-    // 2. Voice Output (Text-to-Speech)
+    // 2. Clear Natural Voice Output (Filters out emojis/symbols & picks best Indian voice)
     var voiceOn = true;
     var hiVoice = null, enVoice = null;
+    function pickBestVoice(voices, langRegex) {
+      var list = voices.filter(function (v) { return langRegex.test(v.lang); });
+      return list.find(function (v) { return /google|natural|online|neural|rishi|lekha/i.test(v.name); }) || list[0] || null;
+    }
     function loadVoices() {
       if (!('speechSynthesis' in window)) return;
       var voices = window.speechSynthesis.getVoices() || [];
-      hiVoice = voices.find(function (v) { return /hi[-_]IN/i.test(v.lang); }) || null;
-      enVoice = voices.find(function (v) { return /en[-_]IN/i.test(v.lang); }) || null;
+      hiVoice = pickBestVoice(voices, /hi[-_]IN/i);
+      enVoice = pickBestVoice(voices, /en[-_]IN/i);
     }
     if ('speechSynthesis' in window) {
       loadVoices();
@@ -204,34 +208,24 @@ document.querySelectorAll('aside').forEach(function (el) {
       if (!voiceOn || !('speechSynthesis' in window)) return;
       try {
         window.speechSynthesis.cancel();
-        var clean = html.replace(/<[^>]+>/g, ' ').replace(/👉.*$/g, '').replace(/\s+/g, ' ').trim();
+        var clean = html
+          .replace(/<[^>]+>/g, ' ')
+          .replace(/👉.*$/g, '')
+          .replace(/[®™•⋮→🙏☀️🌤️🌆🌙🎤🔴🔊🔇]/g, ' ')
+          .replace(/\s+/g, ' ')
+          .trim();
         if (!clean) return;
         var hasHindi = /[\u0900-\u097F]/.test(clean);
         var u = new SpeechSynthesisUtterance(clean);
         u.lang = hasHindi ? 'hi-IN' : 'en-IN';
-        u.rate = 1.02;
-        u.pitch = 1.05;
+        u.rate = 0.96;
+        u.pitch = 1.0;
         if (hasHindi && hiVoice) u.voice = hiVoice;
         else if (!hasHindi && enVoice) u.voice = enVoice;
         window.speechSynthesis.speak(u);
       } catch (e) {}
     }
 
-    // Always show Voice On/Off button in chat header
-    var clearBtn = document.getElementById('clear-chat-btn');
-    if (clearBtn && !document.getElementById('pk-voice-toggle')) {
-      var vBtn = document.createElement('button');
-      vBtn.id = 'pk-voice-toggle';
-      vBtn.type = 'button';
-      vBtn.className = 'text-xs bg-indigo-900 text-indigo-100 px-2.5 py-1 rounded-lg mr-2';
-      vBtn.textContent = '🔊 Voice On';
-      vBtn.addEventListener('click', function () {
-        voiceOn = !voiceOn;
-        vBtn.textContent = voiceOn ? '🔊 Voice On' : '🔇 Muted';
-        if (!voiceOn && 'speechSynthesis' in window) window.speechSynthesis.cancel();
-      });
-      clearBtn.parentNode.insertBefore(vBtn, clearBtn);
-    }
 
     // 3. Language-Aware & Time-Aware Greeting
     function getGreeting(hi) {
