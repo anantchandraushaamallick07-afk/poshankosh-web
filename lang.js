@@ -444,6 +444,7 @@ document.querySelectorAll('aside').forEach(function (el) {
             micBtn.textContent = '🔴';
             micBtn.classList.add('bg-red-50', 'border-red-400');
             rec.start();
+            inp.placeholder = '🎤 सुन रहा हूँ... बोलिए (Listening...)';
           } catch (err) { listening = false; micBtn.textContent = '🎤'; }
         });
         rec.onresult = function (ev) {
