@@ -215,11 +215,14 @@ document.querySelectorAll('aside').forEach(function (el) {
           .replace(/\s+/g, ' ')
           .trim();
         if (!clean) return;
-        var hasHindi = /[\u0900-\u097F]/.test(clean);
-        var u = new SpeechSynthesisUtterance(clean);
+        // Keep spoken reply short & conversational (first 2 sentences max)
+        var parts = clean.split(/(?<=[।.!?])\s+/);
+        var spoken = parts.slice(0, 2).join(' ').slice(0, 220);
+        var hasHindi = /[\u0900-\u097F]/.test(spoken);
+        var u = new SpeechSynthesisUtterance(spoken);
         u.lang = hasHindi ? 'hi-IN' : 'en-IN';
-        u.rate = 0.96;
-        u.pitch = 1.0;
+        u.rate = 0.95;
+        u.pitch = 1.04;
         if (hasHindi && hiVoice) u.voice = hiVoice;
         else if (!hasHindi && enVoice) u.voice = enVoice;
         window.speechSynthesis.speak(u);
@@ -237,7 +240,11 @@ document.querySelectorAll('aside').forEach(function (el) {
       vBtn.addEventListener('click', function () {
         voiceOn = !voiceOn;
         vBtn.textContent = voiceOn ? '🔊 Voice On' : '🔇 Muted';
-        if (!voiceOn && 'speechSynthesis' in window) window.speechSynthesis.cancel();
+        if (!voiceOn && 'speechSynthesis' in window) {
+          window.speechSynthesis.cancel();
+        } else if (voiceOn) {
+          speakText(isHindiMode() ? 'आवाज़ चालू है, पूछिए मैं आपकी क्या मदद करूँ?' : 'Voice is on, how may I help you?');
+        }
       });
       clearBtn.parentNode.insertBefore(vBtn, clearBtn);
     }
@@ -464,7 +471,10 @@ document.querySelectorAll('aside').forEach(function (el) {
           } catch (err) {
             listening = false;
             micBtn.textContent = '🎤';
+            micBtn.classList.remove('bg-red-50', 'border-red-400');
             inp.placeholder = defaultPlaceholder;
+            box.innerHTML += '<div class="flex items-start gap-2.5"><div class="w-7 h-7 rounded-full bg-white flex items-center justify-center p-0.5 border border-slate-200 shrink-0 mt-1"><img src="logo-256x256.png" class="w-full h-full object-contain"></div><div class="bg-white p-3 rounded-2xl text-slate-700 border border-slate-200 text-xs">🎤 माइक शुरू नहीं हो सका—कृपया ब्राउज़र में Microphone को <b>Allow</b> करें या कीबोर्ड के माइक का उपयोग करें।</div></div>';
+            box.scrollTop = box.scrollHeight;
           }
         });
         rec.onresult = function (ev) {
@@ -477,11 +487,16 @@ document.querySelectorAll('aside').forEach(function (el) {
           micBtn.classList.remove('bg-red-50', 'border-red-400');
           inp.placeholder = defaultPlaceholder;
         };
-        rec.onerror = function () {
+        rec.onerror = function (ev) {
           listening = false;
           micBtn.textContent = '🎤';
           micBtn.classList.remove('bg-red-50', 'border-red-400');
           inp.placeholder = defaultPlaceholder;
+          var errMsg = (ev && ev.error === 'not-allowed')
+            ? '🎤 माइक की अनुमति बंद है — एड्रेस बार के पास से <b>Microphone → Allow</b> करें या कीबोर्ड का माइक दबाकर बोलें।'
+            : '🎤 इस ब्राउज़र में वेब-माइक सपोर्ट उपलब्ध नहीं है (iPhone पर <b>Safari</b> में खोलें या कीबोर्ड का माइक इस्तेमाल करें)।';
+          box.innerHTML += '<div class="flex items-start gap-2.5"><div class="w-7 h-7 rounded-full bg-white flex items-center justify-center p-0.5 border border-slate-200 shrink-0 mt-1"><img src="logo-256x256.png" class="w-full h-full object-contain"></div><div class="bg-white p-3 rounded-2xl text-slate-700 border border-slate-200 text-xs">' + errMsg + '</div></div>';
+          box.scrollTop = box.scrollHeight;
         };
       } else {
         micBtn.addEventListener('click', function () {
@@ -523,11 +538,9 @@ document.querySelectorAll('aside').forEach(function (el) {
             ? 'माफ़ कीजिए, मैं केवल <b>PoshanKosh ऐप</b> (अकाउंट, स्टॉक जोड़ना, एडिट करना, कैशबुक, वाउचर, बैकअप, कहानी और 119 रुपये प्लान) से जुड़ी सहायता कर सकती हूँ। कृपया <a href="how-to-use.html" class="text-brand-green font-bold underline">How to Use</a> या <a href="faqs.html" class="text-brand-green font-bold underline">114+ FAQs</a> देखें!'
             : 'Sorry, I can only help with <b>PoshanKosh® App</b> (Account Setup, Stock Restock, Editing Entries, Cashbook, Vouchers, Backup, Story & ₹119 Plan). Please check <a href="how-to-use.html" class="text-brand-green font-bold underline">How to Use</a> or <a href="faqs.html" class="text-brand-green font-bold underline">114+ FAQs</a>!');
 
-      setTimeout(function () {
-        box.innerHTML += '<div class="flex items-start gap-2.5"><div class="w-7 h-7 rounded-full bg-white flex items-center justify-center p-0.5 border border-slate-200 shrink-0 mt-1"><img src="logo-256x256.png" class="w-full h-full object-contain"></div><div class="bg-white p-3.5 rounded-2xl text-slate-800 border border-slate-200 shadow-2xs max-w-[85%] text-xs sm:text-sm leading-relaxed">' + reply + '</div></div>';
-        box.scrollTop = box.scrollHeight;
-        speakText(reply);
-      }, 220);
+      box.innerHTML += '<div class="flex items-start gap-2.5"><div class="w-7 h-7 rounded-full bg-white flex items-center justify-center p-0.5 border border-slate-200 shrink-0 mt-1"><img src="logo-256x256.png" class="w-full h-full object-contain"></div><div class="bg-white p-3.5 rounded-2xl text-slate-800 border border-slate-200 shadow-2xs max-w-[85%] text-xs sm:text-sm leading-relaxed">' + reply + '</div></div>';
+      box.scrollTop = box.scrollHeight;
+      speakText(reply);
     });
   }
 
