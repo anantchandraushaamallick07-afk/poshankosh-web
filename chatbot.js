@@ -1,3 +1,4 @@
+
 // PoshanKosh® Complete Voice + Message AI Agent (Paste ONLY this block at the end of lang.js)
 (function () {
   function startAIAgent() {
@@ -311,85 +312,4 @@
           if ('speechSynthesis' in window) window.speechSynthesis.cancel();
           if (listening) { rec.stop(); return; }
           try {
-            rec.lang = isHindiMode() ? 'hi-IN' : 'en-IN';
-            listening = true;
-            micBtn.textContent = '🔴';
-            micBtn.classList.add('bg-red-50', 'border-red-400');
-            inp.placeholder = '🎤 सुन रहा हूँ... बोलिए (Listening...)';
-            rec.start();
-          } catch (err) {
-            listening = false;
-            micBtn.textContent = '🎤';
-            inp.placeholder = defaultPlaceholder;
-          }
-        });
-        rec.onresult = function (ev) {
-          inp.value = ev.results[0][0].transcript;
-          freshForm.dispatchEvent(new Event('submit'));
-        };
-        rec.onend = function () {
-          listening = false;
-          micBtn.textContent = '🎤';
-          micBtn.classList.remove('bg-red-50', 'border-red-400');
-          inp.placeholder = defaultPlaceholder;
-        };
-        rec.onerror = function () {
-          listening = false;
-          micBtn.textContent = '🎤';
-          micBtn.classList.remove('bg-red-50', 'border-red-400');
-          inp.placeholder = defaultPlaceholder;
-        };
-      } else {
-        micBtn.addEventListener('click', function () {
-          var msg = '🎤 बोलकर पूछने के लिए कृपया पेज को <b>Chrome / Safari</b> में खोलें या कीबोर्ड के माइक का उपयोग करें।';
-          box.innerHTML += '<div class="flex items-start gap-2.5"><div class="w-7 h-7 rounded-full bg-white flex items-center justify-center p-0.5 border border-slate-200 shrink-0 mt-1"><img src="logo-256x256.png" class="w-full h-full object-contain"></div><div class="bg-white p-3 rounded-2xl text-slate-700 border border-slate-200 text-xs">' + msg + '</div></div>';
-          box.scrollTop = box.scrollHeight;
-          speakText(msg);
-        });
-      }
-    }
-
-    freshForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var raw = inp.value.trim();
-      if (!raw) return;
-      inp.value = '';
-      var safeUser = raw.replace(/</g, '&lt;').replace(/>/g, '&gt;');
-      box.innerHTML += '<div class="flex justify-end"><div class="bg-brand-green text-white p-3 rounded-2xl text-xs sm:text-sm max-w-[85%]">' + safeUser + '</div></div>';
-
-      var words = norm(raw).split(/\s+/).filter(Boolean);
-      var best = null, bestScore = 0;
-      topics.forEach(function (t) {
-        var sc = 0;
-        words.forEach(function (w) {
-          t.k.forEach(function (kw) {
-            if (w === kw || (w.length > 3 && kw.indexOf(w) !== -1) || (kw.length > 3 && w.indexOf(kw) !== -1)) {
-              sc += t.w * 2;
-            } else if (w.length >= 4 && kw.length >= 4 && editDist(w, kw) <= 1) {
-              sc += t.w;
-            }
-          });
-        });
-        if (sc > bestScore) { bestScore = sc; best = t; }
-      });
-
-      var reply = (best && bestScore > 0)
-        ? (typeof best.a === 'function' ? best.a() : best.a)
-        : (isHindiMode()
-            ? 'माफ़ कीजिए, मैं केवल <b>PoshanKosh ऐप</b> (अकाउंट, स्टॉक जोड़ना, एडिट करना, कैशबुक, वाउचर, बैकअप, कहानी AI फीचर्स व ₹119/₹149 प्लान) से जुड़ी सहायता कर सकती हूँ। कृपया <a href="how-to-use.html" class="text-brand-green font-bold underline">How to Use</a> या <a href="faqs.html" class="text-brand-green font-bold underline">114+ FAQs</a> देखें!'
-            : 'Sorry, I can only help with <b>PoshanKosh® App</b> (Account Setup, Stock Restock, Editing Entries, Cashbook, Vouchers, Backup, Story AI Features & ₹119/₹149 Plans). Please check <a href="how-to-use.html" class="text-brand-green font-bold underline">How to Use</a> or <a href="faqs.html" class="text-brand-green font-bold underline">114+ FAQs</a>!');
-
-      setTimeout(function () {
-        box.innerHTML += '<div class="flex items-start gap-2.5"><div class="w-7 h-7 rounded-full bg-white flex items-center justify-center p-0.5 border border-slate-200 shrink-0 mt-1"><img src="logo-256x256.png" class="w-full h-full object-contain"></div><div class="bg-white p-3.5 rounded-2xl text-slate-800 border border-slate-200 shadow-2xs max-w-[85%] text-xs sm:text-sm leading-relaxed">' + reply + '</div></div>';
-        box.scrollTop = box.scrollHeight;
-        speakText(reply);
-      }, 220);
-    });
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', startAIAgent);
-  } else {
-    startAIAgent();
-  }
-})();
+            rec.lang = i
