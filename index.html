@@ -1541,39 +1541,6 @@
       document.querySelectorAll('.lang-text').forEach(el => el.textContent = isHi ? el.dataset.hi : el.dataset.en);
     });
 
-    // AI CHATBOT (AI SAHAYAK)
-    const chatKnowledge = [
-      { k: ['rate', 'rates', 'दर', 'cost'], a: '<b>संशोधित PM-POSHAN कुकिंग कॉस्ट दरें:</b><br>• <b>प्राथमिक (1 से 5):</b> <b>₹6.78 प्रति छात्र</b> प्रतिदिन।<br>• <b>उच्च प्राथमिक (6 से 8):</b> <b>₹10.17 प्रति छात्र</b> प्रतिदिन।<br>PoshanKosh में यह दरें इनबिल्ट हैं।' },
-      { k: ['chakhna', 'चखना', 'tasting'], a: '<b>चखना पंजी (Food Tasting Register):</b><br>भोजन परोसने से पूर्व शिक्षक/SMC सदस्य द्वारा भोजन चखकर स्वाद, स्वच्छता व गुणवत्ता का दैनिक प्रमाणन दर्ज किया जाता है।' },
-      { k: ['ragi', 'रागी', 'मड़ुआ'], a: '<b>रागी पंजी (Ragi / Millet Register):</b><br>श्री अन्न योजना अंतर्गत पोषक लड्डुओं के वितरण, दैनिक ग्राम खपत, आवक व स्टॉक बैलेंस की अलग पंजी।' },
-      { k: ['iron', 'आयरन', 'ifa'], a: '<b>आयरन व फोलिक एसिड पंजी (IFA):</b><br>WIFS योजना अंतर्गत प्राथमिक (गुलाबी) व उच्च प्राथमिक (नीली) गोलियों का साप्ताहिक वितरण व मासिक स्टॉक बैलेंस।' },
-      { k: ['register', 'registers', '12', 'पंजी'], a: '<b>PoshanKosh की 12 पंजियाँ:</b><br>1. दैनिक व्यय 2. व्यय/रोकड़ बही 3. रागी 4. अंडा/फल 5. आयरन 6. चखना 7. दैनिक हाजिरी 8. साप्ताहिक 9. मासिक MPR 10. त्रैमासिक UC 11. अर्द्धवार्षिक 12. वार्षिक ऑडिट।' },
-      { k: ['rice', 'चावल', 'gram'], a: '<b>चावल का सरकारी मानक:</b><br>• <b>प्राथमिक:</b> 100 ग्राम प्रति छात्र<br>• <b>उच्च प्राथमिक:</b> 150 ग्राम प्रति छात्र प्रतिदिन।' },
-      { k: ['voucher', 'vouchers', '4', 'वाउचर'], a: '<b>4 मासिक वाउचर्स:</b><br>1. राशन (Vr 1) 2. अंडा/फल (Vr 2) 3. सब्जी (Vr 3) 4. ईंधन (Vr 4) - सभी कैशबुक खर्च में स्वतः दर्ज होते हैं।' }
-    ];
-    document.getElementById('ai-chat-form')?.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const inp = document.getElementById('ai-input');
-      const val = inp.value.trim().toLowerCase();
-      if (!val) return;
-      const box = document.getElementById('chat-messages');
-      box.innerHTML += `<div class="flex justify-end"><div class="bg-brand-green text-white p-3 rounded-2xl text-xs sm:text-sm max-w-[85%]">${inp.value}</div></div>`;
-      const match = chatKnowledge.find(item => item.k.some(key => val.includes(key)));
-      setTimeout(() => {
-        const resp = match ? match.a : `PoshanKosh संशोधित दरों (₹6.78 / ₹10.17), 12 पंजियों और 4 मासिक वाउचर्स का स्वतः हिसाब रखता है। अधिक जानकारी के लिए '12 Registers' या 'FAQs' देखें।`;
-        box.innerHTML += `<div class="flex items-start gap-2.5"><div class="w-7 h-7 rounded-full bg-white flex items-center justify-center p-0.5 border border-slate-200 shrink-0 mt-1"><img src="logo-256x256.png" class="w-full h-full object-contain"></div><div class="bg-white p-3.5 rounded-2xl text-slate-800 border border-slate-200 shadow-2xs max-w-[85%] text-xs sm:text-sm leading-relaxed">${resp}</div></div>`;
-        box.scrollTop = box.scrollHeight;
-      }, 300);
-      inp.value = '';
-    });
-    document.querySelectorAll('.quick-chip').forEach(c => c.addEventListener('click', () => {
-      document.getElementById('ai-input').value = c.dataset.q;
-      document.getElementById('ai-chat-form').dispatchEvent(new Event('submit'));
-    }));
-    document.getElementById('clear-chat-btn')?.addEventListener('click', () => {
-      document.getElementById('chat-messages').innerHTML = `<div class="flex items-start gap-2.5"><div class="w-7 h-7 rounded-full bg-white flex items-center justify-center p-0.5 border border-slate-200 shrink-0 mt-1"><img src="logo-256x256.png" class="w-full h-full object-contain"></div><div class="bg-white p-3.5 rounded-2xl text-slate-800 border border-slate-200 shadow-2xs max-w-[85%] leading-relaxed"><p>Chat cleared. Ask any question regarding revised rates, 12 registers, or PM-POSHAN! 🙏</p></div></div>`;
-    });
-  
     // SINGLE-FILE SPA HASH ROUTER (#home, #privacy, #terms, #about, #contact, #journey, #how-to-use, #how-beneficial)
     const SPA_VIEWS = ['home','privacy','terms','about','contact','journey','how-to-use','how-beneficial'];
     const HOME_SECTIONS = ['features','registers','ai-assistant','calculator','vouchers','faqs','previews','pricing','download'];
@@ -1644,4 +1611,5 @@
         }).catch(function () {});
     })();
   </script>
+  <script src="lang.js"></script>
 </body>
