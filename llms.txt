@@ -1,0 +1,26 @@
+# PoshanKosh® (poshankosh.com)
+> India's First AI-Powered Offline PM-POSHAN (Mid-Day Meal) Management Assistant App for School Teachers & Headmasters.
+
+## What PoshanKosh Is (and Is Not)
+- PoshanKosh® (`in.poshankosh.teacher`) is an **independent, private utility Android app** built for Indian government and aided school teachers/headmasters.
+- It is **not** an official Government of India, Ministry of Education, or State Education Department app.
+- **Zero Central Financial Storage:** All school attendance, cashbook, stock, and bank records stay 100% offline on the user's device (Encrypted SQLite) and the user's own Google Drive (`drive.appdata`).
+
+## Core Features
+- **Offline Voice & Text AI Assistant (Hindi, English, Hinglish):** Multitasking hands-free assistant for attendance, student names, stock, expenses, and reports.
+- **AI Student Attendance + Auto-Sync:** Class-by-class attendance (ST/SC/OBC/General) that automatically updates Daily Expenditure, Egg (Monday/Friday, shifting to Tuesday/Saturday on holidays), Ragi, and Iron Tablet (Class 1–12 on Wednesday/Thursday).
+- **3-Way Student Name Entry:** Add or correct student names via Class+Roll, Old-to-New replacement, or instant voice correction (`"X nahi Y"`).
+- **4-Column Chakhna Panji:** Date, Cook Name, Menu, and Remarks, pre-filled and synced with School Calendar holidays.
+- **Complete Registers & Finance:** Rice Stock (Opening Balance, in-place Edit/Delete), Cooking Cost (₹6.78 Primary / ₹10.17 Upper Primary), Other Scheme Amount, Bank Withdrawal (with Cheque No.), Cashbook reconciliation, and 1-Click MPR / Form-II PDF & Excel.
+- **5 Offline AI Power Tools:** Bill/Parchi Photo OCR, Smart Audit, Ration Forecast, 1-Tap BRC WhatsApp Report, and Voice Undo.
+- **Coming Soon:** Student Report Card & Percentage Generator.
+
+## Pricing
+- **30-Day Free Trial (₹0):** Full Manual Registers + Full Offline AI Assistant free for 30 days.
+- **₹119 / year (Standard Manual Plan):** All 12+ manual registers, MPR/Form-II PDF & Excel, and 1st AI report free (₹30 per extra AI report).
+- **₹149 / year (AI Pro Plan):** Everything in ₹119 plus unlimited Offline Voice & Text AI, AI Attendance, 3-Way Student Name Entry, Bill Photo OCR, Smart Audit, Ration Forecast & 1-Tap BRC WhatsApp Reports.
+
+## Official Links & Support
+- Website: https://poshankosh.com
+- Direct APK Download: https://github.com/anantchandraushaamallick07-afk/poshankosh-web/releases/latest/download/PoshanKosh-0.16.4-release-arm64.apk
+- Support Email: support@poshankosh.com
