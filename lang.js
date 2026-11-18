@@ -152,7 +152,7 @@ document.querySelectorAll('aside').forEach(function (el) {
   }
 });
 
-// PoshanKosh® Complete Voice + Message AI Agent (Paste ONLY this block at the end of lang.js)
+// PoshanKosh® Complete Voice + Message AI Agent (Short, Crisp & Humanoid)
 (function () {
   function startAIAgent() {
     if (location.pathname.indexOf('faqs') !== -1) {
@@ -192,7 +192,6 @@ document.querySelectorAll('aside').forEach(function (el) {
       return isHindiMode();
     }
 
-    // Natural Fast Voice Output (Gemini-style responsive Indian voice)
     var voiceOn = true;
     var hiVoice = null, enVoice = null;
     function pickBestVoice(voices, langRegex) {
@@ -227,7 +226,7 @@ document.querySelectorAll('aside').forEach(function (el) {
         u.lang = hasHindi ? 'hi-IN' : 'en-IN';
         if (hasHindi && hiVoice) u.voice = hiVoice;
         if (!hasHindi && enVoice) u.voice = enVoice;
-        u.rate = 1.06;
+        u.rate = 1.08;
         u.pitch = 1.02;
         window.speechSynthesis.speak(u);
       } catch (_) {}
@@ -236,13 +235,13 @@ document.querySelectorAll('aside').forEach(function (el) {
     function getGreeting(hi) {
       var hr = new Date().getHours();
       if (hi) {
-        if (hr < 12) return 'सुप्रभात! 🙏';
-        if (hr < 17) return 'नमस्कार! 🙏';
-        return 'शुभ संध्या! 🙏';
+        if (hr >= 5 && hr < 12) return 'सुप्रभात!';
+        if (hr >= 12 && hr < 17) return 'नमस्कार!';
+        return 'नमस्ते!';
       }
-      if (hr < 12) return 'Good Morning! 🙏';
-      if (hr < 17) return 'Good Afternoon! 🙏';
-      return 'Good Evening! 🙏';
+      if (hr >= 5 && hr < 12) return 'Good morning!';
+      if (hr >= 12 && hr < 17) return 'Good afternoon!';
+      return 'Hello!';
     }
 
     function norm(s) {
@@ -274,7 +273,6 @@ document.querySelectorAll('aside').forEach(function (el) {
       return dp[a.length][b.length];
     }
 
-    // Conversation Context for Humanoid Multitasking & Clarification
     var ctx = { pendingClarify: null, lastTopic: null };
 
     var topics = [
@@ -283,8 +281,8 @@ document.querySelectorAll('aside').forEach(function (el) {
         k: ['hello', 'hi', 'hey', 'hii', 'namaste', 'hlo', 'good morning', 'good afternoon', 'good evening', 'नमस्ते', 'हेलो', 'सुप्रभात', 'kaise ho', 'kaisa hai'],
         a: function (hi) {
           return hi
-            ? '<b>' + getGreeting(true) + '</b> मैं <b>PoshanKosh AI Sahayak</b> हूँ! आप मुझसे बोलकर या लिखकर कुछ भी पूछ सकते हैं — जैसे <b>₹119 vs ₹149 प्लान</b>, <b>AI हाजिरी</b>, <b>3-Way नाम एंट्री</b>, <b>चखना पंजी</b>, या <b>चावल/अंडा/रागी स्टॉक</b>। बताइए, क्या मदद करूँ?'
-            : '<b>' + getGreeting(false) + '</b> I am <b>PoshanKosh AI Sahayak</b>! Ask me anything by voice or text — like <b>₹119 vs ₹149 plans</b>, <b>AI Attendance</b>, <b>3-Way Student Name Entry</b>, <b>Chakhna Panji</b>, or <b>Rice/Egg/Ragi Stock</b>. How can I help you?';
+            ? getGreeting(true) + ' बताइए, PoshanKosh में क्या मदद करूँ?'
+            : getGreeting(false) + ' How can I help you with PoshanKosh?';
         }
       },
       {
@@ -293,8 +291,8 @@ document.querySelectorAll('aside').forEach(function (el) {
         a: function (hi) {
           ctx.pendingClarify = null;
           return hi
-            ? 'बहुत बढ़िया! 🙏 क्या किसी और काम या दूसरे रजिस्टर (जैसे हाजिरी, स्टॉक, चखना पंजी या प्लान) में आपकी सहायता करूँ?'
-            : 'All set! 🙏 Is there anything else I can help you with — like attendance, stock, Chakhna Panji, or pricing?';
+            ? 'जी ठीक है! क्या किसी और काम में सहायता करूँ?'
+            : 'Got it! Need help with anything else?';
         }
       },
       {
@@ -302,8 +300,8 @@ document.querySelectorAll('aside').forEach(function (el) {
         k: ['119', '149', 'price', 'plan', 'trial', 'free', 'difference', 'pro', 'standard', 'प्लान', 'अंतर', 'ट्रायल', 'फ्री'],
         a: function (hi) {
           return hi
-            ? '<b>PoshanKosh प्लान और अंतर:</b><br>• <b>30-Day Free Trial (₹0):</b> सभी Manual रजिस्टर + पूरा Offline AI फ्री।<br>• <b>₹119/वर्ष (Standard):</b> सभी 12+ पंजियाँ, MPR/Form-II PDF, और 1st AI रिपोर्ट फ्री (अतिरिक्त AI रिपोर्ट ₹30)।<br>• <b>₹149/वर्ष (AI Pro):</b> ₹119 के सभी फीचर्स + <b>Unlimited Offline Voice/Text AI</b>, AI हाजिरी, 3-Way नाम एंट्री, Bill OCR, Smart Audit, Ration Forecast व BRC WhatsApp रिपोर्ट!<br>👉 <a href="#pricing" class="text-brand-green font-bold underline">₹119 vs ₹149 तुलना देखें</a>'
-            : '<b>PoshanKosh Plans & Difference:</b><br>• <b>30-Day Free Trial (₹0):</b> Full Manual Registers + Full Offline AI Free.<br>• <b>₹119/year (Standard):</b> All 12+ registers, MPR/Form-II PDFs, and 1st AI report free (₹30 per extra AI report).<br>• <b>₹149/year (AI Pro):</b> Everything in ₹119 + <b>Unlimited Offline Voice & Text AI</b>, AI Attendance, 3-Way Student Name Entry, Bill OCR, Smart Audit, Ration Forecast & 1-Tap BRC WhatsApp Report!<br>👉 <a href="#pricing" class="text-brand-green font-bold underline">See ₹119 vs ₹149 Comparison</a>';
+            ? '<b>30 दिन Free Trial</b> के बाद दो प्लान हैं: <b>₹119/वर्ष</b> (सिर्फ Manual रजिस्टर, 1st AI रिपोर्ट फ्री) और <b>₹149/वर्ष</b> (Manual + Unlimited Offline Voice/Text AI, OCR, Smart Audit व BRC रिपोर्ट)। <a href="#pricing" class="text-brand-green font-bold underline">तुलना देखें</a>'
+            : 'After the <b>30-day Free Trial</b>: <b>₹119/yr</b> covers all manual registers (1st AI report free; ₹30/extra), while <b>₹149/yr</b> adds <b>Unlimited Offline AI</b>, OCR, Smart Audit & BRC reports. <a href="#pricing" class="text-brand-green font-bold underline">Compare</a>';
         }
       },
       {
@@ -311,8 +309,8 @@ document.querySelectorAll('aside').forEach(function (el) {
         k: ['ai', 'voice', 'ocr', 'audit', 'forecast', 'brc', 'whatsapp', 'undo', 'assistant', 'humanoid', 'multitask', 'एआई', 'वॉइस', 'ऑडिट'],
         a: function (hi) {
           return hi
-            ? '<b>PoshanKosh — भारत का पहला AI-Powered MDM Assistant:</b><br>• <b>AI हाजिरी:</b> क्लास-वाइज बोलकर हाजिरी दर्ज करें और एक साथ कई काम (multitask) करें।<br>• <b>3-Way नाम एंट्री:</b> Class+Roll, Old→New, या तुरंत "X नहीं Y" बोलकर छात्र का नाम बदलें।<br>• <b>5 ऑफलाइन पावर टूल्स:</b> Bill Photo OCR, Smart Audit, Ration Forecast, 1-Tap BRC WhatsApp रिपोर्ट और Voice Undo!<br>👉 <a href="#previews" class="text-brand-green font-bold underline">Live AI Demo देखें</a>'
-            : '<b>PoshanKosh — India\'s First AI-Powered MDM Assistant:</b><br>• <b>AI Attendance:</b> Class-by-class voice attendance with seamless task switching.<br>• <b>3-Way Student Name Entry:</b> Update names via Class+Roll, Old→New, or instant "X not Y" correction.<br>• <b>5 Offline Power Tools:</b> Bill Photo OCR, Smart Audit, Ration Forecast, 1-Tap BRC WhatsApp Report & Voice Undo!<br>👉 <a href="#previews" class="text-brand-green font-bold underline">Try Live AI Demo</a>';
+            ? 'PoshanKosh AI से आप बोलकर <b>हाजिरी, छात्र नाम एंट्री, स्टॉक, चखना पंजी</b> कर सकते हैं — साथ ही <b>Bill OCR, Smart Audit, Ration Forecast, 1-Tap BRC रिपोर्ट और Voice Undo</b> भी ऑफलाइन चलते हैं।'
+            : 'PoshanKosh AI handles voice <b>attendance, student names, stock, and Chakhna Panji</b> offline — plus <b>Bill OCR, Smart Audit, Ration Forecast, BRC WhatsApp Report & Voice Undo</b>.';
         }
       },
       {
@@ -320,8 +318,8 @@ document.querySelectorAll('aside').forEach(function (el) {
         k: ['student', 'roll', 'caste', 'st', 'sc', 'obc', 'general', 'boy', 'girl', 'रोल', 'जाति', 'लड़का', 'लड़की'],
         a: function (hi) {
           return hi
-            ? '<b>3-Way छात्र नाम व जाति एंट्री:</b><br>1. <b>Class + Roll:</b> <i>"कक्षा 2 रोल 1 नितेश कुमार ST Boy"</i> बोलें।<br>2. <b>Old → New:</b> पुराना नाम बदलकर नया नाम बोलें।<br>3. <b>तुरंत सुधार:</b> गलत नाम आने पर सीधे <i>"नीत नहीं नितेश कुमार"</i> बोल दें — AI तुरंत सुधार देगा!'
-            : '<b>3-Way Student Name & Category Entry:</b><br>1. <b>Class + Roll:</b> Say <i>"Class 2 Roll 1 Nitesh Kumar ST Boy"</i>.<br>2. <b>Old → New:</b> Replace an existing student name directly.<br>3. <b>Instant Fix:</b> Just say <i>"Not Neet, Nitesh Kumar"</i> and the AI fixes it immediately!';
+            ? 'नाम एंट्री के 3 तरीके हैं: <b>Class+Roll</b> बोलकर, <b>Old→New</b> बदलकर, या गलत नाम पर तुरंत <i>"X नहीं Y"</i> बोलकर।'
+            : '3 ways to update student names: speak <b>Class+Roll</b>, replace <b>Old→New</b>, or say <i>"Not X, Y"</i> to fix immediately.';
         }
       },
       {
@@ -329,8 +327,8 @@ document.querySelectorAll('aside').forEach(function (el) {
         k: ['attendance', 'daily', 'class', 'हाजिरी', 'दैनिक', 'क्लास'],
         a: function (hi) {
           return hi
-            ? '<b>AI व मैनुअल दैनिक हाजिरी:</b><br>आप एक-एक क्लास (Class-by-Class) की हाजिरी भी सेव कर सकते हैं। हाजिरी सेव होते ही <b>दैनिक व्यय, चावल, अंडा, रागी और आयरन टैबलेट</b> पंजियाँ अपने आप अपडेट हो जाती हैं!<br>👉 <a href="faqs.html#q13" class="text-brand-green font-bold underline">FAQ #13 देखें</a>'
-            : '<b>AI & Manual Daily Attendance:</b><br>You can save attendance class-by-class. As soon as you save, <b>Daily Expenditure, Rice, Egg, Ragi, and Iron Tablet</b> registers auto-sync!<br>👉 <a href="faqs.html#q13" class="text-brand-green font-bold underline">See FAQ #13</a>';
+            ? 'आप एक-एक क्लास की हाजिरी भी सेव कर सकते हैं। सेव करते ही <b>दैनिक व्यय, चावल, अंडा, रागी और आयरन टैबलेट</b> अपने आप अपडेट हो जाते हैं।'
+            : 'You can save attendance class-by-class — <b>Daily Expenditure, Rice, Egg, Ragi, and Iron Tablet</b> auto-sync immediately.';
         }
       },
       {
@@ -338,8 +336,8 @@ document.querySelectorAll('aside').forEach(function (el) {
         k: ['chakhna', 'cook', 'menu', 'remarks', 'holiday', 'calendar', 'चखना', 'रसोइया', 'मेनू', 'छुट्टी'],
         a: function (hi) {
           return hi
-            ? '<b>नया 4-कॉलम चखना पंजी:</b><br>फ़ॉर्मेट: <b>दिनांक | रसोइया का नाम | मेनू | अभियुक्ति (Remarks)</b>। इसमें महीने की सभी तारीखें पहले से भरी रहती हैं और <b>School Calendar</b> की छुट्टियाँ अपने आप सिंक हो जाती हैं — आप AI या मैनुअल दोनों से एंट्री कर सकते हैं!'
-            : '<b>New 4-Column Chakhna Panji:</b><br>Format: <b>Date | Cook Name | Menu | Remarks</b>. All dates are pre-filled and automatically synced with your <b>School Calendar</b> holidays, supporting both AI voice and manual entry!';
+            ? '<b>4-कॉलम चखना पंजी:</b> दिनांक, रसोइया का नाम, मेनू और अभियुक्ति। तारीखें पहले से भरी रहती हैं और कैलेंडर की छुट्टियाँ अपने आप सिंक होती हैं।'
+            : '<b>4-Column Chakhna Panji:</b> Date, Cook Name, Menu, and Remarks — pre-filled with dates and synced with school calendar holidays.';
         }
       },
       {
@@ -347,8 +345,8 @@ document.querySelectorAll('aside').forEach(function (el) {
         k: ['egg', 'ragi', 'iron', 'ifa', 'monday', 'friday', 'tuesday', 'saturday', 'wednesday', 'thursday', 'रागी', 'आयरन', 'गोली'],
         a: function (hi) {
           return hi
-            ? '<b>अंडा, रागी व आयरन टैबलेट नियम:</b><br>• <b>अंडा/फल:</b> सोमवार व शुक्रवार (छुट्टी होने पर अपने आप मंगलवार व शनिवार को शिफ्ट)।<br>• <b>रागी:</b> दैनिक/नियमानुसार ऑटो-सिंक।<br>• <b>आयरन टैबलेट (IFA):</b> कक्षा 1 से 12 के लिए बुधवार/गुरुवार को ऑटो-सिंक!'
-            : '<b>Egg, Ragi & Iron Tablet Rules:</b><br>• <b>Egg/Fruit:</b> Monday & Friday (automatically shifts to Tuesday & Saturday on holidays).<br>• <b>Ragi:</b> Auto-synced with attendance.<br>• <b>Iron Tablet (IFA):</b> Auto-synced for Classes 1–12 on Wednesday/Thursday!';
+            ? '<b>अंडा</b> सोम/शुक्र को (छुट्टी पर मंगल/शनि शिफ्ट), <b>रागी</b> रोज़ाना/नियमानुसार, और <b>आयरन टैबलेट</b> कक्षा 1–12 के लिए बुध/गुरु को हाजिरी से ऑटो-सिंक होता है।'
+            : '<b>Egg</b> syncs Mon/Fri (shifts to Tue/Sat on holidays), <b>Ragi</b> syncs per rule, and <b>Iron Tablet</b> syncs Wed/Thu for Classes 1–12.';
         }
       },
       {
@@ -356,8 +354,8 @@ document.querySelectorAll('aside').forEach(function (el) {
         k: ['stock', 'restock', 'rice', 'opening', 'edit', 'delete', 'स्टॉक', 'जोड़', 'ओपनिंग', 'डिलीट'],
         a: function (hi) {
           return hi
-            ? '<b>चावल व स्टॉक एंट्री:</b><br>Registers → Rice Stock में ऊपर <b>3-डॉट (⋮) → Quick Restock</b> से KG–5 और 6–8 जोड़ें। किसी भी गलत एंट्री पर सीधे <b>Edit</b> या <b>Delete</b> कर सकते हैं — या AI से बोलकर सीधे अपडेट करें!'
-            : '<b>Rice & Stock Entry:</b><br>Open Registers → Rice Stock → <b>3-dot (⋮) → Quick Restock</b> for KG–5 & 6–8, or edit/delete any entry directly in-place — or just speak to the AI Assistant!';
+            ? '<b>Registers → Rice Stock → ⋮ (Quick Restock)</b> से KG–5 व 6–8 जोड़ें, या वहीं किसी भी एंट्री को सीधे Edit/Delete करें — AI से बोलकर भी अपडेट कर सकते हैं।'
+            : 'Go to <b>Registers → Rice Stock → ⋮ (Quick Restock)</b> to add KG–5 & 6–8, edit/delete any row in-place, or update via Voice AI.';
         }
       },
       {
@@ -365,8 +363,8 @@ document.querySelectorAll('aside').forEach(function (el) {
         k: ['cashbook', 'bank', 'withdrawal', 'cheque', 'scheme', 'other', 'reconcile', 'कैशबुक', 'बैंक', 'निकासी', 'चेक', 'योजना'],
         a: function (hi) {
           return hi
-            ? '<b>रोकड़ बही, बैंक निकासी व अन्य योजना:</b><br>• <b>Withdrawal:</b> Cheque No. सहित बैंक निकासी डालें — Cashbook में अपने आप कॉन्ट्रा एंट्री होगी।<br>• <b>Other Scheme Amount:</b> विशेष योजना की राशि व खर्च अलग से ट्रैक व Settle करें।<br>• <b>Cashbook:</b> दैनिक व्यय अपने आप Cash-in-Hand से घटता है और 100% बैंक मिलान होता है!'
-            : '<b>Cashbook, Withdrawal & Other Schemes:</b><br>• <b>Withdrawal:</b> Enter bank withdrawals with Cheque No. for automatic contra entries.<br>• <b>Other Scheme Amount:</b> Track & settle special scheme grants separately.<br>• <b>Cashbook:</b> Daily expenditure auto-deducts from Cash-in-Hand for 100% bank reconciliation!';
+            ? '<b>Withdrawal</b> में Cheque No. डालने पर Cashbook में कॉन्ट्रा एंट्री अपने आप होती है, <b>Other Scheme</b> अलग ट्रैक होता है, और दैनिक व्यय Cash-in-Hand से खुद घटता है।'
+            : '<b>Withdrawals</b> with Cheque No. auto-post contra entries in Cashbook, <b>Other Schemes</b> track separately, and Daily Expense auto-deducts from Cash-in-Hand.';
         }
       },
       {
@@ -374,8 +372,8 @@ document.querySelectorAll('aside').forEach(function (el) {
         k: ['6.78', '10.17', 'cooking', '100', '150', 'दर', 'कुकिंग'],
         a: function (hi) {
           return hi
-            ? '<b>PM-POSHAN मानक:</b> प्राथमिक (1–5) के लिए <b>₹6.78</b> व 100 ग्राम चावल, तथा उच्च प्राथमिक (6–8) के लिए <b>₹10.17</b> व 150 ग्राम चावल प्रति छात्र प्रतिदिन इनबिल्ट हैं।<br>👉 <a href="#calculator" class="text-brand-green font-bold underline">Live Calculator देखें</a>'
-            : '<b>PM-POSHAN Norms:</b> Primary (1–5) uses <b>₹6.78</b> & 100g rice, and Upper Primary (6–8) uses <b>₹10.17</b> & 150g rice per student daily.<br>👉 <a href="#calculator" class="text-brand-green font-bold underline">Try Live Calculator</a>';
+            ? 'प्राथमिक (1–5) के लिए <b>₹6.78 + 100g चावल</b> और उच्च प्राथमिक (6–8) के लिए <b>₹10.17 + 150g चावल</b> प्रति छात्र प्रतिदिन तय है।'
+            : 'Primary (1–5) uses <b>₹6.78 + 100g rice</b> and Upper Primary (6–8) uses <b>₹10.17 + 150g rice</b> per student daily.';
         }
       },
       {
@@ -383,8 +381,8 @@ document.querySelectorAll('aside').forEach(function (el) {
         k: ['government', 'privacy', 'offline', 'data', 'server', 'secure', 'drive', 'बैकअप', 'प्राइवेसी', 'सरकारी'],
         a: function (hi) {
           return hi
-            ? '<b>PoshanKosh एक स्वतंत्र शिक्षक ऐप है (सरकारी ऐप नहीं)</b>। यह 100% ऑफलाइन चलता है — आपका सारा स्कूल व वित्तीय डेटा सिर्फ आपके फोन और आपके अपने Google Drive में रहता है, हमारे सर्वर पर नहीं।'
-            : '<b>PoshanKosh is an independent teacher utility app (not a government app)</b>. It works 100% offline — all financial and school data stays strictly on your device and your own Google Drive.';
+            ? 'PoshanKosh एक स्वतंत्र ऐप है (सरकारी नहीं) और 100% ऑफलाइन चलता है — आपका डेटा सिर्फ आपके फोन व Google Drive में रहता है।'
+            : 'PoshanKosh is an independent app (not a government portal) and works 100% offline — your data stays only on your device and Google Drive.';
         }
       },
       {
@@ -392,8 +390,8 @@ document.querySelectorAll('aside').forEach(function (el) {
         k: ['download', 'install', 'support', 'email', 'contact', 'डाउनलोड', 'इंस्टॉल', 'संपर्क', 'मदद'],
         a: function (hi) {
           return hi
-            ? 'लेटेस्ट Android APK आप सीधे <a href="#download" class="text-brand-green font-bold underline">Download Section</a> से बिना किसी नए टैब के डाउनलोड कर सकते हैं। किसी भी सहायता के लिए लिखें: <b>support@poshankosh.com</b>'
-            : 'You can download the latest Android APK directly from the <a href="#download" class="text-brand-green font-bold underline">Download Section</a> without leaving this page. For help, email <b>support@poshankosh.com</b>.';
+            ? 'नीचे <a href="#download" class="text-brand-green font-bold underline">Download Section</a> से सीधे APK डाउनलोड करें। मदद के लिए: <b>support@poshankosh.com</b>'
+            : 'Download the APK directly from the <a href="#download" class="text-brand-green font-bold underline">Download Section</a>. Support: <b>support@poshankosh.com</b>.';
         }
       },
       {
@@ -401,8 +399,8 @@ document.querySelectorAll('aside').forEach(function (el) {
         k: ['report card', 'marksheet', 'percentage', 'marks', 'future', 'रिपोर्ट कार्ड', 'प्रतिशत'],
         a: function (hi) {
           return hi
-            ? '🚀 <b>Student Report Card & Percentage Generator</b> जल्द ही अगले अपडेट में आने वाला है — जिससे छात्रों का रिजल्ट और प्रतिशत भी ऐप के अंदर बन सकेगा!'
-            : '🚀 <b>Student Report Card & Percentage Generator</b> is coming soon in an upcoming update so you can generate student marksheets and percentages right inside PoshanKosh!';
+            ? '<b>Student Report Card & Percentage</b> फीचर अगले अपडेट में आने वाला है।'
+            : '<b>Student Report Card & Percentage</b> generation is coming in an upcoming update.';
         }
       }
     ];
@@ -412,9 +410,8 @@ document.querySelectorAll('aside').forEach(function (el) {
     var freshForm = form.cloneNode(true);
     form.parentNode.replaceChild(freshForm, form);
     inp = document.getElementById('ai-input');
-    var defaultPlaceholder = inp.getAttribute('placeholder') || 'Type or speak your query...';
+    var defaultPlaceholder = inp.getAttribute('placeholder') || 'Type or speak...';
 
-    // Always render Mic (🎤) + Voice Toggle (🔊) in UI
     if (!document.getElementById('pk-mic-btn')) {
       var micBtn = document.createElement('button');
       micBtn.id = 'pk-mic-btn';
@@ -454,7 +451,7 @@ document.querySelectorAll('aside').forEach(function (el) {
             listening = true;
             micBtn.textContent = '🔴';
             micBtn.classList.add('bg-red-50', 'border-red-400');
-            inp.placeholder = 'सुन रही हूँ... बोलिए (Listening...)';
+            inp.placeholder = 'सुन रही हूँ...';
             rec.start();
           } catch (_) { listening = false; }
         });
@@ -479,7 +476,7 @@ document.querySelectorAll('aside').forEach(function (el) {
         };
       } else {
         micBtn.addEventListener('click', function () {
-          var msg = '🎤 बोलकर पूछने के लिए कृपया पेज को <b>Chrome / Safari</b> में खोलें या मोबाइल कीबोर्ड का माइक उपयोग करें।';
+          var msg = '🎤 बोलकर पूछने के लिए कृपया Chrome या Safari में खोलें।';
           box.innerHTML += '<div class="flex items-start gap-2.5"><div class="w-7 h-7 rounded-full bg-white flex items-center justify-center p-0.5 border border-slate-200 shrink-0 mt-1"><img src="logo-256x256.png" class="w-full h-full object-contain"></div><div class="bg-white p-3 rounded-2xl text-slate-700 border border-slate-200 text-xs">' + msg + '</div></div>';
           box.scrollTop = box.scrollHeight;
           speakText(msg);
@@ -487,7 +484,6 @@ document.querySelectorAll('aside').forEach(function (el) {
       }
     }
 
-    // Wire Quick Chips & Clear Button cleanly to new form
     document.querySelectorAll('.quick-chip').forEach(function (c) {
       var nc = c.cloneNode(true);
       c.parentNode.replaceChild(nc, c);
@@ -508,9 +504,8 @@ document.querySelectorAll('aside').forEach(function (el) {
 
       var nRaw = norm(raw);
       var words = nRaw.split(/\s+/).filter(Boolean);
-
-      // Handle short/ambiguous follow-ups or clarifying questions
       var reply = null;
+
       if (ctx.pendingClarify === 'entry_type') {
         if (/attendance|हाजिरी/.test(nRaw)) reply = topics.find(function (t) { return t.id === 'attendance'; }).a(hi);
         else if (/student|रोल|नाम/.test(nRaw)) reply = topics.find(function (t) { return t.id === 'student_name'; }).a(hi);
@@ -522,8 +517,8 @@ document.querySelectorAll('aside').forEach(function (el) {
       if (!reply && /^(entry|help|madad|problem|dikkat|register|samasya|kya hai|batao)$/i.test(nRaw)) {
         ctx.pendingClarify = 'entry_type';
         reply = hi
-          ? 'ज़रूर! थोड़ा स्पष्ट बताइए — आप किस बारे में जानना चाहते हैं: <b>(1) AI हाजिरी</b>, <b>(2) छात्र नाम एंट्री</b>, <b>(3) चावल/अंडा/रागी स्टॉक</b>, या <b>(4) चखना पंजी / ₹119–₹149 प्लान</b>?'
-          : 'Sure! Could you clarify which topic you want help with: <b>(1) AI Attendance</b>, <b>(2) Student Name Entry</b>, <b>(3) Rice/Egg/Ragi Stock</b>, or <b>(4) Chakhna Panji / ₹119–₹149 Plans</b>?';
+          ? 'किस बारे में जानना है — <b>हाजिरी</b>, <b>छात्र नाम</b>, <b>स्टॉक</b>, या <b>₹119/₹149 प्लान</b>?'
+          : 'Which topic do you need — <b>Attendance</b>, <b>Student Names</b>, <b>Stock</b>, or <b>₹119/₹149 Plans</b>?';
       }
 
       if (!reply) {
@@ -562,15 +557,15 @@ document.querySelectorAll('aside').forEach(function (el) {
           ctx.lastTopic = best.id;
           reply = typeof best.a === 'function' ? best.a(hi) : best.a;
         } else if (faqBest && faqScore >= 4) {
-          reply = '<b>' + faqBest.q + '</b><br>' + faqBest.a + '<br>👉 <a href="faqs.html#' + faqBest.id + '" class="text-brand-green font-bold underline">' + faqBest.id.toUpperCase() + ' देखें</a>';
+          reply = '<b>' + faqBest.q + '</b><br>' + faqBest.a + ' <a href="faqs.html#' + faqBest.id + '" class="text-brand-green font-bold underline">' + faqBest.id.toUpperCase() + '</a>';
         } else if (best && bestScore > 0) {
           ctx.lastTopic = best.id;
           reply = typeof best.a === 'function' ? best.a(hi) : best.a;
         } else {
           ctx.pendingClarify = 'entry_type';
           reply = hi
-            ? 'मैं आपकी पूरी बात समझना चाहती हूँ — क्या आप <b>AI हाजिरी</b>, <b>छात्र नाम एंट्री</b>, <b>चावल/अंडा/रागी स्टॉक</b>, <b>चखना पंजी</b>, या <b>₹119 vs ₹149 प्लान</b> के बारे में पूछ रहे हैं?'
-            : 'I want to make sure I answer accurately — are you asking about <b>AI Attendance</b>, <b>Student Name Entry</b>, <b>Rice/Egg/Ragi Stock</b>, <b>Chakhna Panji</b>, or <b>₹119 vs ₹149 Pricing</b>?';
+            ? 'थोड़ा और स्पष्ट बताएं — क्या आप <b>हाजिरी</b>, <b>नाम एंट्री</b>, <b>स्टॉक</b>, <b>चखना पंजी</b>, या <b>₹119/₹149 प्लान</b> पूछ रहे हैं?'
+            : 'Could you clarify — are you asking about <b>Attendance</b>, <b>Name Entry</b>, <b>Stock</b>, <b>Chakhna Panji</b>, or <b>₹119/₹149 Plans</b>?';
         }
       }
 
@@ -578,7 +573,7 @@ document.querySelectorAll('aside').forEach(function (el) {
         box.innerHTML += '<div class="flex items-start gap-2.5"><div class="w-7 h-7 rounded-full bg-white flex items-center justify-center p-0.5 border border-slate-200 shrink-0 mt-1"><img src="logo-256x256.png" class="w-full h-full object-contain"></div><div class="bg-white p-3.5 rounded-2xl text-slate-800 border border-slate-200 shadow-2xs max-w-[85%] text-xs sm:text-sm leading-relaxed">' + reply + '</div></div>';
         box.scrollTop = box.scrollHeight;
         speakText(reply);
-      }, 150);
+      }, 120);
     });
   }
 
