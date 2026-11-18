@@ -153,7 +153,7 @@
         .replace(/(?:^|\s)(ए\s+से|एआई|ऐ\s+से|a\s+se)(?=\s|$)/g, ' ai')
         .replace(/(?:^|\s)(चिकन\s+पणजी|चकना\s+पंछी|चकना\s+पणजी|चखना\s+पंजी|पणजी)(?=\s|$)/g, ' chakhna')
         .replace(/(?:^|\s)(बिलो\s+शेयर|बिल\s+ओसीआर|ओसीआर|बिल\s+फोटो)(?=\s|$)/g, ' ocr')
-        .replace(/(?:^|\s)(वही\s+संतु|वही\s+संडे|वॉइस\s+अनडू|अनडू|अंडू)(?=\s|$)/g, ' undo')
+        .replace(/(?:^|\s)(लहू|लहु|वही\s+संतु|वही\s+संडे|वॉइस\s+अनडू|अनडू|अंडू)(?=\s|$)/g, ' undo')
         .replace(/(?:^|\s)(राशन\s+फोरकास्ट|फोरकास्ट)(?=\s|$)/g, ' forecast')
         .replace(/(?:^|\s)(स्मार्ट\s+ऑडिट|ऑडिट)(?=\s|$)/g, ' audit')
         .replace(/(?:^|\s)(थ्री\s+वे|3\s*वे)(?=\s|$)/g, ' threeway')
@@ -194,6 +194,16 @@
           ctx.pendingClarify = null;
           stopMicLoop();
           return hi ? 'आपका बहुत-बहुत धन्यवाद! 🙏 माइक बंद कर दिया गया है, ज़रूरत पड़ने पर फिर टैप कीजिएगा।' : 'You are welcome! 🙏 Mic turned off — tap anytime if you need help again.';
+        }
+      },
+      {
+        id: 'ai_vs_manual', w: 9,
+        k: ['manual', 'kiske', 'sahayak', 'किसके', 'मैनुअल', 'सहायक'],
+        deep: '₹119/माह Manual प्लान में 1st AI रिपोर्ट फ्री मिलती है; ₹149/माह AI Pro में बोलकर हाजिरी, 3-Way नाम एंट्री, Bill OCR, Smart Audit, Ration Forecast व BRC WhatsApp रिपोर्ट सब अनलिमिटेड हैं।',
+        a: function (hi) {
+          return hi
+            ? '<b>Manual (₹119/माह)</b> उन शिक्षकों के लिए है जो हाथ से आराम से एंट्री करते हैं, जबकि <b>AI Pro (₹149/माह)</b> उनके लिए है जो बोलकर 10–20 सेकंड में हाजिरी, नाम, स्टॉक, OCR और BRC रिपोर्ट तैयार करना चाहते हैं!'
+            : '<b>Manual (₹119/mo)</b> suits teachers who prefer typing entries calmly, while <b>AI Pro (₹149/mo)</b> helps those who want 10-sec voice attendance, names, stock, Bill OCR & BRC reports!';
         }
       },
       {
@@ -258,7 +268,7 @@
       },
       {
         id: 'attendance', w: 9,
-        k: ['attendance', 'daily', 'class', 'क्लास', 'दैनिक'],
+        k: ['attendance', 'daily', 'class', 'लेता', 'लेते', 'क्लास', 'दैनिक'],
         deep: 'आप एक-एक क्लास (Class-by-Class) भी सेव कर सकते हैं (बाकी क्लास 0/0 से भरकर), और पुरानी तारीख की हाजिरी भी कभी भी एडिट कर सकते हैं।',
         a: function (hi) {
           return hi
@@ -497,7 +507,7 @@
       var words = nRaw.split(/\s+/).filter(Boolean);
       var reply = null;
 
-      if (ctx.lastDeep && /^(kyun|kyu|kaise|why|how|detail|details|more|aur batao|samjhao|explain|क्यों|कैसे|विस्तार|समझाओ)$/i.test(nRaw)) {
+      if (ctx.lastDeep && /^(kyun|kyu|kaise|why|how|detail|details|more|aur batao|samjhao|explain|kaise kaam karta hai|kaise kam karta hai|kya hai|iska kya|क्यों|कैसे|विस्तार|समझाओ|कैसे काम करता है|कैसे काम करती है|कैसे होता है|कैसे लेते हैं|कैसे करा सकते हैं)$/i.test(nRaw)) {
         reply = ctx.lastDeep;
       }
 
