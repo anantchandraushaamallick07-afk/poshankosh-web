@@ -442,10 +442,30 @@
       if (SpeechRec) {
         rec = new SpeechRec();
         rec.interimResults = false;
+        function showMicDeniedHelp() {
+          stopMicLoop();
+          var msg = isHindiMode()
+            ? '🎤 ब्राउज़र में माइक अनुमति बंद है — ऊपर एड्रेस बार के <b>🔒 / ⚙️ आइकन → Permissions → Microphone</b> को <b>Allow</b> करें, या कीबोर्ड के माइक का उपयोग करें।'
+            : '🎤 Microphone permission is blocked — tap the <b>🔒 / ⚙️ icon</b> in the address bar → <b>Permissions → Microphone → Allow</b>.';
+          box.innerHTML += '<div class="flex items-start gap-2.5"><div class="w-7 h-7 rounded-full bg-white flex items-center justify-center p-0.5 border border-slate-200 shrink-0 mt-1"><img src="logo-256x256.png" class="w-full h-full object-contain"></div><div class="bg-white p-3 rounded-2xl text-slate-700 border border-slate-200 text-xs">' + msg + '</div></div>';
+          box.scrollTop = box.scrollHeight;
+        }
         micBtn.addEventListener('click', function () {
           if ('speechSynthesis' in window) window.speechSynthesis.cancel();
           isSpeaking = false;
-          if (handsFree) { stopMicLoop(); } else { handsFree = true; startMicLoop(); }
+          if (handsFree) { stopMicLoop(); return; }
+          if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+            navigator.mediaDevices.getUserMedia({ audio: true }).then(function (stream) {
+              try { stream.getTracks().forEach(function (t) { t.stop(); }); } catch (_) {}
+              handsFree = true;
+              startMicLoop();
+            }).catch(function () {
+              showMicDeniedHelp();
+            });
+          } else {
+            handsFree = true;
+            startMicLoop();
+          }
         });
         rec.onresult = function (ev) {
           var transcript = ev.results && ev.results[0] && ev.results[0][0] ? ev.results[0][0].transcript : '';
@@ -464,7 +484,7 @@
         };
         rec.onerror = function (ev) {
           listening = false;
-          if (ev && (ev.error === 'not-allowed' || ev.error === 'service-not-allowed')) stopMicLoop();
+          if (ev && (ev.error === 'not-allowed' || ev.error === 'service-not-allowed' || ev.error === 'audio-capture')) { showMicDeniedHelp(); }
           else if (handsFree && !isSpeaking) setTimeout(startMicLoop, 450);
           else if (!handsFree) updateMicUi(false);
         };
