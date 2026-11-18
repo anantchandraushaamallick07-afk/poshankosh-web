@@ -17,8 +17,8 @@
 
 ## Pricing
 - **30-Day Free Trial (₹0):** Full Manual Registers + Full Offline AI Assistant free for 30 days.
-- **₹119 / year (Standard Manual Plan):** All 12+ manual registers, MPR/Form-II PDF & Excel, and 1st AI report free (₹30 per extra AI report).
-- **₹149 / year (AI Pro Plan):** Everything in ₹119 plus unlimited Offline Voice & Text AI, AI Attendance, 3-Way Student Name Entry, Bill Photo OCR, Smart Audit, Ration Forecast & 1-Tap BRC WhatsApp Reports.
+- **₹119 / month (Standard Manual Plan):** All 12+ manual registers, MPR/Form-II PDF & Excel, and 1st AI report free (₹30 per extra AI report).
+- **₹149 / month (AI Pro Plan):** Everything in ₹119 plus unlimited Offline Voice & Text AI, AI Attendance, 3-Way Student Name Entry, Bill Photo OCR, Smart Audit, Ration Forecast & 1-Tap BRC WhatsApp Reports.
 
 ## Official Links & Support
 - Website: https://poshankosh.com
